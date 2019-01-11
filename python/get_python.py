@@ -4,8 +4,8 @@ import json
 import jwt
 import requests
 
-ACCESS_KEY = '<access-key>'
-SECRET_KEY = '<secret-key>'
+ACCESS_KEY = 'xxxxx'
+SECRET_KEY = 'xxxxx'
 
 logger = logging.getLogger(__name__)
 
