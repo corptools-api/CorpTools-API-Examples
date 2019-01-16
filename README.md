@@ -5,4 +5,4 @@ If you have not already been invited to your Gitter channel, please reach out to
 
 ## common 'gotchas' 
 
-* It is strongly recommended to use a JWT library. This streamlines and simplifies your code; reducing the possiblity for error. 
+* It is strongly recommended to use a [JWT library](https://jwt.io/). This streamlines and simplifies your code; reducing the possiblity for error. 
