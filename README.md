@@ -5,4 +5,6 @@ If you have not already been invited to your Gitter channel, please reach out to
 
 ## common 'gotchas' 
 
-* It is strongly recommended to use a [JWT library](https://jwt.io/). This streamlines and simplifies your code; reducing the possiblity for error. 
+* It is strongly recommended to use a [JWT library](https://jwt.io/) to create your token. This streamlines and simplifies your code; reducing the possiblity for error. 
+
+* [JWT](https://jwt.io/) also has a helpful debugger on the homepage to test the structure token.  
