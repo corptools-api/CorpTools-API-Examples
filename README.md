@@ -3,7 +3,6 @@ Each file contains GET and POST examples for your Corptools API implementation i
 
 If you have not already been invited to your Gitter channel, please reach out to api@corporatetools.com to connect with the maintainers of this API. Communication through your Gitter channel is a fast and useful way to get your questions answered. 
 
-## common 'gotchas' 
 
 * It is strongly recommended to use a [JWT library](https://jwt.io/) to create your token. This streamlines and simplifies your code; reducing the possiblity for error. 
 
