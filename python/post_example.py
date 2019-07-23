@@ -18,7 +18,7 @@ payload = {
     "content": hashlib.sha256(body.encode('ascii')).hexdigest()
 }
 
-token = jwt.encode(payload, SECRET_KEY, algorithm='HS256', headers=headers)
+token = jwt.encode(payload, SECRET_KEY, algorithm='HS256', headers=headers).decode('utf-8')
 
 try:
     url = "https://api.corporatetools.com/companies"
