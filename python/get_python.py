@@ -1,3 +1,5 @@
+# Using Python 3.7.6 and PyJWT 1.7.1
+
 import logging
 import hashlib
 import json
@@ -19,6 +21,7 @@ payload = {
 }
 
 token = jwt.encode(payload, SECRET_KEY, algorithm='HS256', headers=headers)
+token = token.decode("utf-8")
 
 try:
     url = "https://api.corporatetools.com/compliance-events"
