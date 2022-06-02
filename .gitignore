@@ -1,3 +1,7 @@
 .idea/
 **/node_modules/**
 **.DS_Store
+**.env**
+php/vendor
+php/composer.lock
+php/downloads/**
