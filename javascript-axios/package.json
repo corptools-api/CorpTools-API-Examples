@@ -1,9 +1,14 @@
 {
   "name": "javascript-axios",
   "version": "1.0.0",
+  "scripts": {
+    "get_companies": "node get_companies.js",
+    "patch_company": "node patch_company.js"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "crypto-js": "^4.0.0",
+    "dotenv": "^16.3.1",
     "jwt-encode": "^1.0.1"
   }
 }
