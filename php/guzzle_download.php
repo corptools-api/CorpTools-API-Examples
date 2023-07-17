@@ -1,18 +1,25 @@
 <?php
+// Loading .env environment properties
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 
-require 'vendor/autoload.php';
 require './jwt.php';
 
 use GuzzleHttp\Client;
 
-$base_url = 'https://api.corporatetools.com';
-$document_id = "ee068109-c2ee-431d-a0b3-9585f01fa3a8";
+/*
+ * Define variables
+ */
+$debug = false;
+$base_url = $_ENV['API_URL'];
+$document_id = $_ENV['DOCUMENT_ID'];
 $request_path = "/documents/$document_id/download";
 $request_params = ['limit' => 1];
 
 $jwt = build_jwt(
-    getenv('ACCESS_KEY'),
-    getenv('SECRET_KEY'),
+    $_ENV['ACCESS_KEY'],
+    $_ENV['SECRET_KEY'],
     $request_path,
 );
 

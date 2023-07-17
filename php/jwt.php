@@ -3,7 +3,7 @@
 /*
  * Build out your Json Web Token
  */
-function build_jwt($access_key, $secret_key, $request_path, $request_data = null) {
+function build_jwt($access_key, $secret_key, $request_path, $request_data = '') {
     $header = json_encode([
       'typ' => 'JWT',
       'alg' => 'HS256',
