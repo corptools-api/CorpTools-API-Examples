@@ -1,21 +1,23 @@
 <?php
-
-// This is a standalone file.
-// It does not require any other files and does not need composer.
+// Loading .env environment properties
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 
 /*
  * Define variables
  */
 $debug = false;
-$access_key = getenv('ACCESS_KEY');
-$secret_key = getenv('SECRET_KEY');
-$base_url = 'https://api.corporatetools.com';
+$access_key = $_ENV['ACCESS_KEY'];
+$secret_key = $_ENV['SECRET_KEY'];
+$base_url   = $_ENV['API_URL'];
 $request_path = '/companies';
-$request_data = null;
+$request_data = '';
 // $request_params = [];
-// $request_params = ['names' => ['Test CT Integration Company 2']];
+$request_params = ['names' => ['Test Company 2']];
 // $request_params = ['offset' => 2, 'limit' => 1];
 $request_params = ['limit' => 1];
+
 
 /*
  * Convert Array of Parameters to Query String
@@ -98,7 +100,7 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     }
 
     if (!empty($http_res_code) && $http_res_code <> 200) {
-        die("Response Code: ${http_res_code}");
+        die("Response Code: {$http_res_code}");
     }
 
     curl_close($ch);

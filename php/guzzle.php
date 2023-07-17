@@ -1,6 +1,9 @@
 <?php
+// Loading .env environment properties
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 
-require 'vendor/autoload.php';
 require './jwt.php';
 
 use GuzzleHttp\Client;
@@ -9,13 +12,13 @@ use GuzzleHttp\Client;
  * Define variables
  */
 $debug = false;
-$access_key = getenv('ACCESS_KEY');
-$secret_key = getenv('SECRET_KEY');
-$base_url = 'https://api.corporatetools.com';
+$access_key = $_ENV['ACCESS_KEY'];
+$secret_key = $_ENV['SECRET_KEY'];
+$base_url = $_ENV['API_URL'];
 $request_path = '/companies';
-$request_data = null;
+$request_data = '';
 // $request_params = [];
-// $request_params = ['names' => ['Test CT Integration Company 2']];
+$request_params = ['names' => ['Test Company 2']];
 // $request_params = ['offset' => 2, 'limit' => 1];
 $request_params = ['limit' => 1];
 
