@@ -1,13 +1,15 @@
-# Using Python 3.7.6 and PyJWT 1.7.1
-
 import logging
 import hashlib
 import json
 import jwt
 import requests
+from dotenv import dotenv_values
 
-ACCESS_KEY = 'xxxxx'
-SECRET_KEY = 'xxxxx'
+config = dotenv_values()
+
+ACCESS_KEY = config['ACCESS_KEY']
+SECRET_KEY = config['SECRET_KEY']
+API_URL    = config['API_URL']
 
 logger = logging.getLogger(__name__)
 
@@ -21,10 +23,9 @@ payload = {
 }
 
 token = jwt.encode(payload, SECRET_KEY, algorithm='HS256', headers=headers)
-token = token.decode("utf-8")
 
 try:
-    url = "https://api.corporatetools.com/compliance-events"
+    url = API_URL + "/compliance-events"
     headers = {"Authorization": 'Bearer %s'%(token), "Content-Type": "json"}
     r = requests.get(url, headers=headers, data=body)
 
