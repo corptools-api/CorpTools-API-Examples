@@ -17,4 +17,4 @@ COMPANY_NAME='<company-name>'
 - `yarn install`
 
 ## Getting Started
-1. `yarn run get_companies` or `yarn run patch_company`
+- `yarn run <script-name>` (See scripts section of package.json for available examples)
