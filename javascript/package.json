@@ -4,8 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "get_documents": "node ./examples/get_documents.js",
+    "get_filing_products_offerings": "node ./examples/get_filing_products_offerings.js",
+    "post_companies": "node ./examples/post_companies.js"
   },
   "author": "",
   "license": "ISC",
