@@ -5,3 +5,8 @@
 php/vendor
 php/composer.lock
 php/downloads/**
+csharp/.env
+csharp/.vs/**
+csharp/bin/**
+csharp/obj/**
+ruby/Gemfile.lock

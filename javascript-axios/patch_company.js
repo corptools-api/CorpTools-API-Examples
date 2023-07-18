@@ -1,3 +1,4 @@
+require('dotenv').config();
 const axios = require('axios')
 const crypto = require('crypto-js')
 const sign = require('jwt-encode')
@@ -7,12 +8,12 @@ let keys = {
   secret_key: process.env.SECRET_KEY,
 }
 
-let url = 'https://api.corporatetools.com'
+let url = process.env.API_URL
 let data = {
   companies: [
     {
-      company_id: '<uuid>',
-      name: '<new company name>',
+      company_id: process.env.COMPANY_ID,
+      name: process.env.COMPANY_NAME,
     }
   ]
 }
