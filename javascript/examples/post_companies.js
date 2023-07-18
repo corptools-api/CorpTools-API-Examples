@@ -1,13 +1,13 @@
-let body = JSON.stringify(
-	{ companies: [
+let body = { 
+	companies: [
 		{ 
-			name: 'An Example Company', 
+			name: 'Another Example Company', 
 			entity_type: 'Limited Liability Company', 
 			jurisdictions: ['Maine', 'Washington']
-		}]
-	}
-); 
+		}
+	]
+};
 
-token = require('../request.js').request.token({ path: '/companies' });
+token = require('../request.js').request.token({ path: '/companies', body: body });
 
 require('../request.js').request.post({ path: '/companies', token: token, body: body });
