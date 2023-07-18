@@ -18,15 +18,19 @@ exports.request = {
 		};
 		
 		if (body) {
-			payload.content = CryptoJS.SHA256(body).toString(CryptoJS.enc.Hex);
+			payload.content = CryptoJS.SHA256(JSON.stringify(body)).toString(CryptoJS.enc.Hex);
 		} else {
 			payload.content = CryptoJS.SHA256(encodeURIComponent('')).toString(CryptoJS.enc.Hex);
 		}
 
 		token = jwt.encode(payload, SECRET_KEY, 'HS256', { header: header });
+		console.log(`token=${token}`)
 		return token;
 	},
-	get: function ({ path, token, queryParams = null }) {
+	delete: function ({ path, token, body = {} }) {
+		// TODO
+	},
+	get: function ({ path, token, queryParams = '' }) {
 		let url;
 		if (queryParams) {
 			// read in query parameters to set on the URL
@@ -41,7 +45,7 @@ exports.request = {
 		} else {
 			url = API_URL + path;
 		}
-		console.log("GET request to url=" + url);
+		console.log(`GET request to url=${url}`);
 		request.open('GET', url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);
 		request.setRequestHeader("Content-Type", "application/json");
@@ -57,13 +61,17 @@ exports.request = {
 
 		request.send();
 	},
-	post: function ({ path, token, body = null }) {
+	patch: function ({ path, token, body = {} }) {
+		// TODO
+	},
+	post: function ({ path, token, body = {} }) {
+		body = JSON.stringify(body)
 		let payload = {
 		  path: path,
 		  content: CryptoJS.SHA256(body).toString(CryptoJS.enc.Hex)
 		}; 
 		let url = API_URL + path
-		console.log("POST request to url=" + url);
+		console.log(`POST request to url=${url}`);
 		request.open('POST', url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);
 		request.setRequestHeader("Content-Type", "application/json");
