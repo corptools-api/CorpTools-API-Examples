@@ -1,4 +1,4 @@
-require_relative './request.rb'
+require_relative '../request.rb'
 
 params = { companies: [
 	{ 
