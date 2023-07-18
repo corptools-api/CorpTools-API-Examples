@@ -2,36 +2,36 @@
 # yarn lockfile v1
 
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+"axios@^0.21.1":
+  "integrity" "sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz"
+  "version" "0.21.1"
   dependencies:
-    follow-redirects "^1.10.0"
+    "follow-redirects" "^1.10.0"
 
-crypto-js@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.0.0.tgz#2904ab2677a9d042856a2ea2ef80de92e4a36dcc"
-  integrity sha512-bzHZN8Pn+gS7DQA6n+iUmBfl0hO5DJq++QP3U6uTucDtk/0iGpXd/Gg7CGR0p8tJhofJyaKoWBuJI4eAO00BBg==
+"crypto-js@^4.0.0":
+  "integrity" "sha512-bzHZN8Pn+gS7DQA6n+iUmBfl0hO5DJq++QP3U6uTucDtk/0iGpXd/Gg7CGR0p8tJhofJyaKoWBuJI4eAO00BBg=="
+  "resolved" "https://registry.npmjs.org/crypto-js/-/crypto-js-4.0.0.tgz"
+  "version" "4.0.0"
 
-dotenv@^16.3.1:
-  version "16.3.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
-  integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
+"dotenv@^16.3.1":
+  "integrity" "sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.3.1.tgz"
+  "version" "16.3.1"
 
-follow-redirects@^1.10.0:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.1.tgz#5f69b813376cee4fd0474a3aba835df04ab763b7"
-  integrity sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
+"follow-redirects@^1.10.0":
+  "integrity" "sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.13.1.tgz"
+  "version" "1.13.1"
 
-jwt-encode@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jwt-encode/-/jwt-encode-1.0.1.tgz#6602a0475f757c7d5d559a7e923f3d3d5ecd938c"
-  integrity sha512-QrGiNhynbAYyFdbC1GbjborzenSFs5Ga+2nE0uBokGXsH11xrgd1AX55HR7P+wGQyyZOn6LUO5iKlh74dlhBkA==
+"jwt-encode@^1.0.1":
+  "integrity" "sha512-QrGiNhynbAYyFdbC1GbjborzenSFs5Ga+2nE0uBokGXsH11xrgd1AX55HR7P+wGQyyZOn6LUO5iKlh74dlhBkA=="
+  "resolved" "https://registry.npmjs.org/jwt-encode/-/jwt-encode-1.0.1.tgz"
+  "version" "1.0.1"
   dependencies:
-    ts.cryptojs256 "^1.0.1"
+    "ts.cryptojs256" "^1.0.1"
 
-ts.cryptojs256@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/ts.cryptojs256/-/ts.cryptojs256-1.0.1.tgz#56a3d3a3bc022ad358b3e62cd8dae3224d9384f1"
-  integrity sha1-VqPTo7wCKtNYs+Ys2NrjIk2ThPE=
+"ts.cryptojs256@^1.0.1":
+  "integrity" "sha1-VqPTo7wCKtNYs+Ys2NrjIk2ThPE="
+  "resolved" "https://registry.npmjs.org/ts.cryptojs256/-/ts.cryptojs256-1.0.1.tgz"
+  "version" "1.0.1"
