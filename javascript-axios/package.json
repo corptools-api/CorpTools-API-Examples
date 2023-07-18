@@ -2,8 +2,9 @@
   "name": "javascript-axios",
   "version": "1.0.0",
   "scripts": {
-    "get_companies": "node get_companies.js",
-    "patch_company": "node patch_company.js"
+    "get_companies": "node ./examples/get_companies.js",
+    "get_filing_products_offerings": "node ./examples/get_filing_products_offerings.js",
+    "patch_companies": "node ./examples/patch_companies.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
