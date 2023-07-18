@@ -5,11 +5,12 @@ Create an `.env` file at the root of the `javascript` folder with the following 
 ACCESS_KEY='<access-key>'
 SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
+
+COMPANY_ID='<company-id>'
+JURISDICTION='<jurisdiction-abbreviation>'
 ```
 # Running Examples
 - Run the following commands:
 - `nvm use` (or have node 18.0.0 installed)
 - `npm install`
-- `npm start`
-
-Note: you must uncomment the example request in app.js you want to run
+- `npm run <script-name>` (See scripts section of package.json for available examples)
