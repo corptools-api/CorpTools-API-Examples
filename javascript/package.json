@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "get_documents": "node ./examples/get_documents.js",
+    "get_filing_products": "node ./examples/get_filing_products.js",
     "get_filing_products_offerings": "node ./examples/get_filing_products_offerings.js",
     "post_companies": "node ./examples/post_companies.js"
   },
