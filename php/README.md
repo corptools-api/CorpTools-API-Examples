@@ -1,7 +1,7 @@
 # PHP Examples
 
 ## Environment Configurations
-Create an `.env` file at the root of the `python` folder with the following properties defined:
+Create an `.env` file at the root of the `php` folder with the following properties defined:
 
 ```
 ACCESS_KEY='<access-key>'
