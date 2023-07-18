@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "get_companies": "node ./examples/get_companies.js",
+    "get_filing_products": "node ./examples/get_filing_products.js",
     "get_filing_products_offerings": "node ./examples/get_filing_products_offerings.js",
     "patch_companies": "node ./examples/patch_companies.js"
   },

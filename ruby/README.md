@@ -11,4 +11,4 @@ API_URL='https://api.corporatetools.com'
 - `bundle install`
 
 ## Getting Started
-1. `ruby get_ruby.rb` or `ruby post_ruby.rb`
+1. `ruby examples/get_documents.rb` or `ruby examples/post_companies.rb` or `ruby examples/get_filing_products.rb`, etc
