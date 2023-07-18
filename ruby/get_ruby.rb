@@ -1,9 +1,13 @@
+require 'dotenv'
+require 'json'
 require 'jwt'
 require 'rest-client'
-require 'json'
 
-access_key = 'xxxx'
-secret_key = 'xxxx'
+Dotenv.load
+
+access_key = ENV['ACCESS_KEY']
+secret_key = ENV['SECRET_KEY']
+base_url   = ENV['API_URL']
 
 body = { status: 'unread' }.to_json
 
@@ -24,7 +28,7 @@ token = JWT.encode(
 begin
   res = RestClient::Request.execute(
     method: :get,
-    url: 'https://api.corporatetools.com/documents',
+    url: base_url + '/documents',
     payload: body,
     headers: {
       authorization: "Bearer #{token}",

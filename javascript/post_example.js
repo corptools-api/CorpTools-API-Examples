@@ -1,9 +1,9 @@
 exports.post = {
-	postCompanies: function(jwt, CryptoJS, request, keys) {
+	postCompanies: function(apiUrl, jwt, CryptoJS, request, keys) {
 		let body = JSON.stringify(
 			{ companies: [
 				{ 
-					name: 'Sample Y', 
+					name: 'Example Company', 
 					entity_type: 'Limited Liability Company', 
 					jurisdictions: ['Maine', 'Washington']
 				}]
@@ -19,7 +19,7 @@ exports.post = {
 
 		let token = jwt.encode(payload, keys.secret_key, 'HS256', { header: header });
 
-		let url = 'https://api.corporatetools.com/companies'
+		let url = apiUrl + '/companies'
 
 		request.open('POST', url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);

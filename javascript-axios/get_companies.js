@@ -1,3 +1,4 @@
+require('dotenv').config();
 const axios = require('axios')
 const crypto = require('crypto-js')
 const sign = require('jwt-encode')
@@ -7,7 +8,7 @@ let keys = {
   secret_key: process.env.SECRET_KEY,
 }
 
-let url = 'https://api.corporatetools.com'
+let url = process.env.API_URL
 let query_string = ''
 let request_body = ''
 

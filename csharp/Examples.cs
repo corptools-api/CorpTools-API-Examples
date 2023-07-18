@@ -6,23 +6,34 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using RestSharp;
+using dotenv;
 
 namespace Examples
 {
     class Program
     {
-        private const string AccessKey   = "<access_key>";
-        private const string SecretKey   = "<secret_key>";
-        private const string ApiUrl      = "https://api.corporatetools.com";
-        private const string CallbackUrl = "<callback_url>";
+        private static string AccessKey;
+        private static string SecretKey;
+        private static string ApiUrl;
+        private static string CallbackUrl;
         
         // Here we have examples of how to add a callback to the API, getting a list of all callbacks added, and an example
         // of what it would look like to listen for that callback to trigger and then how to decode the corresponding data
         static void Main(string[] args)
         {
+            setupEnvironment();
             // AddCallback();
-            // GetCallbacks();
+            GetCallbacks();
             ListenForCallback();
+        }
+
+        private static void setupEnvironment()
+        {
+            dotenv.net.DotEnv.Load();
+            AccessKey = Environment.GetEnvironmentVariable("ACCESS_KEY");
+            SecretKey = Environment.GetEnvironmentVariable("SECRET_KEY");
+            ApiUrl = Environment.GetEnvironmentVariable("API_URL");
+            CallbackUrl = Environment.GetEnvironmentVariable("CALLBACK_URL");
         }
 
         private static void ListenForCallback()
@@ -51,7 +62,8 @@ namespace Examples
         {
             var path    = "callbacks";
             var client  = new RestClient(ApiUrl);
-            var request = new RestRequest(path, Method.POST, DataFormat.Json);
+            var request = new RestRequest(path, RestSharp.Method.Post);
+            request.RequestFormat = DataFormat.Json;
             
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -70,7 +82,8 @@ namespace Examples
         {
             var path    = "callbacks";
             var client  = new RestClient(ApiUrl);
-            var request = new RestRequest(path, Method.GET, DataFormat.Json);
+            var request = new RestRequest(path, RestSharp.Method.Get);
+            request.RequestFormat = DataFormat.Json;
             
             GenerateJwtToken(ref request, path);
 
@@ -112,5 +125,3 @@ namespace Examples
         }
     }
 }
-
-
