@@ -1,7 +1,7 @@
 # JavaScript Axios Examples
 
 ## Environment Configurations
-Create an `.env` file at the root of the `javascript` folder with the following properties defined:
+Create an `.env` file at the root of the `javascript-axios` folder with the following properties defined:
 
 ```
 ACCESS_KEY='<access-key>'
@@ -13,6 +13,8 @@ COMPANY_ID='<company-id>'
 COMPANY_NAME='<company-name>'
 ```
 
+## Installing Dependencies
+- `yarn install`
+
 ## Getting Started
-1. `yarn install`
-2. `yarn run get_companies` or `yarn run patch_company`
+1. `yarn run get_companies` or `yarn run patch_company`
