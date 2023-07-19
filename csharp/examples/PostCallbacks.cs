@@ -4,7 +4,7 @@ namespace Examples.examples
     // POST /callbacks
     public class PostCallbacks : BaseRequest
     {
-        string _callbackUrl;
+        private string _callbackUrl;
 
         public PostCallbacks()
 		{
