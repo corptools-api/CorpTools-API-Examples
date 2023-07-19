@@ -11,9 +11,10 @@ namespace Examples
         static void Main(string[] args)
         {
             // TODO: setup a way to select which request to run
-            requestGetFilingProductsOfferings();
+            // requestGetFilingProductsOfferings();
             //requestPostCallbacks();
             //requestGetCallbacks();
+            requestPostShoppingCart();
             //ListenForCallback();
         }
 
@@ -32,6 +33,12 @@ namespace Examples
         private static void requestPostCallbacks()
         {
             PostCallbacks request = new PostCallbacks();
+            request.SendRequest();
+        }
+
+        private static void requestPostShoppingCart()
+        {
+            PostShoppingCart request = new PostShoppingCart();
             request.SendRequest();
         }
 
