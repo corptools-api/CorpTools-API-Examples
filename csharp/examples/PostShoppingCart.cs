@@ -16,7 +16,7 @@ namespace Examples.examples
             _filingProductId = Environment.GetEnvironmentVariable("FILING_PRODUCT_ID");
             _filingMethodId = Environment.GetEnvironmentVariable("FILING_METHOD_ID");
             _quantity = 1;
-            Console.WriteLine($"PostShoppingCart: _companyId={_companyId} _filingProductId={_filingProductId}");
+            Console.WriteLine($"PostShoppingCart: _companyId={_companyId} _filingProductId={_filingProductId} _filingMethodId={_filingMethodId}");
         }
 
         public override void SendRequest()
