@@ -1,6 +1,11 @@
 {
+   "description": "Example HTTP requests in PHP to Corptools API",
    "require": {
       "guzzlehttp/guzzle": "^7.0",
       "vlucas/phpdotenv": "^5.5"
+   },
+   "scripts": {
+      "get-companies": "php ./examples/get_companies.php",
+      "get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php"
    }
 }
