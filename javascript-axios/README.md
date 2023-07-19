@@ -1,17 +1,7 @@
 # JavaScript Axios Examples
 
-## Environment Configurations
-Create an `.env` file at the root of the project directory with the following properties defined:
-
-```
-ACCESS_KEY='<access-key>'
-SECRET_KEY='<secret-key>'
-API_URL='https://api.corporatetools.com'
-
-# for PATCH company request
-COMPANY_ID='<company-id>'
-COMPANY_NAME='<company-name>'
-```
+## Environmental Configurations
+The JavaScript Axios examples read in configurable properties from a shared `.env` file at the root directory of the project. (See the README.md in project root for directions on setting up the `.env` file.)
 
 ## Installing Dependencies
 - `yarn install`
