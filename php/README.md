@@ -7,6 +7,10 @@ Create an `.env` file at the root of the `php` folder with the following propert
 ACCESS_KEY='<access-key>'
 SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
+
+# Optional, request dependent
+COMPANY_ID='<company-id>'
+JURISDICTION='<jurisdiction-abbreviation>'
 DOCUMENT_ID='<document-id>'
 ```
 
@@ -33,18 +37,16 @@ DOCUMENT_ID='<document-id>'
 
 	`sudo mv composer.phar /usr/local/bin/composer`
 
-### CURL
+## Examples using CURL
 
-#### Getting Started
+### Getting Started
 1. `composer install`
-2. `php curl.php`
+2. `composer run <script-name>` (See `composer.json` for scripts starting with `curl-*`)
 
+## Examples using [Guzzle](https://docs.guzzlephp.org/en/stable/index.html)
 
-### [Guzzle](https://docs.guzzlephp.org/en/stable/index.html)
-
-#### Getting Started
+### Getting Started
 1. `composer install`
-2. `php guzzle.php`
-3. `php guzzle_download.php`
-
+2. `composer run <script-name>` (See `composer.json` for scripts starting with `guzzle-*`)
+3. `php guzzle_download.php` 
 NOTE: The `guzzle_download.php` script expects a directory named `downloads` at the root of the `php` folder for the PDF files to download to.
