@@ -5,7 +5,7 @@
 php/vendor
 php/composer.lock
 php/downloads/**
-python/examples/__pycache__/**
+python/__pycache__/**
 csharp/.env
 csharp/.vs/**
 csharp/bin/**
