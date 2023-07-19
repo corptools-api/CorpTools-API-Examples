@@ -4,24 +4,30 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using RestSharp;
-using dotenv;
 
 namespace Examples
 {
-    class Request
+    /*
+     * Base Request class with examples of how to generate the JWT token and make generic HTTP requests 
+     */
+    public abstract class BaseRequest
     {
-        private static string _accessKey;
-        private static string _secretKey;
-        private static string _apiUrl;
+        protected static string _accessKey;
+        protected static string _secretKey;
+        protected static string _apiUrl;
 
-        public Request() {
+        protected BaseRequest()
+        {
             dotenv.net.DotEnv.Load();
             _accessKey = Environment.GetEnvironmentVariable("ACCESS_KEY");
             _secretKey = Environment.GetEnvironmentVariable("SECRET_KEY");
             _apiUrl = Environment.GetEnvironmentVariable("API_URL");
+            Console.WriteLine($"BaseRequest: _apiUrl={_apiUrl} _accessKey={_accessKey} _secretKey={_secretKey}");
         }
 
-        public void GetRequest(string path, string queryParams)
+        public abstract void SendRequest();
+
+        protected void GetRequest(string path)
         {
             var client = new RestClient(_apiUrl);
             var request = new RestRequest(path, Method.Get);
@@ -31,7 +37,7 @@ namespace Examples
             Console.WriteLine(response.Content);
         }
 
-        public void PostRequest(string path, string body)
+        protected void PostRequest(string path, string body)
         {
             var client = new RestClient(_apiUrl);
             var request = new RestRequest(path, Method.Post);
@@ -41,11 +47,11 @@ namespace Examples
             Console.WriteLine(response.Content);
         }
 
-        private void GenerateJwtToken(ref RestRequest request, string path, string body="")
+        protected void GenerateJwtToken(ref RestRequest request, string path, string body = "")
         {
-            var key         = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var header      = new JwtHeader(credentials)
+            var header = new JwtHeader(credentials)
             {
                 { "access_key", _accessKey }
             };
@@ -54,11 +60,11 @@ namespace Examples
                 {"path", "/" + path},
                 {"content", Sha256HexDigest(body) }
             };
-            
+
             var securityToken = new JwtSecurityToken(header, payload);
-            var handler       = new JwtSecurityTokenHandler();
-            var token   = handler.WriteToken(securityToken);
-            
+            var handler = new JwtSecurityTokenHandler();
+            var token = handler.WriteToken(securityToken);
+
             request.AddHeader("Authorization", "Bearer " + token);
             request.AddHeader("Content-Type", "application/json");
             if (body != "")
@@ -67,7 +73,7 @@ namespace Examples
             }
         }
 
-        private static string Sha256HexDigest(string body)
+        internal static string Sha256HexDigest(string body)
         {
             return BitConverter.ToString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(body)))
                 .Replace("-", String.Empty).ToLower();

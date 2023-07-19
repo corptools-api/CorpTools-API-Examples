@@ -2,23 +2,42 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
-using dotenv;
-
+using Examples.examples;
 
 namespace Examples
 {   
     class Program
     {
-        // Here we have examples of how to add a callback to the API, getting a list of all callbacks added, and an example
-        // of what it would look like to listen for that callback to trigger and then how to decode the corresponding data
         static void Main(string[] args)
         {
-            //AddCallback();
-            GetCallbacks();
+            // TODO: setup a way to select which request to run
+            requestGetFilingProductsOfferings();
+            //requestPostCallbacks();
+            //requestGetCallbacks();
             //ListenForCallback();
         }
 
-       
+        private static void requestGetCallbacks()
+        {
+            GetCallbacks request = new GetCallbacks();
+            request.SendRequest();
+        }
+
+        private static void requestGetFilingProductsOfferings()
+        {
+            GetFilingProductsOfferings request = new GetFilingProductsOfferings();
+            request.SendRequest();
+        }
+
+        private static void requestPostCallbacks()
+        {
+            PostCallbacks request = new PostCallbacks();
+            request.SendRequest();
+        }
+
+        /**
+         * Example of listening for event from our API, sent to the Callback URL
+         */
         private static void ListenForCallback()
         {
             dotenv.net.DotEnv.Load();
@@ -26,11 +45,11 @@ namespace Examples
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add(callbackUrl);
             listener.Start();
-            
-            HttpListenerContext context   = listener.GetContext();
-            HttpListenerRequest request   = context.Request;
+
+            HttpListenerContext context = listener.GetContext();
+            HttpListenerRequest request = context.Request;
             System.IO.StreamReader reader = new System.IO.StreamReader(request.InputStream, request.ContentEncoding);
-            
+
             Dictionary<string, string> data = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(reader.ReadToEnd());
             var token = new JwtSecurityTokenHandler().ReadJwtToken(data["data"]);
 
@@ -41,25 +60,6 @@ namespace Examples
 
             context.Response.Close();
             listener.Stop();
-        }
-
-        private static void AddCallback()
-        {
-            dotenv.net.DotEnv.Load();
-            string callbackUrl = Environment.GetEnvironmentVariable("CALLBACK_URL");
-            var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
-            {
-                url = callbackUrl
-            });
-
-            Request request = new Request();
-            request.PostRequest("callbacks", body);
-        }
-
-        private static void GetCallbacks()
-        {
-            Request request = new Request();
-            request.GetRequest("callbacks", "");
         }
     }
 }
