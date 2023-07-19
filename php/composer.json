@@ -7,6 +7,7 @@
    "scripts": {
       "curl-get-companies": "php ./examples/curl/get_companies.php",
       "curl-get-filing-products-offerings": "php ./examples/curl/get_filing_products_offerings.php",
-      "guzzle-get-companies": "php ./examples/guzzle/get_companies.php"
+      "guzzle-get-companies": "php ./examples/guzzle/get_companies.php",
+      "guzzle-get-filing-products-offerings": "php ./examples/guzzle/get_filing_products_offerings.php"
    }
 }
