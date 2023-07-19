@@ -3,7 +3,7 @@ require 'json'
 require 'jwt'
 require 'rest-client'
 
-Dotenv.load
+Dotenv.load('../.env')
 
 module BaseRequestRoute
 

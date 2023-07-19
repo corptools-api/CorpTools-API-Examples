@@ -1,7 +1,7 @@
 # JavaScript Axios Examples
 
 ## Environment Configurations
-Create an `.env` file at the root of the `javascript-axios` folder with the following properties defined:
+Create an `.env` file at the root of the project directory with the following properties defined:
 
 ```
 ACCESS_KEY='<access-key>'
