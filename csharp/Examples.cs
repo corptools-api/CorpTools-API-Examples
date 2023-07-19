@@ -12,7 +12,7 @@ namespace Examples
         {
             // TODO: setup a way to select which request to run
             requestGetFilingProducts();
-            // requestGetFilingProductsOfferings();
+            //requestGetFilingProductsOfferings();
             //requestPostCallbacks();
             //requestGetCallbacks();
             //ListenForCallback();
