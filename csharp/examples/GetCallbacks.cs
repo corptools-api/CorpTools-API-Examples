@@ -2,8 +2,8 @@
 namespace Examples.examples
 {
     // GET /callbacks
-	public class GetCallbacks : BaseRequest
-	{
+    public class GetCallbacks : BaseRequest
+    {
 		public GetCallbacks()
 		{
 		}
