@@ -9,11 +9,17 @@ function send_request($method, $request_path, $request_params, $request_data) {
     $secret_key = $_ENV['SECRET_KEY'];
     $base_url   = $_ENV['API_URL'];
     $jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
-    $qs = query_string($request_params);
-    $url = $base_url . $request_path . $qs;
+
+    if ($request_data == null) {
+        $qs = query_string($request_params);
+        $url = $base_url . $request_path . $qs; 
+    } else {
+        $url = $base_url . $request_path; 
+    }
+
     if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
-    $result = call_api_curl('GET', $url, $jwt);
+    $result = call_api_curl($method, $url, $jwt, $request_data);
     echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
 }
 
@@ -36,6 +42,7 @@ function query_string($request_params) {
  * Build out your Json Web Token
  */
 function build_jwt($access_key, $secret_key, $request_path, $request_data = null) {
+    echo 'request_data=' . $request_data;
     $header = json_encode([
       'typ' => 'JWT',
       'alg' => 'HS256',
@@ -45,6 +52,8 @@ function build_jwt($access_key, $secret_key, $request_path, $request_data = null
       'path' => $request_path,
       'content' => hash('sha256', $request_data),
     ]);
+
+    echo '$payload=' . $payload;
 
     $e_header = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
     $e_payload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($payload));
@@ -65,10 +74,9 @@ function call_api_curl($method, $url, $jwt, $data = null) {
 
     switch ($method) {
         case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
+            curl_setopt($ch, CURLOPT_POST, 1);
             if ($data) {
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             }
             break;
         default:
