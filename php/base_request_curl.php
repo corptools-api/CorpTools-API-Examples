@@ -4,20 +4,18 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-/*
- * Define variables
- */
-$debug = false;
-$access_key = $_ENV['ACCESS_KEY'];
-$secret_key = $_ENV['SECRET_KEY'];
-$base_url   = $_ENV['API_URL'];
-$request_path = '/companies';
-$request_data = '';
-// $request_params = [];
-$request_params = ['names' => ['Test Company 2']];
-// $request_params = ['offset' => 2, 'limit' => 1];
-$request_params = ['limit' => 1];
+function send_request($method, $request_path, $request_params, $request_data) {
+    $access_key = $_ENV['ACCESS_KEY'];
+    $secret_key = $_ENV['SECRET_KEY'];
+    $base_url   = $_ENV['API_URL'];
+    $jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
+    $qs = query_string($request_params);
+    $url = $base_url . $request_path . $qs;
+    if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
+    $result = call_api_curl('GET', $url, $jwt);
+    echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
+}
 
 /*
  * Convert Array of Parameters to Query String
@@ -107,11 +105,3 @@ function call_api_curl($method, $url, $jwt, $data = null) {
 
     return $result;
 }
-
-$jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
-$qs = query_string($request_params);
-$url = $base_url . $request_path . $qs;
-if ($debug) echo 'URL: ' . $url . PHP_EOL;
-
-$result = call_api_curl('GET', $url, $jwt);
-echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
