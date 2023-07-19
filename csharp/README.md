@@ -7,9 +7,13 @@ SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
 
 # Optional, request dependent
-CALLBACK_URL='<callback-url>'
 COMPANY_ID='<company-id>'
+COMPANY_NAME='<company-name>'
 JURISDICTION='<jurisdiction-abbreviation>'
+DOCUMENT_ID='<document-id>'
+FILING_PRODUCT_ID='<filing-product-id>'
+FILING_METHOD_ID='<filing-method-id>'
+WEBSITE_URL=<website-url>
 ```
 
 # Running Examples
