@@ -4,9 +4,9 @@ namespace Examples.examples
     // GET /callbacks
     public class GetCallbacks : BaseRequest
     {
-		public GetCallbacks()
-		{
-		}
+        public GetCallbacks()
+        {
+        }
 
         public override void SendRequest()
         {
