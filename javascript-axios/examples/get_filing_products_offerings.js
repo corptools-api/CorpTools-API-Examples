@@ -1,3 +1,5 @@
+const path = require('path');
+process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
 const COMPANY_ID = process.env.COMPANY_ID;
