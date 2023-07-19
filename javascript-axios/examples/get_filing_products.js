@@ -1,3 +1,5 @@
+const path = require('path');
+process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
 const WEBSITE_URL = process.env.WEBSITE_URL;

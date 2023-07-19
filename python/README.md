@@ -1,5 +1,5 @@
 # Environment Configurations
-Create an `.env` file at the root of the `python` folder with the following properties defined:
+Create an `.env` file at the root of the project directory with the following properties defined:
 
 ```
 ACCESS_KEY='<access-key>'
@@ -18,4 +18,4 @@ API_URL='https://api.corporatetools.com'
 - `pip3 install python-dotenv`
 
 ## Getting Started
-1. `python3 get_python.py` or `python3 post_python.py`
+1. `python3 examples/get_python.py` or `python3 examples/post_python.py`, etc
