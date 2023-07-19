@@ -5,7 +5,8 @@
       "vlucas/phpdotenv": "^5.5"
    },
    "scripts": {
-      "get-companies": "php ./examples/get_companies.php",
-      "get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php"
+      "curl-get-companies": "php ./examples/curl/get_companies.php",
+      "curl-get-filing-products-offerings": "php ./examples/curl/get_filing_products_offerings.php",
+      "guzzle-get-companies": "php ./examples/guzzle/get_companies.php"
    }
 }
