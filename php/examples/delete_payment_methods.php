@@ -11,4 +11,4 @@ $json_body = json_encode($request_data);
 
 $path = '/payment-methods/' . $payment_method_id;
 
-send_request('DELETE', $path, $request_params, $json_body);
+send_request('DELETE', $path, '', '');
