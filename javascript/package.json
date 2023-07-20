@@ -8,6 +8,7 @@
     "get-filing-products": "node ./examples/get_filing_products.js",
     "get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js",
     "post-companies": "node ./examples/post_companies.js",
+    "post-payment-methods": "node ./examples/post_payment_methods.js",
     "post-shopping-cart": "node ./examples/post_shopping_cart.js"
   },
   "author": "",
