@@ -27,6 +27,16 @@ namespace Examples
 
         public abstract void SendRequest();
 
+        protected void DeleteRequest(string path)
+        {
+            var client = new RestClient(_apiUrl);
+            var request = new RestRequest(path, Method.Delete);
+            request.RequestFormat = DataFormat.Json;
+            GenerateJwtToken(ref request, path);
+            var response = client.Delete(request);
+            Console.WriteLine(response.Content);
+        }
+
         protected void GetRequest(string path)
         {
             var client = new RestClient(_apiUrl);
