@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "get-company": "node ./examples/get_company.js",
+    "get-companies": "node ./examples/get_companies.js",
     "get-documents": "node ./examples/get_documents.js",
     "get-filing-methods": "node ./examples/get_filing_methods.js",
     "get-filing-products": "node ./examples/get_filing_products.js",
