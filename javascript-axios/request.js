@@ -25,6 +25,25 @@ exports.request = {
 		console.log(`token=${token}`);
 		return token;
 	},
+	base_request: function({ method, path, token, body = {}}) {
+		let url = API_URL + path;
+		console.log(`${method} request to url=${url} body=${body}`);
+		axios({
+		  method: method,
+		  url: url,
+		  data: body,
+		  headers: {
+		    'Authorization': 'Bearer ' + token,
+		  },
+		}).then(response => {
+		  console.log('response:', response.data)
+		}).catch(error => {
+		  console.log('error:', error.message, error.config.data)
+		})
+	},
+	delete: function({ path, token, body = {} }) {
+		this.base_request({ method: 'DELETE', path: path, token: token, body: body });
+	},
 	get: function ({ path, token, queryParams = '' }) {
 		let url;
 		if (queryParams) {
@@ -36,53 +55,15 @@ exports.request = {
 			    params.append(key, value);
 			  }
 			}
-			url = API_URL + path + '?' + params.toString();
-		} else {
-			url = API_URL + path;
+			path += '?' + params.toString();
 		}
 
-		axios({
-		  method: 'GET',
-		  url: url,
-		  headers: {
-		    'Authorization': 'Bearer ' + token,
-		  },
-		}).then(response => {
-		  console.log('response:', response.data)
-		}).catch(error => {
-		  console.log('error:', error.message)
-		})
+		this.base_request({ method: 'GET', path: path, token: token });
 	},
 	patch: function ({ path, token, body = {} }) {
-		let url = API_URL + path;
-		console.log(`PATCH request to url=${url} body=${body}`);
-		axios({
-		  method: 'PATCH',
-		  url: url,
-		  data: body,
-		  headers: {
-		    'Authorization': 'Bearer ' + token,
-		  },
-		}).then(response => {
-		  console.log('response:', response.data)
-		}).catch(error => {
-		  console.log('error:', error.message, error.config.data)
-		})
+		this.base_request({ method: 'PATCH', path: path, token: token, body: body });
 	},
 	post: function ({ path, token, body = {} }) {
-		let url = API_URL + path;
-		console.log(`POST request to url=${url} body=${body}`);
-		axios({
-		  method: 'POST',
-		  url: url,
-		  data: body,
-		  headers: {
-		    'Authorization': 'Bearer ' + token,
-		  },
-		}).then(response => {
-		  console.log('response:', response.data)
-		}).catch(error => {
-		  console.log('error:', error.message, error.config.data)
-		})
+		this.base_request({ method: 'POST', path: path, token: token, body: body });
 	}
 }

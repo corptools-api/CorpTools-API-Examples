@@ -27,11 +27,31 @@ exports.request = {
 		console.log(`token=${token}`)
 		return token;
 	},
+	base_request: function({ method, path, token, body = null }) {
+		let url = API_URL + path;
+		console.log(`${method} request to url=${url}`);
+		body = JSON.stringify(body);
+		request.open(method, url, true);
+		request.setRequestHeader('Authorization', 'Bearer ' + token);
+		request.setRequestHeader("Content-Type", "application/json");
+		request.onload = function () {
+		    if (request.readyState === 4 && request.status === 200) {
+		        let response = JSON.parse(request.responseText);
+		        console.log(response);
+		    } else {
+		    	 console.log("Error", JSON.parse(request.responseText)); 
+		    }
+		};
+		if (body == null) {
+			request.send();
+		} else {
+			request.send(body);
+		}
+	},
 	delete: function ({ path, token, body = {} }) {
-		// TODO
+		this.base_request({ method: 'DELETE', path: path, token: token, body: body });
 	},
 	get: function ({ path, token, queryParams = '' }) {
-		let url;
 		if (queryParams) {
 			// read in query parameters to set on the URL
 			const params = new URLSearchParams();
@@ -41,50 +61,14 @@ exports.request = {
 			    params.append(key, value);
 			  }
 			}
-			url = API_URL + path + '?' + params.toString();
-		} else {
-			url = API_URL + path;
+			path += '?' + params.toString();
 		}
-		console.log(`GET request to url=${url}`);
-		request.open('GET', url, true);
-		request.setRequestHeader('Authorization', 'Bearer ' + token);
-		request.setRequestHeader("Content-Type", "application/json");
-
-		request.onload = function () {
-		    if (request.readyState === 4 && request.status === 200) {
-		        let response = JSON.parse(request.responseText);
-		        console.log(response);
-		    } else {
-		    	 console.log("Error", JSON.parse(request.responseText)); 
-		    }
-		};
-
-		request.send();
+		this.base_request({ method: 'GET', path: path, token: token });
 	},
 	patch: function ({ path, token, body = {} }) {
 		// TODO
 	},
 	post: function ({ path, token, body = {} }) {
-		body = JSON.stringify(body)
-		let payload = {
-		  path: path,
-		  content: CryptoJS.SHA256(body).toString(CryptoJS.enc.Hex)
-		}; 
-		let url = API_URL + path
-		console.log(`POST request to url=${url}`);
-		request.open('POST', url, true);
-		request.setRequestHeader('Authorization', 'Bearer ' + token);
-		request.setRequestHeader("Content-Type", "application/json");
-
-		request.onload = function () {
-		    if (request.readyState === 4 && request.status === 200) {
-		        let response = JSON.parse(request.responseText);
-		        console.log(response);
-		    } else {
-		    	console.log("Error", JSON.parse(request.responseText)); 
-		    }
-		};
-
-		request.send(body);
+		this.base_request({ method: 'POST', path: path, token: token, body: body });
 	}
 }
