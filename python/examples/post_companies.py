@@ -16,7 +16,7 @@ class PostCompaniesRequest(BaseRequest):
     def post_companies(self, name, jurisdictions, entity_type):
         path = "/companies"
         body = {'companies': [{'name': name, 'jurisdiction': [jurisdictions], 'entity_type': entity_type}]}
-        return self.make_request("POST", path, body)
+        return self.make_request("POST", path, body=body)
 
 name = config['COMPANY_NAME']
 jurisdictions = config['JURISDICTIONS']
