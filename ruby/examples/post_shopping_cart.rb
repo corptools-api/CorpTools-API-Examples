@@ -2,7 +2,7 @@ require_relative '../request.rb'
 
 # Example of POST /shopping-cart
 
-COMPANY_ID			= ENV['COMPANY_ID']
+COMPANY_ID 			= ENV['COMPANY_ID']
 FILING_PRODUCT_ID 	= ENV['FILING_PRODUCT_ID']
 FILING_METHOD_ID 	= ENV['FILING_METHOD_ID']
 QUANTITY = 1
