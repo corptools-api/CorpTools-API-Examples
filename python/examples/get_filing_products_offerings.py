@@ -14,12 +14,12 @@ class GetFilingProductsOfferingsRequest(BaseRequest):
         super().__init__()
     
     def get_filing_products_offerings(self, company_id, product_id, jurisdiction):
-        body = {
+        params = {
             'company_id': company_id,
             'product_id': product_id,
             'jurisdiction': jurisdiction
         }
-        return self.make_request('GET', '/filing-products/offerings', body)
+        return self.make_request('GET', '/filing-products/offerings', params=params)
 
 company_id = config['COMPANY_ID']
 product_id = config['FILING_PRODUCT_ID']
