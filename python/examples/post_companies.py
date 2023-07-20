@@ -13,7 +13,7 @@ class PostCompaniesRequest(BaseRequest):
     def __init__(self):
         super().__init__()
     
-    def post_companies(self, name, jurisdictions, entity_type):
+    def post_companies(self, name, home_state, entity_type):
         path = "/companies"
         body = {'companies': [{'name': name, 'home_state': home_state, 'entity_type': entity_type}]}
         return self.make_request("POST", path, body=body)
