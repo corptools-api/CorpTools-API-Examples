@@ -1,8 +1,6 @@
 {
   "name": "javascript-examples",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
   "scripts": {
     "delete-payment-methods": "node ./examples/delete_payment_methods.js",
     "get-company": "node ./examples/get_company.js",
@@ -13,13 +11,26 @@
     "get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js",
     "post-companies": "node ./examples/post_companies.js",
     "post-payment-methods": "node ./examples/post_payment_methods.js",
-    "post-shopping-cart": "node ./examples/post_shopping_cart.js"
+    "post-shopping-cart": "node ./examples/post_shopping_cart.js",
+
+    "axios-delete-payment-methods": "node ./examples/delete_payment_methods.js axios",
+    "axios-get-company": "node ./examples/get_company.js axios",
+    "axios-get-companies": "node ./examples/get_companies.js axios",
+    "axios-get-documents": "node ./examples/get_documents.js axios",
+    "axios-get-filing-methods": "node ./examples/get_filing_methods.js axios",
+    "axios-get-filing-products": "node ./examples/get_filing_products.js axios",
+    "axios-get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js axios",
+    "axios-post-companies": "node ./examples/post_companies.js axios",
+    "axios-post-payment-methods": "node ./examples/post_payment_methods.js axios",
+    "axios-post-shopping-cart": "node ./examples/post_shopping_cart.js axios"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^16.3.1",
+    "jwt-encode": "^1.0.1",
     "jwt-simple": "^0.5.5",
     "xmlhttprequest": "^1.8.0"
   }
