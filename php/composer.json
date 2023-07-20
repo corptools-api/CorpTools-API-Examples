@@ -5,6 +5,7 @@
       "vlucas/phpdotenv": "^5.5"
    },
    "scripts": {
+      "curl-delete-payment-methods": "php ./examples/delete_payment_methods.php curl",
       "curl-get-companies": "php ./examples/get_companies.php curl",
       "curl-get-company": "php ./examples/get_company.php curl",
       "curl-post-companies": "php ./examples/post_companies.php curl",
@@ -13,6 +14,7 @@
       "curl-get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
+      "guzzle-delete-payment-methods": "php ./examples/delete_payment_methods.php guzzle",
       "guzzle-get-companies": "php ./examples/get_companies.php guzzle",
       "guzzle-get-company": "php ./examples/get_company.php guzzle",
       "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
