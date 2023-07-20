@@ -8,4 +8,4 @@ The JavaScript and JavaScript Axios examples read in configurable properties fro
 - `nvm use` (or have node 18.0.0 installed)
 - `npm install`
 ## Running Examples
-- `npm run <script-name>` (See scripts section of package.json for available examples. Be sure to use scripts with `axios` appended for running JavaScript Axios examples.)
+- `npm run <script-name>` (See scripts section of package.json for available examples. Be sure to use scripts with `axios` prepended for running JavaScript Axios examples.)
