@@ -11,11 +11,11 @@ namespace Examples
         static void Main(string[] args)
         {
             // TODO: setup a way to select which request to run
+            //requestGetCallbacks();
             //requestGetFilingMethods();
             //requestGetFilingProducts();
             //requestGetFilingProductsOfferings();
             //requestPostCallbacks();
-            //requestGetCallbacks();
             requestPostPaymentMethods();
             //requestPostShoppingCart();
             //ListenForCallback();
