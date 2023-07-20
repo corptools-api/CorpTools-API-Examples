@@ -22,7 +22,7 @@ class PostShoppingCartRequest(BaseRequest):
             'product_option_id': filing_method_id,
             'quantity': 1
         }
-        return self.make_request('POST', '/shopping-cart', body)
+        return self.make_request('POST', '/shopping-cart', body=body)
 
 company_id = config['COMPANY_ID'];
 filing_product_id = config['FILING_PRODUCT_ID'];

@@ -16,7 +16,7 @@ class GetFilingProductsRequest(BaseRequest):
     def get_filing_products(self, url, jurisdiction):
         path = "/filing-products"
         params = { 'url': url, 'jurisdiction': jurisdiction }
-        return self.make_request("GET", path, params)
+        return self.make_request("GET", path, params=params)
 
 url = config['WEBSITE_URL']
 jurisdiction = config['JURISDICTION']
