@@ -14,7 +14,7 @@ class GetCompaniesRequest(BaseRequest):
         super().__init__()
     
     def get_companies(self):
-        path = f"/companies"
+        path = "/companies"
         return self.make_request("GET", path)
 
 get_companies_request = GetCompaniesRequest()
