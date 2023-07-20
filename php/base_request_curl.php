@@ -74,11 +74,15 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     if ($GLOBALS['debug']) echo 'Curl: ' . $method . ' ' . $url . ' ' . $data . PHP_EOL;
 
     switch ($method) {
-        case "POST":
-            curl_setopt($ch, CURLOPT_POST, 1);
+        case "DELETE":
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             if ($data) {
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             }
+            break;
+        case "POST":
+            curl_setopt($ch, CURLOPT_DELETE, 1);
             break;
         default:
             break;
