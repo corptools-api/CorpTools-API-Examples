@@ -14,12 +14,12 @@ class GetFilingMethodsRequest(BaseRequest):
         super().__init__()
     
     def get_filing_methods(self, company_id, product_id, jurisdiction):
-        body = {
+        params = {
             'company_id': company_id,
             'filing_product_id': product_id,
             'jurisdiction': jurisdiction
         }
-        return self.make_request('GET', '/filing-methods', body)
+        return self.make_request('GET', '/filing-methods', params=params)
 
 company_id = config['COMPANY_ID']
 product_id = config['FILING_PRODUCT_ID']
