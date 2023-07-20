@@ -11,7 +11,8 @@ namespace Examples
         static void Main(string[] args)
         {
             // TODO: setup a way to select which request to run
-            requestGetFilingProducts();
+            requestGetFilingMethods();
+            //requestGetFilingProducts();
             //requestGetFilingProductsOfferings();
             //requestPostCallbacks();
             //requestGetCallbacks();
@@ -22,6 +23,12 @@ namespace Examples
         private static void requestGetCallbacks()
         {
             GetCallbacks request = new GetCallbacks();
+            request.SendRequest();
+        }
+
+        private static void requestGetFilingMethods()
+        {
+            GetFilingMethods request = new GetFilingMethods();
             request.SendRequest();
         }
 
