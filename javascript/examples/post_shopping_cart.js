@@ -1,3 +1,5 @@
+const baseRequest = require('../base_request.js').baseRequest
+
 const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
@@ -18,6 +20,6 @@ let body = {
 	// form_data: FORM_DATA
 };
 
-token = require('../request.js').request.token({ path: '/shopping-cart', body: body });
+token = baseRequest.request.token({ path: '/shopping-cart', body: body });
 
-require('../request.js').request.post({ path: '/shopping-cart', token: token, body: body });
+baseRequest.request.post({ path: '/shopping-cart', token: token, body: body });

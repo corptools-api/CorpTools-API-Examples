@@ -1,3 +1,5 @@
+const baseRequest = require('../base_request.js').baseRequest
+
 const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
@@ -17,6 +19,6 @@ let body =
   ]
 };
 
-token = require('../request.js').request.token({ path: '/companies', body: body });
+token = baseRequest.request.token({ path: '/companies', body: body });
 
-require('../request.js').request.post({ path: '/companies', token: token, body: body });
+baseRequest.request.post({ path: '/companies', token: token, body: body });
