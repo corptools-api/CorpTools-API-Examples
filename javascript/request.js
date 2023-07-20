@@ -28,7 +28,23 @@ exports.request = {
 		return token;
 	},
 	delete: function ({ path, token, body = {} }) {
-		// TODO
+		let url = API_URL + path;
+		body = JSON.stringify(body);
+		console.log(`DELETE request to url=${url}`);
+		request.open('DELETE', url, true);
+		request.setRequestHeader('Authorization', 'Bearer ' + token);
+		request.setRequestHeader("Content-Type", "application/json");
+
+		request.onload = function () {
+		    if (request.readyState === 4 && request.status === 200) {
+		        let response = JSON.parse(request.responseText);
+		        console.log(response);
+		    } else {
+		    	 console.log("Error", JSON.parse(request.responseText)); 
+		    }
+		};
+
+		request.send(body);
 	},
 	get: function ({ path, token, queryParams = '' }) {
 		let url;
@@ -65,12 +81,8 @@ exports.request = {
 		// TODO
 	},
 	post: function ({ path, token, body = {} }) {
-		body = JSON.stringify(body)
-		let payload = {
-		  path: path,
-		  content: CryptoJS.SHA256(body).toString(CryptoJS.enc.Hex)
-		}; 
-		let url = API_URL + path
+		body = JSON.stringify(body); 
+		let url = API_URL + path;
 		console.log(`POST request to url=${url}`);
 		request.open('POST', url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);

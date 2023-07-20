@@ -19,10 +19,11 @@ API_URL='https://api.corporatetools.com'
 # Optional, request dependent
 COMPANY_ID='<company-id>'
 COMPANY_NAME='<company-name>'
-JURISDICTION='<jurisdiction-abbreviation>'
-JURISDICTIONS='<comma-separated-list-of-jurisdiction-names>'
 DOCUMENT_ID='<document-id>'
 FILING_PRODUCT_ID='<filing-product-id>'
 FILING_METHOD_ID='<filing-method-id>'
+JURISDICTION='<jurisdiction-abbreviation>'
+JURISDICTIONS='<comma-separated-list-of-jurisdiction-names>'
+PAYMENT_METHOD_ID='<payment-method-id>'
 WEBSITE_URL=<website-url>
 ```
