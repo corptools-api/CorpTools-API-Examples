@@ -9,21 +9,23 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-class GetFilingProductsOfferingsRequest(BaseRequest):
+class GetFilingMethodsRequest(BaseRequest):
     def __init__(self):
         super().__init__()
     
-    def get_filing_products_offerings(self, company_id, jurisdiction):
+    def get_filing_methods(self, company_id, product_id, jurisdiction):
         params = {
             'company_id': company_id,
+            'filing_product_id': product_id,
             'jurisdiction': jurisdiction
         }
-        return self.make_request('GET', '/filing-products/offerings', params=params)
+        return self.make_request('GET', '/filing-methods', params=params)
 
 company_id = config['COMPANY_ID']
+product_id = config['FILING_PRODUCT_ID']
 jurisdiction = config['JURISDICTION']
 
-request = GetFilingProductsOfferingsRequest()
-response = request.get_filing_products_offerings(company_id, jurisdiction)
+request = GetFilingMethodsRequest()
+response = request.get_filing_methods(company_id, product_id, jurisdiction)
 
 pprint.pprint(response)
