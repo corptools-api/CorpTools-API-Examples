@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 namespace Examples.examples
 {
     // POST /companies
@@ -13,12 +14,12 @@ namespace Examples.examples
             _companyName = Environment.GetEnvironmentVariable("COMPANY_NAME");
             _jurisdiction = Environment.GetEnvironmentVariable("JURISDICTION");
             _entityType = Environment.GetEnvironmentVariable("ENTITY_TYPE");
-            Console.WriteLine($"PostCompanies: _companyName={_companyName} _jurisdiction={_jurisdiciton} _entityType={_entityType}");
+            Console.WriteLine($"PostCompanies: _companyName={_companyName} _jurisdiction={_jurisdiction} _entityType={_entityType}");
         }
         
         private class CompanyData
         {
-          [JsonProperty("name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("home_state")]
