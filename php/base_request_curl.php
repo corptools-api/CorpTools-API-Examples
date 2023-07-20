@@ -9,12 +9,16 @@ function send_request($method, $request_path, $request_params, $request_data) {
     $secret_key = $_ENV['SECRET_KEY'];
     $base_url   = $_ENV['API_URL'];
 
-    if ($GLOBALS['debug']) echo 'Curl: access_key=' . $access_key . ' secret_key=' . $secret_key . ' base_url=' . $base_url;
+    if ($GLOBALS['debug']) echo 'Curl: access_key=' . $access_key . ' secret_key=' . $secret_key . ' base_url=' . $base_url . PHP_EOL;
     $jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
 
     if ($request_data == null) {
-        $qs = query_string($request_params);
-        $url = $base_url . $request_path . $qs; 
+        if ($request_params == null) {
+            $url = $base_url . $request_path; 
+        } else {
+            $qs = query_string($request_params);
+            $url = $base_url . $request_path . $qs; 
+        }
     } else {
         $url = $base_url . $request_path; 
     }
@@ -76,13 +80,14 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     switch ($method) {
         case "DELETE":
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+            echo 'HERE' . PHP_EOL;
+            break;
+        case "POST":
+            curl_setopt($ch, CURLOPT_POST, 1);
             if ($data) {
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             }
-            break;
-        case "POST":
-            curl_setopt($ch, CURLOPT_DELETE, 1);
             break;
         default:
             break;
