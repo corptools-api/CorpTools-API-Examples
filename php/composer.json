@@ -6,10 +6,12 @@
    },
    "scripts": {
       "curl-get-companies": "php ./examples/get_companies.php curl",
+      "curl-get-filing-methods": "php ./examples/get_filing_methods.php curl",
       "curl-get-filing-products": "php ./examples/get_filing_products.php curl",
       "curl-get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
       "guzzle-get-companies": "php ./examples/get_companies.php guzzle",
+      "guzzle-get-filing-methods": "php ./examples/get_filing_methods.php guzzle",
       "guzzle-get-filing-products": "php ./examples/get_filing_products.php guzzle",
       "guzzle-get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle"
