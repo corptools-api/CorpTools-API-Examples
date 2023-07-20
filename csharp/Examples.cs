@@ -18,6 +18,7 @@ namespace Examples
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
             // requestPostCallbacks();
+            // requestPostCompanies();
             // requestPostPaymentMethods();
             // requestPostShoppingCart();
             // ListenForCallback();
@@ -62,6 +63,12 @@ namespace Examples
         private static void requestPostCallbacks()
         {
             PostCallbacks request = new PostCallbacks();
+            request.SendRequest();
+        }
+
+        private static void requestPostCompanies()
+        {
+            PostCompanies request = new PostCompanies();
             request.SendRequest();
         }
 
