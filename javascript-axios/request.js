@@ -25,6 +25,22 @@ exports.request = {
 		console.log(`token=${token}`);
 		return token;
 	},
+	delete: function({ path, token, body = {} }) {
+		let url = API_URL + path;
+		console.log(`DELETE request to url=${url} body=${body}`);
+		axios({
+		  method: 'DELETE',
+		  url: url,
+		  data: body,
+		  headers: {
+		    'Authorization': 'Bearer ' + token,
+		  },
+		}).then(response => {
+		  console.log('response:', response.data)
+		}).catch(error => {
+		  console.log('error:', error.message, error.config.data)
+		})
+	},
 	get: function ({ path, token, queryParams = '' }) {
 		let url;
 		if (queryParams) {
