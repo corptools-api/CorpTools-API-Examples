@@ -1,3 +1,5 @@
+const baseRequest = require('../base_request.js').baseRequest
+
 const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
@@ -8,8 +10,8 @@ const CARD_NUMBER = '4000056655665556'
 const EXP_MONTH = '12'
 const EXP_YEAR = '2028'
 const CVC = '123'
-const FIRST_NAME = 'Cookie'
-const LAST_NAME = 'Monster'
+const FIRST_NAME = 'Count'
+const LAST_NAME = 'Dracula'
 const BILLING_ADDRESS= {
     "city": "New York",
     "state": "NY",
@@ -29,6 +31,6 @@ let body = {
 	billing_address: BILLING_ADDRESS
 };
 
-token = require('../request.js').request.token({ path: '/payment-methods', body: body });
+token = baseRequest.request.token({ path: '/payment-methods', body: body });
 
-require('../request.js').request.post({ path: '/payment-methods', token: token, body: body });
+baseRequest.request.post({ path: '/payment-methods', token: token, body: body });

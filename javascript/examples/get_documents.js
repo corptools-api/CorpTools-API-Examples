@@ -1,7 +1,9 @@
+const baseRequest = require('../base_request.js').baseRequest
+
 params = {
 	status: 'unread'
 }
 
-token = require('../request.js').request.token({ path: '/documents' });
+token = baseRequest.request.token({ path: '/documents' });
 
-require('../request.js').request.get({ path: '/documents', token: token, queryParams: params });
+baseRequest.request.get({ path: '/documents', token: token, queryParams: params });
