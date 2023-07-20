@@ -1,15 +1,9 @@
-# Environment Configurations
-Create an `.env` file at the root of the project directory with the following properties defined:
+# JavaScript Examples
 
-```
-ACCESS_KEY='<access-key>'
-SECRET_KEY='<secret-key>'
-API_URL='https://api.corporatetools.com'
+## Environmental Configurations
+The JavaScript examples read in configurable properties from a shared `.env` file at the root directory of the project. (See the README.md in project root for directions on setting up the `.env` file.)
 
-COMPANY_ID='<company-id>'
-JURISDICTION='<jurisdiction-abbreviation>'
-```
-# Running Examples
+## Running Examples
 - Run the following commands:
 - `nvm use` (or have node 18.0.0 installed)
 - `npm install`

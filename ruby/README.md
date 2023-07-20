@@ -1,14 +1,10 @@
-# Environment Configurations
-Create an `.env` file at the root of the project directory with the following properties defined:
+# Ruby Examples
 
-```
-ACCESS_KEY='<access-key>'
-SECRET_KEY='<secret-key>'
-API_URL='https://api.corporatetools.com'
-```
+## Environmental Configurations
+The Ruby examples read in configurable properties from a shared `.env` file at the root directory of the project. (See the README.md in project root for directions on setting up the `.env` file.)
 
 ## Installing Dependencies
 - `bundle install`
 
 ## Getting Started
-1. `ruby examples/get_documents.rb` or `ruby examples/post_companies.rb` or `ruby examples/get_filing_products.rb`, etc
+1. `ruby examples/<script-filename>` (see `examples` directory for example options)

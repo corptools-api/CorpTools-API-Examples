@@ -1,5 +1,7 @@
 <?php
-require_once 'base_request_guzzle.php';
+require_once 'base_request.php';
+
+// Example of GET /filing-products/offerings
 
 $debug = true;
 $jurisdiction = $_ENV['JURISDICTION'];

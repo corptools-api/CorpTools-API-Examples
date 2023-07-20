@@ -7,3 +7,21 @@ If you have not already been invited to your Gitter channel, please reach out to
 * It is strongly recommended to use a [JWT library](https://jwt.io/) to create your token. This streamlines and simplifies your code; reducing the possiblity for error. 
 
 * [JWT](https://jwt.io/) also has a helpful debugger on the homepage to test the structure token.  
+
+# Environment Configurations
+Create an `.env` file at the root directory of the project with the following properties defined:
+
+```
+ACCESS_KEY='<access-key>'
+SECRET_KEY='<secret-key>'
+API_URL='https://api.corporatetools.com'
+
+# Optional, request dependent
+COMPANY_ID='<company-id>'
+COMPANY_NAME='<company-name>'
+JURISDICTION='<jurisdiction-abbreviation>'
+DOCUMENT_ID='<document-id>'
+FILING_PRODUCT_ID='<filing-product-id>'
+FILING_METHOD_ID='<filing-method-id>'
+WEBSITE_URL=<website-url>
+```

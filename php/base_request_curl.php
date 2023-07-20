@@ -8,12 +8,20 @@ function send_request($method, $request_path, $request_params, $request_data) {
     $access_key = $_ENV['ACCESS_KEY'];
     $secret_key = $_ENV['SECRET_KEY'];
     $base_url   = $_ENV['API_URL'];
+
+    if ($GLOBALS['debug']) echo 'Curl: access_key=' . $access_key . ' secret_key=' . $secret_key . ' base_url=' . $base_url;
     $jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
-    $qs = query_string($request_params);
-    $url = $base_url . $request_path . $qs;
+
+    if ($request_data == null) {
+        $qs = query_string($request_params);
+        $url = $base_url . $request_path . $qs; 
+    } else {
+        $url = $base_url . $request_path; 
+    }
+
     if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
-    $result = call_api_curl('GET', $url, $jwt);
+    $result = call_api_curl($method, $url, $jwt, $request_data);
     echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
 }
 
@@ -63,12 +71,13 @@ function build_jwt($access_key, $secret_key, $request_path, $request_data = null
 function call_api_curl($method, $url, $jwt, $data = null) {
     $ch = curl_init();
 
+    if ($GLOBALS['debug']) echo 'Curl: ' . $method . ' ' . $url . ' ' . $data . PHP_EOL;
+
     switch ($method) {
         case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
+            curl_setopt($ch, CURLOPT_POST, 1);
             if ($data) {
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             }
             break;
         default:

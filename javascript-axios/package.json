@@ -2,10 +2,11 @@
   "name": "javascript-axios",
   "version": "1.0.0",
   "scripts": {
-    "get_companies": "node ./examples/get_companies.js",
-    "get_filing_products": "node ./examples/get_filing_products.js",
-    "get_filing_products_offerings": "node ./examples/get_filing_products_offerings.js",
-    "patch_companies": "node ./examples/patch_companies.js"
+    "get-companies": "node ./examples/get_companies.js",
+    "get-filing-products": "node ./examples/get_filing_products.js",
+    "get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js",
+    "patch-companies": "node ./examples/patch_companies.js",
+    "post-shopping-cart": "node ./examples/post_shopping_cart.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
