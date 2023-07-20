@@ -44,7 +44,6 @@ function query_string($request_params) {
  * Build out your Json Web Token
  */
 function build_jwt($access_key, $secret_key, $request_path, $request_data = null) {
-    echo 'request_data=' . $request_data;
     $header = json_encode([
       'typ' => 'JWT',
       'alg' => 'HS256',
@@ -54,8 +53,6 @@ function build_jwt($access_key, $secret_key, $request_path, $request_data = null
       'path' => $request_path,
       'content' => hash('sha256', $request_data),
     ]);
-
-    echo '$payload=' . $payload;
 
     $e_header = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
     $e_payload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($payload));
