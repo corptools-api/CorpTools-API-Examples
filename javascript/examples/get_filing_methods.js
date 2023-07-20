@@ -1,3 +1,5 @@
+const baseRequest = require('../base_request.js').baseRequest
+
 const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
@@ -12,6 +14,6 @@ params = {
   	filing_product_id: PRODUCT_ID
 }
 
-token = require('../request.js').request.token({ path: '/filing-methods' });
+token = baseRequest.request.token({ path: '/filing-methods' });
 
-require('../request.js').request.get({ path: '/filing-methods', token: token, queryParams: params });
+baseRequest.request.get({ path: '/filing-methods', token: token, queryParams: params });

@@ -1,3 +1,5 @@
-token = require('../request.js').request.token({ path: '/companies' });
+const baseRequest = require('../base_request.js').baseRequest
 
-require('../request.js').request.get({ path: '/companies', token: token });
+token = baseRequest.request.token({ path: '/companies' });
+
+baseRequest.request.get({ path: '/companies', token: token });
