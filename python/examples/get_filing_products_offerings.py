@@ -19,7 +19,7 @@ class GetFilingProductsOfferingsRequest(BaseRequest):
             'product_id': product_id,
             'jurisdiction': jurisdiction
         }
-        return self.make_request('GET', '/filing-products/offerings', params)
+        return self.make_request('GET', '/filing-products/offerings', params=params)
 
 company_id = config['COMPANY_ID']
 product_id = config['FILING_PRODUCT_ID']
