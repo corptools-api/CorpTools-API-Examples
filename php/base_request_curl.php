@@ -12,8 +12,8 @@ function send_request($method, $request_path, $request_params, $request_data) {
     if ($GLOBALS['debug']) echo 'Curl: access_key=' . $access_key . ' secret_key=' . $secret_key . ' base_url=' . $base_url . PHP_EOL;
     $jwt = build_jwt($access_key, $secret_key, $request_path, $request_data);
 
-    if ($request_data == null) {
-        if ($request_params == null) {
+    if ($request_data == '') {
+        if ($request_params == '') {
             $url = $base_url . $request_path; 
         } else {
             $qs = query_string($request_params);
@@ -80,8 +80,7 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     switch ($method) {
         case "DELETE":
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-            echo 'HERE' . PHP_EOL;
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             break;
         case "POST":
             curl_setopt($ch, CURLOPT_POST, 1);
