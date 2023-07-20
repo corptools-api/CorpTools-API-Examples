@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "delete-payment-methods": "node ./examples/delete_payment_methods.js",
     "get-company": "node ./examples/get_company.js",
     "get-companies": "node ./examples/get_companies.js",
     "get-documents": "node ./examples/get_documents.js",
