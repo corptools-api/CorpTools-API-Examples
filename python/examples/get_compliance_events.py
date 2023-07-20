@@ -15,8 +15,8 @@ class ComplianceEventsRequest(BaseRequest):
     
     def get_compliance_events(self, start_date, end_date, limit=40):
         path = "/compliance-events"
-        body = { 'start_date': start_date, 'end_date': end_date, 'limit': limit }
-        return self.make_request("GET", path, body)
+        params = { 'start_date': start_date, 'end_date': end_date, 'limit': limit }
+        return self.make_request("GET", path, params=params)
 
 start_date = config['START_DATE']
 end_date = config['END_DATE']
