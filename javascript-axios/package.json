@@ -2,6 +2,7 @@
   "name": "javascript-axios",
   "version": "1.0.0",
   "scripts": {
+    "delete-payment-methods": "node ./examples/delete_payment_methods.js",
     "get-companies": "node ./examples/get_companies.js",
     "get-company": "node ./examples/get_company.js",
     "get-filing-methods": "node ./examples/get_filing_methods.js",
