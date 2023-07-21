@@ -5,8 +5,8 @@ require_once 'base_request.php';
 
 // this example request will update the home_state for the specified company
 $debug = true;
-$company 		    = $_ENV['COMPANY_NAME'];
-$entity_type        = 'Corporation';
+$company = $_ENV['COMPANY_NAME'];
+$entity_type = 'Corporation';
 
 $request_data = array(
     'company' => $company,
