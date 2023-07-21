@@ -15,6 +15,7 @@ namespace Examples
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
+            // requestGetComplianceEvents();
             // requestGetFilingMethods();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
@@ -45,6 +46,12 @@ namespace Examples
         {
             GetCompanies request = new GetCompanies();
             request.SendRequest();
+        }
+
+        private static void requestGetComplianceEvents()
+        {
+             GetComplianceEvents request = new GetComplianceEvents();
+             request.SendRequest();
         }
 
         private static void requestGetCompany()
