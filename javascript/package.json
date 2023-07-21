@@ -9,6 +9,7 @@
     "get-filing-methods": "node ./examples/get_filing_methods.js",
     "get-filing-products": "node ./examples/get_filing_products.js",
     "get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js",
+    "get-payment-methods": "node ./examples/get_payment_methods.js",
     "post-companies": "node ./examples/post_companies.js",
     "post-payment-methods": "node ./examples/post_payment_methods.js",
     "post-shopping-cart": "node ./examples/post_shopping_cart.js",
@@ -19,6 +20,7 @@
     "axios-get-filing-methods": "node ./examples/get_filing_methods.js axios",
     "axios-get-filing-products": "node ./examples/get_filing_products.js axios",
     "axios-get-filing-products-offerings": "node ./examples/get_filing_products_offerings.js axios",
+    "axios-get-payment-methods": "node ./examples/get_payment_methods.js axios",
     "axios-post-companies": "node ./examples/post_companies.js axios",
     "axios-post-payment-methods": "node ./examples/post_payment_methods.js axios",
     "axios-post-shopping-cart": "node ./examples/post_shopping_cart.js axios"
