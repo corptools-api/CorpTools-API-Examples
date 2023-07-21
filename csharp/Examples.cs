@@ -15,7 +15,7 @@ namespace Examples
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
-            requestGetComplianceEvents();
+            // requestGetComplianceEvents();
             // requestGetFilingMethods();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
