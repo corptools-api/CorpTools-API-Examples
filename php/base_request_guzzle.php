@@ -55,11 +55,13 @@ function delete_request($client, $request_path, $request_params)
 function get_request($client, $request_path, $request_params)
 {
     try {
-        if ($GLOBALS['debug']) echo 'Guzzle: GET ' . $request_path . ' ' . $request_params . PHP_EOL;
+        $qs = http_build_query($request_params, '');
+        $qs = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $qs);
+        if ($GLOBALS['debug']) echo 'Guzzle: GET ' . $request_path . ' ' . $qs . PHP_EOL;
         $response = $client->get(
             $request_path,
             [
-                'query' => $request_params,
+                'query' => $qs,
             ],
         );
 
