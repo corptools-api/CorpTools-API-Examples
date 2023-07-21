@@ -88,6 +88,12 @@ function call_api_curl($method, $url, $jwt, $data = null) {
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             }
             break;
+        case "PATCH":
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
+            if ($data) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            }
+            break;
         default:
             break;
     }

@@ -33,6 +33,8 @@ function send_request($method, $request_path, $request_params, $request_data) {
         $response = get_request($client, $request_path, $request_params);
     } else if ($method == 'POST') {
         $response = post_request($client, $request_path, $request_data);
+    } else if ($method == 'PATCH') {
+        $response = patch_request($client, $request_path, $request_data);
     }
     if ($response != null) {
          echo json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
@@ -74,6 +76,25 @@ function post_request($client, $request_path, $request_data)
     try {
         if ($GLOBALS['debug']) echo 'Guzzle: POST ' . $request_path . ' ' . $request_data . PHP_EOL;
         $response = $client->post(
+            $request_path,
+            [
+                'json' => $data,
+            ],
+        );
+
+        return $response;
+    } catch (ClientException $e) {
+        handle_error($e);
+    }
+}
+
+function patch_request($client, $request_path, $request_data)
+{
+    // Convert the JSON string to a PHP associative array
+    $data = json_decode($request_data, true);
+    try {
+        if ($GLOBALS['debug']) echo 'Guzzle: PATCH ' . $request_path . ' ' . $request_data . PHP_EOL;
+        $response = $client->patch(
             $request_path,
             [
                 'json' => $data,
