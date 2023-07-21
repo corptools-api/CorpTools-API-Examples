@@ -2,6 +2,7 @@
   "name": "javascript-examples",
   "version": "1.0.0",
   "scripts": {
+    "delete-shopping-cart": "node ./examples/delete_shopping_cart.js",
     "delete-payment-methods": "node ./examples/delete_payment_methods.js",
     "get-company": "node ./examples/get_company.js",
     "get-companies": "node ./examples/get_companies.js",
@@ -16,6 +17,7 @@
     "post-companies": "node ./examples/post_companies.js",
     "post-payment-methods": "node ./examples/post_payment_methods.js",
     "post-shopping-cart": "node ./examples/post_shopping_cart.js",
+    "axios-delete-shopping-cart": "node ./examples/delete_shopping_cart.js",
     "axios-delete-payment-methods": "node ./examples/delete_payment_methods.js axios",
     "axios-get-company": "node ./examples/get_company.js axios",
     "axios-get-companies": "node ./examples/get_companies.js axios",
