@@ -5,6 +5,7 @@ const request = new XMLHttpRequest();
 const jwt = require('jwt-simple');
 const CryptoJS = require("crypto-js");
 
+const DEBUG			= process.env.DEBUG;
 const API_URL		= process.env.API_URL;
 const ACCESS_KEY 	= process.env.ACCESS_KEY;
 const SECRET_KEY 	= process.env.SECRET_KEY;
@@ -24,13 +25,13 @@ exports.request = {
 		}
 
 		token = jwt.encode(payload, SECRET_KEY, 'HS256', { header: header });
-		console.log(`token=${token}`)
+		if (DEBUG) console.log(`token=${token}`)
 		return token;
 	},
 	base_request: function({ method, path, token, body = null }) {
 		let url = API_URL + path;
-		console.log(`${method} request to url=${url}`);
 		body = JSON.stringify(body);
+		if (DEBUG) console.log(`XHR: ${method} ${url} body=${body}`);
 		request.open(method, url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);
 		request.setRequestHeader("Content-Type", "application/json");
@@ -39,7 +40,7 @@ exports.request = {
 		        let response = JSON.parse(request.responseText);
 		        console.log(response);
 		    } else {
-		    	 console.log("Error", JSON.parse(request.responseText)); 
+		    	console.log(`ERROR: status=${request.status} msg=${request.responseText}`)
 		    }
 		};
 		if (body == null) {
@@ -66,7 +67,7 @@ exports.request = {
 		this.base_request({ method: 'GET', path: path, token: token });
 	},
 	patch: function ({ path, token, body = {} }) {
-		// TODO
+		this.base_request({ method: 'PATCH', path: path, token: token, body: body });
 	},
 	post: function ({ path, token, body = {} }) {
 		this.base_request({ method: 'POST', path: path, token: token, body: body });
