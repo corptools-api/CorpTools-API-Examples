@@ -14,6 +14,8 @@
       "curl-get-filing-products": "php ./examples/get_filing_products.php curl",
       "curl-get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php curl",
       "curl-get-payment-methods": "php ./examples/get_payment_methods.php curl",
+      "curl-patch-payment-methods": "php ./examples/patch_payment_methods.php curl",
+      "curl-post-companies": "php ./examples/post_companies.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
       "guzzle-delete-payment-methods": "php ./examples/delete_payment_methods.php guzzle",
@@ -25,6 +27,8 @@
       "guzzle-get-filing-products": "php ./examples/get_filing_products.php guzzle",
       "guzzle-get-filing-products-offerings": "php ./examples/get_filing_products_offerings.php guzzle",
       "guzzle-get-payment-methods": "php ./examples/get_payment_methods.php guzzle",
+      "guzzle-patch-payment-methods": "php ./examples/patch_payment_methods.php guzzle",
+      "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle"
    }

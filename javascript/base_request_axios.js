@@ -3,7 +3,7 @@ const axios = require('axios');
 const CryptoJS = require("crypto-js");
 const sign = require('jwt-encode');
 
-
+const DEBUG			= process.env.DEBUG;
 const API_URL		= process.env.API_URL;
 const ACCESS_KEY 	= process.env.ACCESS_KEY;
 const SECRET_KEY 	= process.env.SECRET_KEY;
@@ -22,12 +22,12 @@ exports.request = {
 			payload.content = CryptoJS.SHA256(encodeURIComponent('')).toString(CryptoJS.enc.Hex);
 		}
 		token = sign(payload, SECRET_KEY, header);
-		console.log(`token=${token}`);
+		if (DEBUG) console.log(`token=${token}`);
 		return token;
 	},
 	base_request: function({ method, path, token, body = {}}) {
 		let url = API_URL + path;
-		console.log(`${method} request to url=${url} body=${body}`);
+		if (DEBUG) console.log(`Axios: ${method} request to url=${url} body=${body}`);
 		axios({
 		  method: method,
 		  url: url,

@@ -7,35 +7,34 @@ Dotenv.load('../.env')
 
 module BaseRequestRoute
 
+  DEBUG       = ENV['DEBUG']&.downcase == 'true'
+  ACCESS_KEY  = ENV['ACCESS_KEY']
+  SECRET_KEY  = ENV['SECRET_KEY']
+  BASE_URL    = ENV['API_URL']
+
   def self.request(method, path, query_params: nil, body: '')
-      debug = ENV['DEBUG']&.downcase == 'true'
-
-      access_key = ENV['ACCESS_KEY']
-      secret_key = ENV['SECRET_KEY']
-      base_url   = ENV['API_URL']
-
-      p "#{method.to_s.upcase} #{path} query_params=#{query_params} body=#{body}" if debug
+      p "#{method.to_s.upcase} #{path} query_params=#{query_params} body=#{body}" if DEBUG
       
       payload = {
         path: path,
         content: Digest::SHA2.hexdigest(body)
       }
 
-      headers = { access_key: access_key }
+      headers = { access_key: ACCESS_KEY }
 
       token = JWT.encode(
           payload,
-          secret_key,
+          SECRET_KEY,
           'HS256',
           headers
       )
 
-      p "token=#{token}" if debug
+      p "token=#{token}" if DEBUG
 
       begin
         res = RestClient::Request.execute(
           method: method,
-          url: base_url + path,
+          url: BASE_URL + path,
           payload: query_params || body,
           headers: {
             authorization: "Bearer #{token}",
@@ -51,4 +50,3 @@ module BaseRequestRoute
 
     end
 end
-
