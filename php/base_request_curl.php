@@ -82,6 +82,12 @@ function call_api_curl($method, $url, $jwt, $data = null) {
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             break;
+        case "PATCH":
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
+            if ($data) {
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            }
+            break;
         case "POST":
             curl_setopt($ch, CURLOPT_POST, 1);
             if ($data) {

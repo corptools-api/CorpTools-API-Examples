@@ -39,6 +39,7 @@ class BaseRequest:
       url = self.api_url + path
       headers["Authorization"] = 'Bearer %s' % self.generate_token(path, payload)
       headers["Content-Type"] = "application/json"
+      print(f'{method} {path} body={body}')
       response = requests.request(method, url, headers=headers, data=payload)
 
       return response.json()
