@@ -19,6 +19,7 @@ namespace Examples
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
             // requestGetPaymentMethods();
+            // requestGetShoppingCart();
             // requestPatchPaymentMethods();
             // requestPostCallbacks();
             // requestPatchCompanies();
@@ -73,6 +74,12 @@ namespace Examples
         private static void requestGetPaymentMethods()
         {
             GetPaymentMethods request = new GetPaymentMethods();
+            request.SendRequest();
+        }
+
+        private static void requestGetShoppingCart()
+        {
+            GetShoppingCart request = new GetShoppingCart();
             request.SendRequest();
         }
 
