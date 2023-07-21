@@ -69,13 +69,13 @@ function get_request($client, $request_path, $request_params)
     }
 }
 
-function patch_request($client, $request_path, $request_data)
+function post_request($client, $request_path, $request_data)
 {
     // Convert the JSON string to a PHP associative array
     $data = json_decode($request_data, true);
     try {
-        if ($GLOBALS['debug']) echo 'Guzzle: PATCH ' . $request_path . ' ' . $request_data . PHP_EOL;
-        $response = $client->patch(
+        if ($GLOBALS['debug']) echo 'Guzzle: POST ' . $request_path . ' ' . $request_data . PHP_EOL;
+        $response = $client->post(
             $request_path,
             [
                 'json' => $data,
@@ -88,13 +88,13 @@ function patch_request($client, $request_path, $request_data)
     }
 }
 
-function post_request($client, $request_path, $request_data)
+function patch_request($client, $request_path, $request_data)
 {
     // Convert the JSON string to a PHP associative array
     $data = json_decode($request_data, true);
     try {
-        if ($GLOBALS['debug']) echo 'Guzzle: POST ' . $request_path . ' ' . $request_data . PHP_EOL;
-        $response = $client->post(
+        if ($GLOBALS['debug']) echo 'Guzzle: PATCH ' . $request_path . ' ' . $request_data . PHP_EOL;
+        $response = $client->patch(
             $request_path,
             [
                 'json' => $data,
