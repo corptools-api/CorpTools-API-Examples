@@ -12,6 +12,7 @@ If you have not already been invited to your Gitter channel, please reach out to
 Create an `.env` file at the root directory of the project with the following properties defined:
 
 ```
+DEBUG=true
 ACCESS_KEY='<access-key>'
 SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
