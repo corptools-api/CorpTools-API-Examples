@@ -27,13 +27,26 @@ function send_request($method, $request_path, $request_params, $request_data) {
 
     $response = null;
 
-    if ($method == 'GET') {
+    if ($method == 'DELETE') {
+        $response = delete_request($client, $request_path, $request_params);
+    } else if ($method == 'GET') {
         $response = get_request($client, $request_path, $request_params);
     } else if ($method == 'POST') {
         $response = post_request($client, $request_path, $request_data);
     }
     if ($response != null) {
          echo json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
+    }
+}
+
+function delete_request($client, $request_path, $request_params)
+{
+    try {
+        if ($GLOBALS['debug']) echo 'Guzzle: DELETE ' . $request_path . ' ' . $request_params . PHP_EOL;
+        $response = $client->delete($request_path,[]);
+        return $response;
+    } catch (ClientException $e) {
+        handle_error($e);
     }
 }
 
