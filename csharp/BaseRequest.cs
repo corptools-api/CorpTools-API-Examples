@@ -47,6 +47,16 @@ namespace Examples
             Console.WriteLine(response.Content);
         }
 
+        protected void PatchRequest(string path, string body)
+        {
+            var client = new RestClient(_apiUrl);
+            var request = new RestRequest(path, Method.Patch);
+            request.RequestFormat = DataFormat.Json;
+            GenerateJwtToken(ref request, path, body);
+            var response = client.Patch(request);
+            Console.WriteLine(response.Content);
+        }
+
         protected void PostRequest(string path, string body)
         {
             var client = new RestClient(_apiUrl);
