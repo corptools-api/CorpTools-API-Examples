@@ -19,6 +19,7 @@ namespace Examples
             // requestGetFilingMethods();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
+            requestGetInvoice();
             // requestGetInvoices();
             // requestGetPaymentMethods();
             // requestGetShoppingCart();
@@ -76,6 +77,12 @@ namespace Examples
         private static void requestGetFilingProductsOfferings()
         {
             GetFilingProductsOfferings request = new GetFilingProductsOfferings();
+            request.SendRequest();
+        }
+
+        private static void requestGetInvoice()
+        {
+            GetInvoice request = new GetInvoice();
             request.SendRequest();
         }
 
