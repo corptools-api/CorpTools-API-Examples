@@ -25,12 +25,12 @@ namespace Examples
             // requestGetInvoices();
             // requestGetPaymentMethods();
             // requestGetShoppingCart();
-            // requestPostShoppingCart();
             // requestPatchPaymentMethods();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
             // requestPostPaymentMethods();
+            // requestPostShoppingCart();
 
             // ListenForCallback();
         }
