@@ -17,16 +17,7 @@ namespace Examples.examples
 
 		public override void SendRequest()
 		{
-            var company_ids = new string[] { _companyId };
-            var item_ids = new string[] { _shoppingCartItemId };
-
-            var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
-            {
-                company_ids = company_ids,
-                item_ids = item_ids
-            });
-
-            DeleteRequest("shopping-cart", body);
+            DeleteRequest($"shopping-cart?company_ids[]={_companyId}&item_ids[]={_shoppingCartItemId}");
         }
     }
 }
