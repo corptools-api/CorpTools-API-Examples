@@ -11,7 +11,9 @@ namespace Examples
         static void Main(string[] args)
         {
             // TODO: setup a way to select which request to run
+
             // requestDeletePaymentMethods();
+            // requestDeleteShoppingCart();
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
@@ -23,13 +25,20 @@ namespace Examples
             // requestGetInvoices();
             // requestGetPaymentMethods();
             // requestGetShoppingCart();
+            // requestPostShoppingCart();
             // requestPatchPaymentMethods();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
             // requestPostPaymentMethods();
-            // requestPostShoppingCart();
+
             // ListenForCallback();
+        }
+
+        private static void requestDeleteShoppingCart()
+        {
+            DeleteShoppingCart request = new DeleteShoppingCart();
+            request.SendRequest();
         }
 
         private static void requestDeletePaymentMethods()
