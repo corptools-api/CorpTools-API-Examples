@@ -2,6 +2,7 @@
   "name": "javascript-examples",
   "version": "1.0.0",
   "scripts": {
+    "axios-delete-callbacks": "node ./examples/delete_callbacks.js axios",
     "axios-delete-shopping-cart": "node ./examples/delete_shopping_cart.js axios",
     "axios-delete-payment-methods": "node ./examples/delete_payment_methods.js axios",
     "axios-get-callbacks": "node ./examples/get_callbacks.js axios",
@@ -22,6 +23,7 @@
     "axios-post-companies": "node ./examples/post_companies.js axios",
     "axios-post-payment-methods": "node ./examples/post_payment_methods.js axios",
     "axios-post-shopping-cart": "node ./examples/post_shopping_cart.js axios",
+    "delete-callbacks": "node ./examples/delete_callbacks.js",
     "delete-shopping-cart": "node ./examples/delete_shopping_cart.js",
     "delete-payment-methods": "node ./examples/delete_payment_methods.js",
     "get-callbacks": "node ./examples/get_callbacks.js",
