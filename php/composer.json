@@ -21,6 +21,7 @@
       "curl-get-shopping-cart": "php ./examples/get_shopping_cart.php curl",
       "curl-patch-companies": "php ./examples/patch_companies.php curl",
       "curl-patch-payment-methods": "php ./examples/patch_payment_methods.php curl",
+      "curl-post-callbacks": "php ./examples/post_callbacks.php curl",
       "curl-post-companies": "php ./examples/post_companies.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
@@ -40,6 +41,7 @@
       "guzzle-get-shopping-cart": "php ./examples/get_shopping_cart.php guzzle",
       "guzzle-patch-companies": "php ./examples/patch_companies.php guzzle",
       "guzzle-patch-payment-methods": "php ./examples/patch_payment_methods.php guzzle",
+      "guzzle-post-callbacks": "php ./examples/post_callbacks.php guzzle",
       "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle"
