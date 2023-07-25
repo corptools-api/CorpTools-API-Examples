@@ -19,6 +19,7 @@ namespace Examples
             // requestGetCompanies();
             // requestGetComplianceEvents();
             // requestGetFilingMethods();
+            requestGetFilingMethodsSchemas();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
             // requestGetInvoice();
@@ -74,6 +75,12 @@ namespace Examples
         private static void requestGetFilingMethods()
         {
             GetFilingMethods request = new GetFilingMethods();
+            request.SendRequest();
+        }
+
+        private static void requestGetFilingMethodsSchemas()
+        {
+            GetFilingMethodsSchemas request = new GetFilingMethodsSchemas();
             request.SendRequest();
         }
 
