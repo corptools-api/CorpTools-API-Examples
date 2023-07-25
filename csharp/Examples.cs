@@ -19,7 +19,7 @@ namespace Examples
             // requestGetCompanies();
             // requestGetComplianceEvents();
             // requestGetFilingMethods();
-            requestGetFilingMethodsSchemas();
+            // requestGetFilingMethodsSchemas();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
             // requestGetInvoice();
