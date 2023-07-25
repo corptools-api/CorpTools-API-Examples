@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example of DELETE /shopping-cart/:id
+// Example of DELETE /shopping-cart
 
 const COMPANY_ID = process.env.COMPANY_ID;
 const SHOPPING_CART_ITEM_ID = process.env.SHOPPING_CART_ITEM_ID;
