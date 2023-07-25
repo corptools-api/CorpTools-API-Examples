@@ -27,12 +27,12 @@ namespace Examples
 
         public abstract void SendRequest();
 
-        protected void DeleteRequest(string path)
+        protected void DeleteRequest(string path, string body = null)
         {
             var client = new RestClient(_apiUrl);
             var request = new RestRequest(path, Method.Delete);
             request.RequestFormat = DataFormat.Json;
-            GenerateJwtToken(ref request, path);
+            GenerateJwtToken(ref request, path, body);
             var response = client.Delete(request);
             Console.WriteLine(response.Content);
         }
