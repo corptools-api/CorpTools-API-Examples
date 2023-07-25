@@ -17,7 +17,7 @@ function send_request($method, $request_path, $request_params, $request_data) {
             $url = $base_url . $request_path; 
         } else {
             $qs = query_string($request_params);
-            $url = $base_url . $request_path . $qs; 
+            $url = $base_url . $request_path . $qs;
         }
     } else {
         $url = $base_url . $request_path; 
