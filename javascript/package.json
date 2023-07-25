@@ -18,6 +18,7 @@
     "axios-get-shopping-cart": "node ./examples/get_shopping_cart.js axios",
     "axios-patch-companies": "node ./examples/patch_companies.js axios",
     "axios-patch-payment-methods": "node ./examples/patch_payment_methods.js axios",
+    "axios-post-callbacks": "node ./examples/post_callbacks.js axios",
     "axios-post-companies": "node ./examples/post_companies.js axios",
     "axios-post-payment-methods": "node ./examples/post_payment_methods.js axios",
     "axios-post-shopping-cart": "node ./examples/post_shopping_cart.js axios",
@@ -38,6 +39,7 @@
     "get-shopping-cart": "node ./examples/get_shopping_cart.js",
     "patch-companies": "node ./examples/patch_companies.js",
     "patch-payment-methods": "node ./examples/patch_payment_methods.js",
+    "post-callbacks": "node ./examples/post_callbacks.js",
     "post-companies": "node ./examples/post_companies.js",
     "post-payment-methods": "node ./examples/post_payment_methods.js",
     "post-shopping-cart": "node ./examples/post_shopping_cart.js"
