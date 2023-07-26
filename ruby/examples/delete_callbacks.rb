@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example DELETE /callbacks/:id
+# Example of DELETE /callbacks/:id
 
 CALLBACK_ID = ENV['CALLBACK_ID']
 

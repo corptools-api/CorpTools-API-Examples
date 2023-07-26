@@ -1,5 +1,7 @@
 require_relative '../request.rb'
 
+# Example of PATCH /companies
+
 # any values passed in for name, entity_type, home_state, and jurisdictions will be updated
 
 COMPANY	= ENV['COMPANY_NAME'] # current company name

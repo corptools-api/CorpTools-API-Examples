@@ -1,5 +1,7 @@
 require_relative '../request.rb'
 
+# Example of GET /filing-methods
+
 # Lists filing methods for filing product if eligible for offering to company
 
 COMPANY_ID        = ENV['COMPANY_ID']
