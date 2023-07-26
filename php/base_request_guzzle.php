@@ -44,8 +44,11 @@ function send_request($method, $request_path, $request_params, $request_data) {
 function delete_request($client, $request_path, $request_params)
 {
     try {
-        $qs = http_build_query($request_params, '');
-        $qs = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $qs);
+        $qs = '';
+        if (is_array($request_params)) {
+            $qs = http_build_query($request_params, '');
+            $qs = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $qs);
+        }
         if ($GLOBALS['debug']) echo 'Guzzle: DELETE ' . $request_path . ' ' . $qs . PHP_EOL;
         $response = $client->delete(
             $request_path,

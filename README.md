@@ -18,6 +18,8 @@ SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
 
 # Optional, request dependent
+CALLBACK_ID='<callback-id>'
+CALLBACK_URL='<callback-url>'
 COMPANY_ID='<company-id>'
 COMPANY_NAME='<company-name>'
 DOCUMENT_ID='<document-id>'

@@ -12,6 +12,7 @@ namespace Examples
         {
             // TODO: setup a way to select which request to run
 
+            // requestDeleteCallbacks();
             // requestDeletePaymentMethods();
             // requestDeleteShoppingCart();
             // requestGetCallbacks();
@@ -34,6 +35,12 @@ namespace Examples
             // requestPostShoppingCart();
 
             // ListenForCallback();
+        }
+
+        private static void requestDeleteCallbacks()
+        {
+            DeleteCallbacks request = new DeleteCallbacks();
+            request.SendRequest();
         }
 
         private static void requestDeleteShoppingCart()

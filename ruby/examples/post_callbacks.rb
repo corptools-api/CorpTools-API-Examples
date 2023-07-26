@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example POST /callbacks
+# Example of POST /callbacks
 
 WEBSITE_URL	= ENV['CALLBACK_URL']
 

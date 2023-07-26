@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example POST /payment-methods
+# Example of POST /payment-methods
 
 CARD_NUMBER = '6011111111111117'
 EXP_MONTH = '12'
