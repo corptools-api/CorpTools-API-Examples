@@ -1,5 +1,5 @@
 require_relative '../request.rb'
 
-# Example GET /callbacks
+# Example of GET /callbacks
 
 BaseRequestRoute.request(:get, "/callbacks")

@@ -1,5 +1,5 @@
 require_relative '../request.rb'
 
-# Example GET /payment-methods
+# Example of GET /payment-methods
 
 BaseRequestRoute.request(:get, '/payment-methods')
