@@ -1,5 +1,7 @@
 require_relative '../request.rb'
 
+# Example of GET /filing-products
+
 WEBSITE_URL	= ENV['WEBSITE_URL']
 JURISDICTION 	= ENV['JURISDICTION']
 

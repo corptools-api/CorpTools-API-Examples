@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# GET /filing-methods/schemas
+# Example of GET /filing-methods/schemas
 
 COMPANY_ID        = ENV['COMPANY_ID']
 FILING_METHOD_ID  = ENV['FILING_METHOD_ID']

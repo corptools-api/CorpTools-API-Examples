@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example DELETE /shopping-cart
+# Example of DELETE /shopping-cart
 
 COMPANY_ID = ENV['COMPANY_ID']
 ITEM_ID    = ENV['SHOPPING_CART_ITEM_ID']

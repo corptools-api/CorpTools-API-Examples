@@ -1,5 +1,7 @@
 require_relative '../request.rb'
 
+# Example of POST /companies
+
 NAME	= ENV['COMPANY_NAME']
 ENTITY_TYPE = ENV['ENTITY_TYPE']
 JURISDICTION 	= ENV['JURISDICTION']
