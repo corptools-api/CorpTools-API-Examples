@@ -24,6 +24,7 @@
       "curl-patch-payment-methods": "php ./examples/patch_payment_methods.php curl",
       "curl-post-callbacks": "php ./examples/post_callbacks.php curl",
       "curl-post-companies": "php ./examples/post_companies.php curl",
+      "curl-post-invoices-pay": "php ./examples/post_invoices_pay.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
       "guzzle-delete-callbacks": "php ./examples/delete_callbacks.php guzzle",
@@ -45,6 +46,7 @@
       "guzzle-patch-payment-methods": "php ./examples/patch_payment_methods.php guzzle",
       "guzzle-post-callbacks": "php ./examples/post_callbacks.php guzzle",
       "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
+      "guzzle-post-invoices-pay": "php ./examples/post_invoices_pay.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle"
    }
