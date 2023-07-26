@@ -33,6 +33,7 @@ namespace Examples
             // requestPostCompanies();
             // requestPostPaymentMethods();
             // requestPostShoppingCart();
+            // requestPostShoppingCartCheckout();
 
             // ListenForCallback();
         }
@@ -160,6 +161,12 @@ namespace Examples
         private static void requestPostShoppingCart()
         {
             PostShoppingCart request = new PostShoppingCart();
+            request.SendRequest();
+        }
+
+        private static void requestPostShoppingCartCheckout()
+        {
+            PostShoppingCartCheckout request = new PostShoppingCartCheckout();
             request.SendRequest();
         }
 
