@@ -26,6 +26,7 @@
       "curl-post-companies": "php ./examples/post_companies.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
+      "curl-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php curl",
       "guzzle-delete-callbacks": "php ./examples/delete_callbacks.php guzzle",
       "guzzle-delete-payment-methods": "php ./examples/delete_payment_methods.php guzzle",
       "guzzle-delete-shopping-cart": "php ./examples/delete_shopping_cart.php guzzle",
@@ -46,6 +47,7 @@
       "guzzle-post-callbacks": "php ./examples/post_callbacks.php guzzle",
       "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
-      "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle"
+      "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle",
+      "guzzle-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php guzzle"
    }
 }
