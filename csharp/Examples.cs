@@ -32,6 +32,7 @@ namespace Examples
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
+            requestPostInvoicesPay();
             // requestPostPaymentMethods();
             // requestPostShoppingCart();
             // requestPostShoppingCartCheckout();
@@ -156,6 +157,12 @@ namespace Examples
         private static void requestPostCompanies()
         {
             PostCompanies request = new PostCompanies();
+            request.SendRequest();
+        }
+
+        private static void requestPostInvoicesPay()
+        {
+            PostInvoicesPay request = new PostInvoicesPay();
             request.SendRequest();
         }
 
