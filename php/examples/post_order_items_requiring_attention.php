@@ -7,7 +7,7 @@ $debug = true;
 $company_id = $_ENV['COMPANY_ID'];
 $order_item_id = $_ENV['ORDER_ITEM_ID'];
 
-$file_path = '../data/form_data_ein_tax_id.json';
+$file_path = '../data/form_data.json';
 $json_data = file_get_contents($file_path);
 $form_data = json_decode($json_data);
 
