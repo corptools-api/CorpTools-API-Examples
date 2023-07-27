@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using Examples.examples;
+using Examples.examples.models;
 
 namespace Examples
 {   
@@ -43,6 +44,7 @@ namespace Examples
             // requestPostCompanies();
             // requestPostInvoicesPay();
             // requestPostPaymentMethods();
+            // requestPostServices();
             // requestPostShoppingCart();
             // requestPostShoppingCartCheckout();
 
@@ -232,6 +234,12 @@ namespace Examples
         private static void requestPostPaymentMethods()
         {
             PostPaymentMethods request = new PostPaymentMethods();
+            request.SendRequest();
+        }
+
+        private static void requestPostServices()
+        {
+            PostServices request = new PostServices();
             request.SendRequest();
         }
 
