@@ -1,7 +1,7 @@
 using System;
 namespace Examples.examples
 {
-    // Example GET /documents
+    // Example of GET /documents
 
     public class GetDocuments : BaseRequest
 	{
