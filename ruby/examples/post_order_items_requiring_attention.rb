@@ -6,7 +6,7 @@ COMPANY_ID    = ENV['COMPANY_ID']
 ORDER_ITEM_ID = ENV['ORDER_ITEM_ID']
 # replace with JSON file for the specific filing
 current_directory="#{File.dirname(File.expand_path(__FILE__))}"
-FORM_DATA = JSON.parse(File.read("#{current_directory}/../data/form_data.json"))
+FORM_DATA = JSON.parse(File.read("#{current_directory}/../../data/form_data.json"))
 
 params = {
   'company_id': COMPANY_ID,
