@@ -28,6 +28,7 @@
       "curl-post-callbacks": "php ./examples/post_callbacks.php curl",
       "curl-post-companies": "php ./examples/post_companies.php curl",
       "curl-post-invoices-pay": "php ./examples/post_invoices_pay.php curl",
+      "curl-post-order-items-requiring-attention": "php ./examples/post_order_items_requiring_attention.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
       "curl-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php curl",
@@ -54,6 +55,7 @@
       "guzzle-post-callbacks": "php ./examples/post_callbacks.php guzzle",
       "guzzle-post-companies": "php ./examples/post_companies.php guzzle",
       "guzzle-post-invoices-pay": "php ./examples/post_invoices_pay.php guzzle",
+      "guzzle-post-order-items-requiring-attention": "php ./examples/post_order_items_requiring_attention.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle",
       "guzzle-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php guzzle"
