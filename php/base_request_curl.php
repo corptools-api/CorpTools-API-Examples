@@ -26,7 +26,13 @@ function send_request($method, $request_path, $request_params, $request_data) {
     if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
     $result = call_api_curl($method, $url, $jwt, $request_data);
-    echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
+
+    $decoded_result = json_decode($result, true);
+    if ($decoded_result !== null) {
+        echo json_encode($decoded_result, JSON_PRETTY_PRINT);
+    } else {
+        echo $result;
+    }
 }
 
 /*
