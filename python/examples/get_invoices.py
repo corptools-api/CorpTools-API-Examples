@@ -20,7 +20,7 @@ class GetInvoicesRequest(BaseRequest):
         params = {
             'company_ids': company_ids
         }
-        return self.make_request('GET', '/shopping-cart', params=params)
+        return self.make_request('GET', '/invoices', params=params)
 
 company_id  = config['COMPANY_ID']
 company_ids = [company_id]
