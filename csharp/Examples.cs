@@ -15,6 +15,7 @@ namespace Examples
             // requestDeleteCallbacks();
             // requestDeletePaymentMethods();
             // requestDeleteShoppingCart();
+            // requestGetAccount();
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
@@ -58,6 +59,12 @@ namespace Examples
         private static void requestDeletePaymentMethods()
         {
             DeletePaymentMethods request = new DeletePaymentMethods();
+            request.SendRequest();
+        }
+
+        private static void requestGetAccount()
+        {
+            GetAccount request = new GetAccount();
             request.SendRequest();
         }
 
