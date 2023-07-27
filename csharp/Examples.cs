@@ -19,20 +19,21 @@ namespace Examples
             // requestGetCompany();
             // requestGetCompanies();
             // requestGetComplianceEvents();
+            requestGetDocuments();
             // requestGetFilingMethods();
             // requestGetFilingMethodsSchemas();
             // requestGetFilingProducts();
             // requestGetFilingProductsOfferings();
             // requestGetInvoice();
             // requestGetInvoices();
-            //requestGetOrderItemsRequiringAttention();
+            // requestGetOrderItemsRequiringAttention();
             // requestGetPaymentMethods();
             // requestGetShoppingCart();
             // requestPatchPaymentMethods();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
-            requestPostInvoicesPay();
+            // requestPostInvoicesPay();
             // requestPostPaymentMethods();
             // requestPostShoppingCart();
             // requestPostShoppingCartCheckout();
@@ -74,6 +75,12 @@ namespace Examples
         {
              GetComplianceEvents request = new GetComplianceEvents();
              request.SendRequest();
+        }
+
+        private static void requestGetDocuments()
+        {
+            GetDocuments request = new GetDocuments();
+            request.SendRequest();
         }
 
         private static void requestGetCompany()
