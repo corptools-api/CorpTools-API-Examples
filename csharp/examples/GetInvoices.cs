@@ -1,8 +1,9 @@
 using System;
 namespace Examples.examples
 {
-    // Example GET /invoices
+    // Example of GET /invoices
     // An array of company names or company_ids may be provided, but not both
+
     public class GetInvoices : BaseRequest
 	{
         private string _companyId;
