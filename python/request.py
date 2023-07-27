@@ -42,7 +42,11 @@ class BaseRequest:
       print(f'{method} {path} body={body}')
       response = requests.request(method, url, headers=headers, data=payload)
 
-      return response.json()
+      if response.headers.get("content-type") == "application/json":
+        return response.json()
+      else:
+        return response.text
+
     except Exception as e:
       self.logger.error(msg="{e}".format(e=e))
       raise e
