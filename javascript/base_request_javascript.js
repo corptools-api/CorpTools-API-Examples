@@ -35,10 +35,17 @@ exports.request = {
 		request.open(method, url, true);
 		request.setRequestHeader('Authorization', 'Bearer ' + token);
 		request.setRequestHeader("Content-Type", "application/json");
+		request.responseType = "";
 		request.onload = function () {
 		    if (request.readyState === 4 && request.status === 200) {
-		        let response = JSON.parse(request.responseText);
-		        console.log(response);
+					let contentType = request.getResponseHeader("content-type");
+					let response = null;
+					if (contentType?.includes("application/json")) {
+						response = JSON.parse(request.responseText);
+					} else {
+						response = request.responseText;
+					}
+					console.log(response);
 		    } else {
 		    	console.log(`ERROR: status=${request.status} msg=${request.responseText}`)
 		    }
