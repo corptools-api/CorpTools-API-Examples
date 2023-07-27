@@ -10,6 +10,8 @@ const filePath = `${currentWorkingDirectory}/data/form_data_ein_tax_id.json`;
 
 console.log(`currentWorkingDirectory=${currentWorkingDirectory} filePath=${filePath}`)
 
+// Example of POST /order-items/requiring-attention
+
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading the JSON file:', err);
@@ -35,21 +37,3 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     console.error('Error parsing form_data:', parseError);
   }
 });
-
-
-// Example of POST /order-items/requiring-attention
-
-
-
-
-// COMPANY_ID    = ENV['COMPANY_ID']
-// ORDER_ITEM_ID = ENV['ORDER_ITEM_ID']
-// # replace with JSON file for the specific filing
-// current_directory="#{File.dirname(File.expand_path(__FILE__))}"
-// FORM_DATA = JSON.parse(File.read("#{current_directory}/../data/form_data.json"))
-
-// params = {
-//   'company_id': COMPANY_ID,
-//   'form_data': FORM_DATA,
-//   'order_item_id': ORDER_ITEM_ID
-// }.to_json
