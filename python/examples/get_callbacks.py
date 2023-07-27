@@ -5,11 +5,8 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from request import BaseRequest
-from dotenv import dotenv_values
 
-config = dotenv_values()
-
-# Example GET /callbacks
+# Example of GET /callbacks
 
 class GetCallbacksRequest(BaseRequest):
     def __init__(self):
