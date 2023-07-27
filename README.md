@@ -29,5 +29,6 @@ JURISDICTION='<jurisdiction-abbreviation>'
 JURISDICTIONS='<comma-separated-list-of-jurisdiction-names>'
 PAYMENT_METHOD_ID='<payment-method-id>'
 SHOPPING_CART_ITEM_ID='<shopping-cart-item-id>'
+STATUS='<document-status>'
 WEBSITE_URL=<website-url>
 ```
