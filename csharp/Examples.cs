@@ -23,6 +23,7 @@ namespace Examples
             // requestGetComplianceEvents();
             // requestGetDocument();
             // requestGetDocuments();
+            // requestGetDocumentDownload();
             // requestGetFilingMethods();
             // requestGetFilingMethodsSchemas();
             // requestGetFilingProducts();
@@ -103,6 +104,12 @@ namespace Examples
         private static void requestGetDocument()
         {
             GetDocument request = new GetDocument();
+            request.SendRequest();
+        }
+
+        private static void requestGetDocumentDownload()
+        {
+            GetDocumentDownload request = new GetDocumentDownload();
             request.SendRequest();
         }
 
