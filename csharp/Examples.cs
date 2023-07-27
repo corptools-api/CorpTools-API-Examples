@@ -19,6 +19,7 @@ namespace Examples
             // requestGetCompany();
             // requestGetCompanies();
             // requestGetComplianceEvents();
+            // requestGetDocument();
             // requestGetDocuments();
             // requestGetFilingMethods();
             // requestGetFilingMethodsSchemas();
@@ -80,6 +81,12 @@ namespace Examples
         private static void requestGetDocuments()
         {
             GetDocuments request = new GetDocuments();
+            request.SendRequest();
+        }
+
+        private static void requestGetDocument()
+        {
+            GetDocument request = new GetDocument();
             request.SendRequest();
         }
 
