@@ -6,17 +6,17 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from request import BaseRequest
 
-# Example of GET /callbacks
+# Example of GET /account
 
-class GetCallbacksRequest(BaseRequest):
+class GetAccountRequest(BaseRequest):
     def __init__(self):
         super().__init__()
     
-    def get_callbacks(self):
-        path = "/callbacks"
+    def get_account(self):
+        path = "/account"
         return self.make_request("GET", path)
 
-get_callbacks_request = GetCallbacksRequest()
-callbacks = get_callbacks_request.get_callbacks()
+get_account_request = GetAccountRequest()
+account = get_account_request.get_account()
 
-pprint.pprint(callbacks)
+pprint.pprint(account)
