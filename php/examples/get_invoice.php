@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of GET /invoices/invoice_id
+// Example of GET /invoices/:invoice_id
 
 $debug = true;
 $invoice_id   = $_ENV['INVOICE_ID'];
