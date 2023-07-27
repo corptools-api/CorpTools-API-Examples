@@ -7,10 +7,14 @@ require('dotenv').config();
 
 const COMPANY_ID = process.env.COMPANY_ID
 const COMPANY_NAME = process.env.COMPANY_NAME
+const LIMIT = 3
+const OFFSET = 0
 
 params = {
 	company_id: COMPANY_ID,
-	// company: COMPANY_NAME
+	// company: COMPANY_NAME,
+	// limit: LIMIT,
+	// offset: OFFSET
 }
 
 token = baseRequest.request.token({ path: '/services' });
