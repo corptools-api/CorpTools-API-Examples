@@ -8,8 +8,8 @@ LIMIT = 3
 OFFSET = 0
 
 params = {
-	# company_id: COMPANY_ID,
-	company: COMPANY_NAME,
+	company_id: COMPANY_ID,
+	# company: COMPANY_NAME,
 	# limit: LIMIT,
 	# offset: OFFSET
 }
