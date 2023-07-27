@@ -30,6 +30,7 @@ namespace Examples
             // requestGetOrderItemsRequiringAttention();
             // requestGetPaymentMethods();
             // requestGetShoppingCart();
+            // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
             // requestPostCallbacks();
             // requestPatchCompanies();
@@ -177,6 +178,12 @@ namespace Examples
         private static void requestPostInvoicesPay()
         {
             PostInvoicesPay request = new PostInvoicesPay();
+            request.SendRequest();
+        }
+
+        private static void requestPostOrderItemsRequiringAttention()
+        {
+            PostOrderItemsRequiringAttention request = new PostOrderItemsRequiringAttention();
             request.SendRequest();
         }
 
