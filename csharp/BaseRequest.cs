@@ -45,7 +45,9 @@ namespace Examples
             request.RequestFormat = DataFormat.Json;
             GenerateJwtToken(ref request, path);
             var response = client.Get(request);
-            Console.WriteLine(response.Content);
+
+            string contentType = response.ContentType;
+            HandleResponse(response, contentType);
         }
 
         protected void PatchRequest(string path, string body)
@@ -68,7 +70,7 @@ namespace Examples
             Console.WriteLine(response.Content);
         }
 
-        protected void HandleResponse(IRestResponse response, string contentType)
+        protected void HandleResponse(RestResponse response, string contentType = "application/json")
         {
             if (contentType == "application/json")
             {
@@ -113,7 +115,7 @@ namespace Examples
             var token = handler.WriteToken(securityToken);
 
             request.AddHeader("Authorization", "Bearer " + token);
-            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Accept", "application/json");
             if (body != "")
             {
                 request.AddJsonBody(body);
