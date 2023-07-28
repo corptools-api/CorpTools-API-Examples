@@ -27,6 +27,7 @@
       "curl-get-order-items-requiring-attention": "php ./examples/get_order_items_requiring_attention.php curl",
       "curl-get-payment-methods": "php ./examples/get_payment_methods.php curl",
       "curl-get-services": "php ./examples/get_services.php curl",
+      "curl-get-services-info": "php ./examples/get_services_info.php curl",
       "curl-get-shopping-cart": "php ./examples/get_shopping_cart.php curl",
       "curl-get-signed-forms": "php ./examples/get_signed_forms.php curl",
       "curl-get-websites": "php ./examples/get_websites.php curl",
@@ -38,6 +39,7 @@
       "curl-post-order-items-requiring-attention": "php ./examples/post_order_items_requiring_attention.php curl",
       "curl-post-payment-methods": "php ./examples/post_payment_methods.php curl",
       "curl-post-services": "php ./examples/post_services.php curl",
+      "curl-post-services-info": "php ./examples/post_services_info.php curl",
       "curl-post-shopping-cart": "php ./examples/post_shopping_cart.php curl",
       "curl-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php curl",
       "guzzle-delete-callbacks": "php ./examples/delete_callbacks.php guzzle",
@@ -62,6 +64,7 @@
       "guzzle-get-order-items-requiring-attention": "php ./examples/get_order_items_requiring_attention.php guzzle",
       "guzzle-get-payment-methods": "php ./examples/get_payment_methods.php guzzle",
       "guzzle-get-services": "php ./examples/get_services.php guzzle",
+      "guzzle-get-services-info": "php ./examples/get_services_info.php guzzle",
       "guzzle-get-shopping-cart": "php ./examples/get_shopping_cart.php guzzle",
       "guzzle-get-signed-forms": "php ./examples/get_signed_forms.php guzzle",
       "guzzle-get-websites": "php ./examples/get_websites.php guzzle",
@@ -73,6 +76,7 @@
       "guzzle-post-order-items-requiring-attention": "php ./examples/post_order_items_requiring_attention.php guzzle",
       "guzzle-post-payment-methods": "php ./examples/post_payment_methods.php guzzle",
       "guzzle-post-services": "php ./examples/post_services.php guzzle",
+      "guzzle-post-services-info": "php ./examples/post_services_info.php guzzle",
       "guzzle-post-shopping-cart": "php ./examples/post_shopping_cart.php guzzle",
       "guzzle-post-shopping-cart-checkout": "php ./examples/post_shopping_cart_checkout.php guzzle"
    }
