@@ -1,0 +1,77 @@
+{
+  "contact_person": {
+    "title": "",
+    "address": {
+      "city": "",
+      "line_1": "",
+      "line_2": "",
+      "country": "",
+      "zip_postal_code": "",
+      "state_province_region": ""
+    },
+    "first_name": "",
+    "last_name": "",
+    "phone": "",
+    "email": ""
+  },
+  "official.director": [
+    {
+      "role": "Director",
+      "address": {
+        "city": "",
+        "line_1": "",
+        "line_2": "",
+        "country": "",
+        "zip_postal_code": "",
+        "state_province_region": ""
+      },
+      "first_name": "",
+      "last_name": ""
+    }
+  ],
+  "official.president": [
+    {
+      "role": "President",
+      "address": {
+        "city": "",
+        "line_1": "",
+        "line_2": "",
+        "country": "",
+        "zip_postal_code": "",
+        "state_province_region": ""
+      },
+      "first_name": "",
+      "last_name": ""
+    }
+  ],
+  "official.secretary": [
+    {
+      "role": "Secretary",
+      "address": {
+        "city": "",
+        "line_1": "",
+        "line_2": "",
+        "country": "",
+        "zip_postal_code": "",
+        "state_province_region": ""
+      },
+      "first_name": "",
+      "last_name": ""
+    }
+  ],
+  "official.treasurer": [
+    {
+      "role": "Treasurer",
+      "address": {
+        "city": "",
+        "line_1": "",
+        "line_2": "",
+        "country": "",
+        "zip_postal_code": "",
+        "state_province_region": ""
+      },
+      "first_name": "",
+      "last_name": ""
+    }
+  ]
+}
