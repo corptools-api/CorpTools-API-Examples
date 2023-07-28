@@ -30,6 +30,7 @@ JURISDICTIONS='<comma-separated-list-of-jurisdiction-names>'
 JURISDICTION_ID='jurisdiction-id'
 PAYMENT_METHOD_ID='<payment-method-id>'
 ORDER_ITEM_ID='<order-item-id>'
+SERVICE_ID='<service-id>'
 SHOPPING_CART_ITEM_ID='<shopping-cart-item-id>'
 STATUS='<document-status>'
 WEBSITE_URL=<website-url>
