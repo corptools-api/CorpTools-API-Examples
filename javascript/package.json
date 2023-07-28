@@ -13,6 +13,7 @@
     "axios-get-document": "node ./examples/get_document.js axios",
     "axios-get-documents": "node ./examples/get_documents.js axios",
     "axios-get-document-download": "node ./examples/get_document_download.js axios",
+    "axios-get-document-page": "node ./examples/get_document_page.js axios",
     "axios-get-filing-methods": "node ./examples/get_filing_methods.js axios",
     "axios-get-filing-methods-schemas": "node ./examples/get_filing_methods_schemas.js axios",
     "axios-get-filing-products": "node ./examples/get_filing_products.js axios",
@@ -47,6 +48,7 @@
     "get-document": "node ./examples/get_document.js",
     "get-documents": "node ./examples/get_documents.js",
     "get-document-download": "node ./examples/get_document_download.js",
+    "get-document-page": "node ./examples/get_document_page.js",
     "get-filing-methods": "node ./examples/get_filing_methods.js",
     "get-filing-methods-schemas": "node ./examples/get_filing_methods_schemas.js",
     "get-filing-products": "node ./examples/get_filing_products.js",
@@ -74,10 +76,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "Buffer": "^0.0.0",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^16.3.1",
+    "isomorphic-fetch": "^3.0.0",
     "jwt-encode": "^1.0.1",
     "jwt-simple": "^0.5.5",
+    "node-fetch": "^3.3.2",
     "xmlhttprequest": "^1.8.0"
   }
 }
