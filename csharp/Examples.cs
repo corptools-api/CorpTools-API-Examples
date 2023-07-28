@@ -25,6 +25,7 @@ namespace Examples
             // requestGetDocument();
             // requestGetDocuments();
             // requestGetDocumentDownload();
+            requestGetDocumentPage();
             // requestGetFilingMethods();
             // requestGetFilingMethodsSchemas();
             // requestGetFilingProducts();
@@ -117,6 +118,12 @@ namespace Examples
         {
             GetDocumentDownload request = new GetDocumentDownload();
             request.SendRequest();
+        }
+
+        private static void requestGetDocumentPage()
+        {
+           GetDocumentPage request = new GetDocumentPage();
+           request.SendRequest();
         }
 
         private static void requestGetCompany()

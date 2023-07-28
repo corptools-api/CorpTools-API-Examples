@@ -12,6 +12,7 @@ csharp/.env
 csharp/.vs/**
 csharp/bin/**
 csharp/obj/**
+csharp/documents/
 ruby/Gemfile.lock
 ruby/documents/
 javascript/documents/
