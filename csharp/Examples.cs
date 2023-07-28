@@ -46,6 +46,7 @@ namespace Examples
             // requestPostInvoicesPay();
             // requestPostPaymentMethods();
             // requestPostServices();
+            // requestPostServicesInfo();
             // requestPostShoppingCart();
             // requestPostShoppingCartCheckout();
 
@@ -247,6 +248,12 @@ namespace Examples
         private static void requestPostServices()
         {
             PostServices request = new PostServices();
+            request.SendRequest();
+        }
+
+        private static void requestPostServicesInfo()
+        {
+            PostServicesInfo request = new PostServicesInfo();
             request.SendRequest();
         }
 
