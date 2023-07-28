@@ -46,7 +46,6 @@ exports.request = {
 			}
 
 			const contentType = response.headers.get('content-type');
-			const contentDisposition = response.headers.get('content-disposition');
 
 			if (contentType?.includes('application/json')) {
 				const responseData = await response.json();
