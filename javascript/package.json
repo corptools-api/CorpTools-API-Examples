@@ -34,6 +34,7 @@
     "axios-post-order-items-requiring-attention": "node ./examples/post_order_items_requiring_attention.js axios",
     "axios-post-payment-methods": "node ./examples/post_payment_methods.js axios",
     "axios-post-services": "node ./examples/post_services.js axios",
+    "axios-post-services-cancel-request": "node ./examples/post_services_cancel_request.js axios",
     "axios-post-services-info": "node ./examples/post_services_info.js axios",
     "axios-post-shopping-cart": "node ./examples/post_shopping_cart.js axios",
     "axios-post-shopping-cart-checkout": "node ./examples/post_shopping_cart_checkout.js axios",
@@ -70,6 +71,7 @@
     "post-order-items-requiring-attention": "node ./examples/post_order_items_requiring_attention.js",
     "post-payment-methods": "node ./examples/post_payment_methods.js",
     "post-services": "node ./examples/post_services.js",
+    "post-services-cancel-request": "node ./examples/post_services_cancel_request.js",
     "post-services-info": "node ./examples/post_services_info.js",
     "post-shopping-cart": "node ./examples/post_shopping_cart.js",
     "post-shopping-cart-checkout": "node ./examples/post_shopping_cart_checkout.js"
