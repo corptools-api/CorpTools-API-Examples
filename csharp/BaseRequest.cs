@@ -2,6 +2,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
+using System.IO;
 using Microsoft.IdentityModel.Tokens;
 using RestSharp;
 
@@ -65,6 +66,32 @@ namespace Examples
             GenerateJwtToken(ref request, path, body);
             var response = client.Post(request);
             Console.WriteLine(response.Content);
+        }
+
+        protected void HandleResponse(IRestResponse response, string contentType)
+        {
+            if (contentType == "application/json")
+            {
+                Console.WriteLine(response.Content);
+            }
+            else if (contentType == "image/png")
+            {
+                byte[] data = response.RawBytes;
+                string filePath = Path.Combine("documents", "get_document_page_response.png");
+                File.WriteAllBytes(filePath, data);
+                Console.WriteLine("PNG file saved as get_document_page_response.png");
+            }
+            else if (contentType == "application/pdf")
+            {
+                byte[] data = response.RawBytes;
+                string filePath = Path.Combine("documents", "get_document_download_response.pdf");
+                File.WriteAllBytes(filePath, data);
+                Console.WriteLine("PDF file saved as get_document_download_response.pdf");
+            }
+            else
+            {
+                Console.WriteLine(response.Content);
+            }
         }
 
         protected void GenerateJwtToken(ref RestRequest request, string path, string body = "")

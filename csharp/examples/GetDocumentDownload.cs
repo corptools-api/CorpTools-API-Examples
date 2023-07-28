@@ -3,6 +3,7 @@ using System;
 namespace Examples.examples
 {
     // Example of GET /documents/:document_id/download
+    // The specified document is saved as a pdf in the 'documents' directory
     class GetDocumentDownload : BaseRequest
     {
         private string _documentId;
