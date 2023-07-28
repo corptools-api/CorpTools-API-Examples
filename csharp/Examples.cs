@@ -34,6 +34,7 @@ namespace Examples
             // requestGetOrderItemsRequiringAttention();
             // requestGetPaymentMethods();
             // requestGetServices();
+            // requestGetServicesInfo();
             // requestGetShoppingCart();
             // requestGetSignedForms();
             // requestGetWebsites();
@@ -45,6 +46,7 @@ namespace Examples
             // requestPostInvoicesPay();
             // requestPostPaymentMethods();
             // requestPostServices();
+            // requestPostServicesInfo();
             // requestPostShoppingCart();
             // requestPostShoppingCartCheckout();
 
@@ -177,6 +179,12 @@ namespace Examples
             request.SendRequest();
         }
 
+        private static void requestGetServicesInfo()
+        {
+            GetServicesInfo request = new GetServicesInfo();
+            request.SendRequest();
+        }
+
         private static void requestGetShoppingCart()
         {
             GetShoppingCart request = new GetShoppingCart();
@@ -240,6 +248,12 @@ namespace Examples
         private static void requestPostServices()
         {
             PostServices request = new PostServices();
+            request.SendRequest();
+        }
+
+        private static void requestPostServicesInfo()
+        {
+            PostServicesInfo request = new PostServicesInfo();
             request.SendRequest();
         }
 
