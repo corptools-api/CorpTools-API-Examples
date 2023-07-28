@@ -11,3 +11,4 @@ csharp/.vs/**
 csharp/bin/**
 csharp/obj/**
 ruby/Gemfile.lock
+ruby/documents/
