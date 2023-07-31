@@ -2,6 +2,7 @@ require 'dotenv'
 require 'json'
 require 'jwt'
 require 'rest-client'
+require 'base64'
 
 Dotenv.load('../.env')
 
@@ -43,9 +44,21 @@ module BaseRequestRoute
         )
 
         puts "Response status code: #{res.code}"
-        puts JSON.pretty_generate(JSON.parse(res.body))
 
-        JSON.parse(res.body)
+        if res.headers[:content_type] == 'image/png'
+          File.open('./documents/get_document_page_response.png', 'wb') do |file|
+            file.write(res.body)
+          end
+          puts 'Image saved as get_document_page_response.png'
+        elsif res.headers[:content_type] == 'application/pdf'
+          File.open('./documents/get_document_download_response.pdf', 'wb') do |file|
+            file.write(res.body)
+          end
+          puts 'PDF saved as get_document_download_response.pdf'
+    else
+      puts JSON.pretty_generate(JSON.parse(res.body))
+      JSON.parse(res.body)
+    end
     rescue StandardError => error
       puts error
       puts error.http_body if defined?(error.http_body) && error.to_s != '500 Internal Server Error'

@@ -9,7 +9,7 @@ require './jwt.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-function send_request($method, $request_path, $request_params, $request_data) {
+function send_request($method, $request_path, $request_params, $request_data, $content_type = 'application/json') {
     $access_key = $_ENV['ACCESS_KEY'];
     $secret_key = $_ENV['SECRET_KEY'];
     $base_url = $_ENV['API_URL'];
@@ -37,7 +37,18 @@ function send_request($method, $request_path, $request_params, $request_data) {
         $response = post_request($client, $request_path, $request_data);
     }
     if ($response != null) {
-         echo json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
+        $content_type = $response->getHeaderLine('content-type');
+        if (strpos($content_type, 'application/json') !== false) {
+            echo json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
+        } elseif (strpos($content_type, 'image/png') !== false) {
+            file_put_contents('./documents/get_document_page_response.png', $response->getBody());
+            echo 'PNG image saved as get_document_page_response.png';
+        } elseif (strpos($content_type, 'application/pdf') !== false) {
+            file_put_contents('./documents/get_document_download_response.pdf', $response->getBody());
+            echo 'PDF file saved as get_document_download_response.pdf';
+        } else {
+            echo $response->getBody();
+        }
     }
 }
 
