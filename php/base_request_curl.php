@@ -25,13 +25,26 @@ function send_request($method, $request_path, $request_params, $request_data) {
 
     if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
-    $result = call_api_curl($method, $url, $jwt, $request_data);
+    $response = call_api_curl($method, $url, $jwt, $request_data);
+    $content_type = $response['content-type'];
+    $result = $response['result'];
 
-    $decoded_result = json_decode($result, true);
-    if ($decoded_result !== null) {
-        echo json_encode($decoded_result, JSON_PRETTY_PRINT);
-    } else {
-        echo $result;
+    if (strpos($content_type, 'application/json') !== false) {
+            echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
+        } elseif (strpos($content_type, 'image/png') !== false) {
+            $png_file_path = __DIR__ . '/documents/get_document_page_response.png';
+            if (file_put_contents($png_file_path, $result) === false) {
+                die("Error: Unable to save PNG file");
+            }
+            echo 'PNG image saved as get_document_page_response.png';
+        } elseif (strpos($content_type, 'application/pdf') !== false) {
+            $pdf_file_path = __DIR__ . '/documents/get_document_download_response.pdf';
+            if (file_put_contents($pdf_file_path, $result) === false) {
+                die("Error: Unable to save PDF file");
+            }
+            echo 'PDF file saved as get_document_download_response.pdf';
+        } else {
+            echo $result;
     }
 }
 
@@ -108,7 +121,6 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
       "Authorization: Bearer $jwt",
-      "Content-Type: application/json",
       "Accept: application/json"
     ]);
 
@@ -116,9 +128,23 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
     curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+    curl_setopt($ch, CURLOPT_HEADER, true);
+    curl_setopt($ch, CURLOPT_HEADER, true);
 
-    $result = curl_exec($ch);
+    $response = curl_exec($ch);
+    $headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+    $headers = substr($response, 0, $headerSize);
+    $content_type_response = '';
 
+    $header_lines = explode("\r\n", $headers);
+    foreach ($header_lines as $line) {
+        if (strpos($line, 'content-type:') !== false) {
+            $content_type_response = trim(explode(':', $line, 2)[1]);
+            break;
+        }
+    }
+
+    $result = substr($response, $headerSize);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $http_res_code = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
 
@@ -132,5 +158,5 @@ function call_api_curl($method, $url, $jwt, $data = null) {
 
     curl_close($ch);
 
-    return $result;
+    return ['content-type' => $content_type_response, 'result' => $result];
 }

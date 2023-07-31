@@ -10,6 +10,7 @@ from dotenv import dotenv_values
 config = dotenv_values()
 
 # Example of GET /documents/:document_id
+# The specified document is saved as a pdf in the 'documents' directory
 
 class GetDocumentRequest(BaseRequest):
     def __init__(self):

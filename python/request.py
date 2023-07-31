@@ -44,6 +44,16 @@ class BaseRequest:
 
       if response.headers.get("content-type") == "application/json":
         return response.json()
+      elif response.headers.get("content-type") == "image/png":
+        with open('./documents/get_document_page_response.png', 'wb') as file:
+            file.write(response.content)
+        print('PNG image saved as get_document_page_response.png')
+        return "PNG image downloaded."
+      elif response.headers.get("content-type") == "application/pdf":
+        with open('./documents/get_document_download_response.pdf', 'wb') as file:
+            file.write(response.content)
+        print('PDF file saved as get_document_download_response.pdf')
+        return "PDF file downloaded"
       else:
         return response.text
 
