@@ -5,9 +5,11 @@
 php/vendor
 php/composer.lock
 php/downloads/**
+python/documents/
 python/__pycache__/**
 csharp/.env
 csharp/.vs/**
 csharp/bin/**
 csharp/obj/**
 ruby/Gemfile.lock
+ruby/documents/
