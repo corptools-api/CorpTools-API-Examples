@@ -37,6 +37,7 @@ namespace Examples
             // requestGetServicesInfo();
             // requestGetShoppingCart();
             // requestGetSignedForms();
+            // requestGetSimpleProducts();
             // requestGetWebsites();
             // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
@@ -195,6 +196,12 @@ namespace Examples
         private static void requestGetSignedForms()
         {
             GetSignedForms request = new GetSignedForms();
+            request.SendRequest();
+        }
+
+        private static void requestGetSimpleProducts()
+        {
+            GetSimpleProducts request = new GetSimpleProducts();
             request.SendRequest();
         }
 
