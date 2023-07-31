@@ -7,7 +7,6 @@ require_once 'base_request.php';
 $debug = true;
 $document_id   = $_ENV['DOCUMENT_ID'];
 $request_data = '';
-$content_type = 'application/pdf';
 $request_params = [];
 
-send_request('GET', '/documents/' . $document_id . '/download', $request_params, $request_data, $content_type);
+send_request('GET', '/documents/' . $document_id . '/download', $request_params, $request_data);
