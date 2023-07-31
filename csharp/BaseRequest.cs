@@ -29,42 +29,67 @@ namespace Examples
 
         protected void DeleteRequest(string path)
         {
-            var client = new RestClient(_apiUrl);
-            var request = new RestRequest(path, Method.Delete);
-            request.RequestFormat = DataFormat.Json;
-            GenerateJwtToken(ref request, path);
-            var response = client.Delete(request);
-            Console.WriteLine(response.Content);
+            try {
+                var client = new RestClient(_apiUrl);
+                var request = new RestRequest(path, Method.Delete);
+                request.RequestFormat = DataFormat.Json;
+                GenerateJwtToken(ref request, path);
+                var response = client.Delete(request);
+                Console.WriteLine(response.Content);
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine("Something went wrong: " + ex.Message);
+            }
         }
 
         protected void GetRequest(string path)
         {
-            var client = new RestClient(_apiUrl);
-            var request = new RestRequest(path, Method.Get);
-            request.RequestFormat = DataFormat.Json;
-            GenerateJwtToken(ref request, path);
-            var response = client.Get(request);
-            Console.WriteLine(response.Content);
+            try {
+                var client = new RestClient(_apiUrl);
+                var request = new RestRequest(path, Method.Get);
+                request.RequestFormat = DataFormat.Json;
+                GenerateJwtToken(ref request, path);
+                var response = client.Get(request);
+                Console.WriteLine(response.Content);
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine("Something went wrong: " + ex.Message);
+            }
         }
 
         protected void PatchRequest(string path, string body)
         {
-            var client = new RestClient(_apiUrl);
-            var request = new RestRequest(path, Method.Patch);
-            request.RequestFormat = DataFormat.Json;
-            GenerateJwtToken(ref request, path, body);
-            var response = client.Patch(request);
-            Console.WriteLine(response.Content);
+            try {
+                var client = new RestClient(_apiUrl);
+                var request = new RestRequest(path, Method.Patch);
+                request.RequestFormat = DataFormat.Json;
+                GenerateJwtToken(ref request, path, body);
+                var response = client.Patch(request);
+                Console.WriteLine(response.Content);
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine("Something went wrong: " + ex.Message);
+            }
         }
 
         protected void PostRequest(string path, string body)
         {
-            var client = new RestClient(_apiUrl);
-            var request = new RestRequest(path, Method.Post);
-            request.RequestFormat = DataFormat.Json;
-            GenerateJwtToken(ref request, path, body);
-            var response = client.Post(request);
-            Console.WriteLine(response.Content);
+            try
+            {
+                var client = new RestClient(_apiUrl);
+                var request = new RestRequest(path, Method.Post);
+                request.RequestFormat = DataFormat.Json;
+                GenerateJwtToken(ref request, path, body);
+                var response = client.Post(request);
+                Console.WriteLine(response.Content);
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine("Something went wrong: " + ex.Message);
+            }
         }
 
         protected void GenerateJwtToken(ref RestRequest request, string path, string body = "")
