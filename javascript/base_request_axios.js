@@ -55,7 +55,9 @@ exports.request = {
 				await fs.writeFile(filePath, buffer);
 				console.log('PDF file saved as get_document_download_response.pdf');
 			} else {
-				console.log('response:', response.data);
+				const dataAsString = response.data.toString();
+				const dataAsJson = JSON.parse(dataAsString);
+				console.log('response:', dataAsJson);
 			}
 		} catch (error) {
 			console.log('error:', error.message, error.config.data);
