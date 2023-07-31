@@ -24,6 +24,7 @@ namespace Examples
             // requestGetComplianceEvents();
             // requestGetDocument();
             // requestGetDocuments();
+            // requestGetDocumentsBulkDownload();
             // requestGetDocumentDownload();
             // requestGetDocumentPage();
             // requestGetDocumentPageUrl();
@@ -108,6 +109,12 @@ namespace Examples
         private static void requestGetDocuments()
         {
             GetDocuments request = new GetDocuments();
+            request.SendRequest();
+        }
+
+        private static void requestGetDocumentsBulkDownload()
+        {
+            GetDocumentsBulkDownload request = new GetDocumentsBulkDownload();
             request.SendRequest();
         }
 
