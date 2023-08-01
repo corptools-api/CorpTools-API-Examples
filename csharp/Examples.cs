@@ -18,6 +18,7 @@ namespace Examples
             // requestDeleteShoppingCart();
             // requestGetAccount();
             // requestGetAccountDashPanel();
+            requestGetAuthRefresh();
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
@@ -84,6 +85,12 @@ namespace Examples
         private static void requestGetAccount()
         {
             GetAccount request = new GetAccount();
+            request.SendRequest();
+        }
+
+        private static void requestGetAuthRefresh()
+        {
+            GetAuthRefresh request = new GetAuthRefresh();
             request.SendRequest();
         }
 
