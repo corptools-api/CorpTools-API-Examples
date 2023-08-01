@@ -3,16 +3,14 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /invoices
-// An array of company names or company_ids may be provided, but not both
+// Example GET /documents/bulk-download
 
-const COMPANY_IDS = [process.env.COMPANY_ID];
+const DOCUMENT_IDS = [process.env.DOCUMENT_ID];
 
-const idsArray = COMPANY_IDS.map((id) => `company_ids[]=${encodeURIComponent(id)}`);
+const idsArray = DOCUMENT_IDS.map((id) => `ids[]=${encodeURIComponent(id)}`);
 const queryString = idsArray.join('&');
-const urlWithParams = `/invoices?${queryString}`
+const urlWithParams = `/documents/bulk-download?${queryString}`
 
 token = baseRequest.request.token({ path: urlWithParams });
 
 baseRequest.request.get({ path: urlWithParams, token: token});
-
