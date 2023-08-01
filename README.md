@@ -18,6 +18,7 @@ SECRET_KEY='<secret-key>'
 API_URL='https://api.corporatetools.com'
 
 # Optional, request dependent
+AGENCY_RESOURCE_ID='<agency-resource-id>'
 AUTH_TOKEN='<auth-token>'
 CALLBACK_ID='<callback-id>'
 CALLBACK_URL='<callback-url>'
