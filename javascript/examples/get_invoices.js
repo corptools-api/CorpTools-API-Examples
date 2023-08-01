@@ -6,12 +6,13 @@ require('dotenv').config();
 // Example GET /invoices
 // An array of company names or company_ids may be provided, but not both
 
-const COMPANY_ID = process.env.COMPANY_ID
+const COMPANY_IDS = [process.env.COMPANY_ID];
 
-params = {
-  company_ids: [COMPANY_ID]
-}
+const idsArray = COMPANY_IDS.map((id) => `company_ids[]=${encodeURIComponent(id)}`);
+const queryString = idsArray.join('&');
+const urlWithParams = `/invoices?${queryString}`
 
-token = baseRequest.request.token({ path: '/invoices' });
+token = baseRequest.request.token({ path: urlWithParams });
 
-baseRequest.request.get({ path: '/invoices', token: token, queryParams: params });
+baseRequest.request.get({ path: urlWithParams, token: token});
+
