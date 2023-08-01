@@ -18,7 +18,7 @@ namespace Examples
             // requestDeleteShoppingCart();
             // requestGetAccount();
             // requestGetAccountDashPanel();
-            requestGetAuthRefresh();
+            // requestGetAuthRefresh();
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
@@ -44,6 +44,7 @@ namespace Examples
             // requestGetWebsites();
             // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
+            requestPostAuthForgotPassword();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
@@ -235,6 +236,12 @@ namespace Examples
         private static void requestPatchPaymentMethods()
         {
             PatchPaymentMethods request = new PatchPaymentMethods();
+            request.SendRequest();
+        }
+
+        private static void requestPostAuthForgotPassword()
+        {
+            PostAuthForgotPassword request = new PostAuthForgotPassword();
             request.SendRequest();
         }
 
