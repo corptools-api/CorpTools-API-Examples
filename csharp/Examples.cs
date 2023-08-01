@@ -37,6 +37,7 @@ namespace Examples
             // requestGetOrderItemsRequiringAttention();
             // requestGetPaymentMethods();
             // requestGetRegisteredAgentProducts();
+            // requestGetResource();
             // requestGetResources();
             // requestGetServices();
             // requestGetServicesInfo();
@@ -204,6 +205,12 @@ namespace Examples
         private static void requestGetRegisteredAgentProducts()
         {
             GetRegisteredAgentProducts request = new GetRegisteredAgentProducts();
+            request.SendRequest();
+        }
+
+        private static void requestGetResource()
+        {
+            GetResource request = new GetResource();
             request.SendRequest();
         }
 
