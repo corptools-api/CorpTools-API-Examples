@@ -6,7 +6,8 @@ namespace Examples.examples
 	{
 		public GetResources()
 		{
-		}
+            Console.WriteLine($"GetResources");
+        }
 
         public override void SendRequest()
         {
