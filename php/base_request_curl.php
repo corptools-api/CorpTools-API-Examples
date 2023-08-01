@@ -29,23 +29,25 @@ function send_request($method, $request_path, $request_params, $request_data, $c
     $content_type = $response['content-type'];
     $result = $response['result'];
 
+    $response_filename = strtolower($method) . str_replace(['/'], ['_'], $request_path) . '_response';
+
     if (strpos($content_type, 'application/json') !== false) {
         echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
     } elseif (strpos($content_type, 'image/png') !== false) {
-        $png_file_path = __DIR__ . '/documents/get_document_page_response.png';
+        $png_file_path = __DIR__ . "/documents/{$$response_filename}.png";
         if (file_put_contents($png_file_path, $result) === false) {
             die("Error: Unable to save PNG file");
         }
-        echo 'PNG image saved as get_document_page_response.png';
+        echo "PNG image saved as {$response_filename}.png";
     } elseif (strpos($content_type, 'application/pdf') !== false) {
-        $pdf_file_path = __DIR__ . '/documents/get_document_download_response.pdf';
+        $pdf_file_path = __DIR__ . "/documents/{$response_filename}.pdf";
         if (file_put_contents($pdf_file_path, $result) === false) {
             die("Error: Unable to save PDF file");
         }
-        echo 'PDF file saved as get_document_download_response.pdf';
+        echo "PDF file saved as {$response_filename}.pdf";
     } else {
         echo $result;
-}
+    }
 }
 
 /*
