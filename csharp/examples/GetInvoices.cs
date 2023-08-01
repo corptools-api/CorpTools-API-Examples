@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 namespace Examples.examples
 {
     // Example of GET /invoices
@@ -6,19 +9,27 @@ namespace Examples.examples
 
     public class GetInvoices : BaseRequest
 	{
-        private string _companyId;
+        private string _companyIds;
 
         public GetInvoices()
 		{
             dotenv.net.DotEnv.Load();
-            _companyId = Environment.GetEnvironmentVariable("COMPANY_ID");
-            Console.WriteLine($"GetInvoices: _companyId={_companyId}");
+            _companyIds = Environment.GetEnvironmentVariable("COMPANY_ID");
+            Console.WriteLine($"GetInvoices: _companyIds={_companyIds}");
         }
 
         public override void SendRequest()
-        {
-            GetRequest($"invoices?company_ids={_companyId}");
-        }
+         {
+            // Construct the url with the ids param as an array in the query string
+            var queryParams = new List<string>();
+            foreach (var id in _companyIds.Split(','))
+            {
+                queryParams.Add($"company_ids[]={Uri.EscapeDataString(id)}");
+            }
+            var queryString = string.Join("&", queryParams);
+            var urlWithParams = $"invoices?{queryString}";
+            GetRequest(urlWithParams);
+         }
     }
 }
 
