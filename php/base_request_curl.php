@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-function send_request($method, $request_path, $request_params, $request_data) {
+function send_request($method, $request_path, $request_params, $request_data, $content_type = 'application/json') {
     $access_key = $_ENV['ACCESS_KEY'];
     $secret_key = $_ENV['SECRET_KEY'];
     $base_url   = $_ENV['API_URL'];
@@ -25,27 +25,27 @@ function send_request($method, $request_path, $request_params, $request_data) {
 
     if ($GLOBALS['debug']) echo $method . ' ' . $url . PHP_EOL;
 
-    $response = call_api_curl($method, $url, $jwt, $request_data);
+    $response = call_api_curl($method, $url, $jwt, $request_data, $content_type);
     $content_type = $response['content-type'];
     $result = $response['result'];
 
     if (strpos($content_type, 'application/json') !== false) {
-            echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
-        } elseif (strpos($content_type, 'image/png') !== false) {
-            $png_file_path = __DIR__ . '/documents/get_document_page_response.png';
-            if (file_put_contents($png_file_path, $result) === false) {
-                die("Error: Unable to save PNG file");
-            }
-            echo 'PNG image saved as get_document_page_response.png';
-        } elseif (strpos($content_type, 'application/pdf') !== false) {
-            $pdf_file_path = __DIR__ . '/documents/get_document_download_response.pdf';
-            if (file_put_contents($pdf_file_path, $result) === false) {
-                die("Error: Unable to save PDF file");
-            }
-            echo 'PDF file saved as get_document_download_response.pdf';
-        } else {
-            echo $result;
-    }
+        echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
+    } elseif (strpos($content_type, 'image/png') !== false) {
+        $png_file_path = __DIR__ . '/documents/get_document_page_response.png';
+        if (file_put_contents($png_file_path, $result) === false) {
+            die("Error: Unable to save PNG file");
+        }
+        echo 'PNG image saved as get_document_page_response.png';
+    } elseif (strpos($content_type, 'application/pdf') !== false) {
+        $pdf_file_path = __DIR__ . '/documents/get_document_download_response.pdf';
+        if (file_put_contents($pdf_file_path, $result) === false) {
+            die("Error: Unable to save PDF file");
+        }
+        echo 'PDF file saved as get_document_download_response.pdf';
+    } else {
+        echo $result;
+}
 }
 
 /*
@@ -91,7 +91,7 @@ function build_jwt($access_key, $secret_key, $request_path, $request_data = null
 /*
  * Call the api using curl
  */
-function call_api_curl($method, $url, $jwt, $data = null) {
+function call_api_curl($method, $url, $jwt, $data = null, $content_type) {
     $ch = curl_init();
 
     if ($GLOBALS['debug']) echo 'Curl: ' . $method . ' ' . $url . ' ' . $data . PHP_EOL;
@@ -121,6 +121,7 @@ function call_api_curl($method, $url, $jwt, $data = null) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
       "Authorization: Bearer $jwt",
+      "Content-Type: $content_type",
       "Accept: application/json"
     ]);
 
