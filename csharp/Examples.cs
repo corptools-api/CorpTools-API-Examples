@@ -44,7 +44,8 @@ namespace Examples
             // requestGetWebsites();
             // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
-            requestPostAuthForgotPassword();
+            // requestPostAuthForgotPassword();
+            // requestPostAuthResetPassword();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
@@ -233,6 +234,12 @@ namespace Examples
             request.SendRequest();
         }
 
+        private static void requestPatchCompanies()
+        {
+            PatchCompanies request = new PatchCompanies();
+            request.SendRequest();
+        }
+
         private static void requestPatchPaymentMethods()
         {
             PatchPaymentMethods request = new PatchPaymentMethods();
@@ -245,15 +252,15 @@ namespace Examples
             request.SendRequest();
         }
 
-        private static void requestPostCallbacks()
+        private static void requestPostAuthResetPassword()
         {
-            PostCallbacks request = new PostCallbacks();
+            PostAuthResetPassword request = new PostAuthResetPassword();
             request.SendRequest();
         }
 
-        private static void requestPatchCompanies()
+        private static void requestPostCallbacks()
         {
-            PatchCompanies request = new PatchCompanies();
+            PostCallbacks request = new PostCallbacks();
             request.SendRequest();
         }
 

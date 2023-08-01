@@ -27,7 +27,7 @@ namespace Examples.examples
                 website_id = _website_id
             });
 
-            PostRequest("/auth/forgot-password", body);
+            PostRequest("auth/forgot-password", body);
         }
     }
 }
