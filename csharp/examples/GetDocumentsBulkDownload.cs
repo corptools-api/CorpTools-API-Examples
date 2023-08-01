@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 namespace Examples.examples
 {
     // Example of GET /documents/bulk-download
@@ -16,7 +19,15 @@ namespace Examples.examples
 
         public override void SendRequest()
         {
-            GetRequest($"documents/bulk-download?ids={_documentIds}");
+            // Construct the url with the ids param as an array in the query string
+            var queryParams = new List<string>();
+            foreach (var id in _documentIds.Split(','))
+            {
+                queryParams.Add($"ids[]={Uri.EscapeDataString(id)}");
+            }
+            var queryString = string.Join("&", queryParams);
+            var urlWithParams = $"documents/bulk-download?{queryString}";
+            GetRequest(urlWithParams);
         }
     }
 }
