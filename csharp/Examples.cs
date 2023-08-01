@@ -45,6 +45,7 @@ namespace Examples
             // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
             // requestPostAuthForgotPassword();
+            // requestPostAuthLogin();
             // requestPostAuthResetPassword();
             // requestPostCallbacks();
             // requestPatchCompanies();
@@ -249,6 +250,12 @@ namespace Examples
         private static void requestPostAuthForgotPassword()
         {
             PostAuthForgotPassword request = new PostAuthForgotPassword();
+            request.SendRequest();
+        }
+
+        private static void requestPostAuthLogin()
+        {
+            PostAuthLogin request = new PostAuthLogin();
             request.SendRequest();
         }
 
