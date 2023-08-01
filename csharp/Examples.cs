@@ -18,6 +18,7 @@ namespace Examples
             // requestDeleteShoppingCart();
             // requestGetAccount();
             // requestGetAccountDashPanel();
+            // requestGetAuthRefresh();
             // requestGetCallbacks();
             // requestGetCompany();
             // requestGetCompanies();
@@ -44,6 +45,9 @@ namespace Examples
             // requestGetWebsites();
             // requestPostOrderItemsRequiringAttention();
             // requestPatchPaymentMethods();
+            // requestPostAuthForgotPassword();
+            // requestPostAuthLogin();
+            // requestPostAuthResetPassword();
             // requestPostCallbacks();
             // requestPatchCompanies();
             // requestPostCompanies();
@@ -85,6 +89,12 @@ namespace Examples
         private static void requestGetAccount()
         {
             GetAccount request = new GetAccount();
+            request.SendRequest();
+        }
+
+        private static void requestGetAuthRefresh()
+        {
+            GetAuthRefresh request = new GetAuthRefresh();
             request.SendRequest();
         }
 
@@ -232,21 +242,39 @@ namespace Examples
             request.SendRequest();
         }
 
+        private static void requestPatchCompanies()
+        {
+            PatchCompanies request = new PatchCompanies();
+            request.SendRequest();
+        }
+
         private static void requestPatchPaymentMethods()
         {
             PatchPaymentMethods request = new PatchPaymentMethods();
             request.SendRequest();
         }
 
-        private static void requestPostCallbacks()
+        private static void requestPostAuthForgotPassword()
         {
-            PostCallbacks request = new PostCallbacks();
+            PostAuthForgotPassword request = new PostAuthForgotPassword();
             request.SendRequest();
         }
 
-        private static void requestPatchCompanies()
+        private static void requestPostAuthLogin()
         {
-            PatchCompanies request = new PatchCompanies();
+            PostAuthLogin request = new PostAuthLogin();
+            request.SendRequest();
+        }
+
+        private static void requestPostAuthResetPassword()
+        {
+            PostAuthResetPassword request = new PostAuthResetPassword();
+            request.SendRequest();
+        }
+
+        private static void requestPostCallbacks()
+        {
+            PostCallbacks request = new PostCallbacks();
             request.SendRequest();
         }
 
