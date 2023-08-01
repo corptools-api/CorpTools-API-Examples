@@ -6,8 +6,6 @@ require('dotenv').config();
 
 // Example of POST /auth/login
 
-const URL = process.env.CALLBACK_URL;
-
 const EMAIL = process.env.EMAIL;
 const PASSWORD = process.env.PASSWORD;
 const WEBSITE_ID = process.env.WEBSITE_ID; // optional
