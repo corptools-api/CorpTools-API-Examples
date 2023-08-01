@@ -52,10 +52,10 @@ module BaseRequestRoute
           end
           puts "Image saved as #{request_name}_response.png"
         elsif res.headers[:content_type] == 'application/pdf'
-          File.open('./documents/get_document_download_response.pdf', 'wb') do |file|
+          File.open("./documents/#{request_name}_response.pdf", 'wb') do |file|
             file.write(res.body)
           end
-          puts 'PDF saved as get_document_download_response.pdf'
+          puts "PDF saved as get_#{request_name}_response.pdf"
     else
       puts JSON.pretty_generate(JSON.parse(res.body))
       JSON.parse(res.body)
