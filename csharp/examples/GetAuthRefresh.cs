@@ -6,7 +6,7 @@ namespace Examples.examples
     {
         public GetAuthRefresh()
         {
-		}
+        }
 
         public override void SendRequest()
         {
