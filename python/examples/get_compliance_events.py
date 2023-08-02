@@ -9,7 +9,8 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-#  GET /invoices/:invoice_id
+# Example of GET /compliance-events
+
 class ComplianceEventsRequest(BaseRequest):
     def __init__(self):
         super().__init__()

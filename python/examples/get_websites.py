@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example GET /websites
+# Example of GET /websites
 
 class GetWebsites(BaseRequest):
     def __init__(self):

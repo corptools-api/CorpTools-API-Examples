@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example GET /payment-methods
+# Example of GET /payment-methods
 
 class GetPaymentMethodsRequest(BaseRequest):
     def __init__(self):
