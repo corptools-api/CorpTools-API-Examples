@@ -2,9 +2,10 @@ using System;
 using Newtonsoft.Json;
 namespace Examples.examples
 {
-    // PATCH /companies
+    // Example of PATCH /companies
 
     // this example will update the entity_type for the specified company
+  
     public class PatchCompanies : BaseRequest
     {
         private string _companyName;

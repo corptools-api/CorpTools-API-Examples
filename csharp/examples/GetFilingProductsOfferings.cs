@@ -3,6 +3,7 @@
 namespace Examples.examples
 {
     // GET /filing-products/offerings
+    
     class GetFilingProductsOfferings : BaseRequest
     {
 		private string _companyId;

@@ -3,7 +3,9 @@ using System;
 namespace Examples.examples
 {
     // Example of GET /resources/:resource_id/download
+
     // The specified resource is saved as a pdf in the 'documents' directory
+    
     class GetResourcesDownload : BaseRequest
     {
         private string _resourceId;

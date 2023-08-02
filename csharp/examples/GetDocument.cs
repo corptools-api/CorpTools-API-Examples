@@ -3,6 +3,7 @@ using System;
 namespace Examples.examples
 {
     // Example of GET /documents/:document_id
+    
     class GetDocument : BaseRequest
     {
         private string _documentId;

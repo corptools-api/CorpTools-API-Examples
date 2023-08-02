@@ -4,6 +4,7 @@ using System.Diagnostics;
 namespace Examples.examples
 {
     // Example of POST /auth/login
+    
 	public class PostAuthLogin : BaseRequest
 	{
         private string _email;

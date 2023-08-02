@@ -1,7 +1,8 @@
 using System;
 namespace Examples.examples
 {
-    // POST /invoices/pay
+    // Example of POST /invoices/pay
+    
     public class PostInvoicesPay : BaseRequest
     {
         private string _paymentToken;

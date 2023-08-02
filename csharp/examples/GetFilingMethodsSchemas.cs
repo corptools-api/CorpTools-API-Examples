@@ -3,6 +3,7 @@ using System;
 namespace Examples.examples
 {
     // GET /filing-methods/schemas
+    
     class GetFilingMethodsSchemas : BaseRequest
     {
         private string _companyId;

@@ -2,7 +2,8 @@ using System;
 using Newtonsoft.Json;
 namespace Examples.examples
 {
-    // POST /companies
+    // Example of POST /companies
+  
     public class PostCompanies : BaseRequest
     {
         private string _companyName;

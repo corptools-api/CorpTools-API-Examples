@@ -2,6 +2,7 @@
 namespace Examples.examples
 {
     // Example of GET /resources
+    
 	public class GetResources : BaseRequest
 	{
 		public GetResources()
