@@ -1,6 +1,6 @@
 const baseRequest = require('../base_request.js').baseRequest
 
-// Example GET /callbacks
+// Example of GET /callbacks
 
 token = baseRequest.request.token({ path: '/callbacks' });
 

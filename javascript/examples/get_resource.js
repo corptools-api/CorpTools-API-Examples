@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example of GET /resources/:id
+// Example of GET /resources/:resource_id
 
 RESOURCE_ID = process.env.AGENCY_RESOURCE_ID
 url_path = `/resources/${RESOURCE_ID}`

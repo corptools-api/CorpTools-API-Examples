@@ -4,6 +4,8 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
+// Example of GET /filing-products
+
 const WEBSITE_URL = process.env.WEBSITE_URL;
 const JURISDICTION = process.env.JURISDICTION;
 

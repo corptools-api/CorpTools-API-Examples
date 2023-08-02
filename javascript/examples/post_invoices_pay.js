@@ -5,6 +5,7 @@ process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
 // Example of POST /invoices/pay
+
 const PAYMENT_METHOD_ID = process.env.PAYMENT_METHOD_ID;
 const INVOICE_ID = process.env.INVOICE_ID;
 

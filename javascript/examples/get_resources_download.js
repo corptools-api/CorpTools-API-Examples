@@ -4,6 +4,7 @@ process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
 // Example of GET /resources/:resource_id/download
+
 // The specified resource is saved as a pdf in the 'documents' directory
 
 const RESOURCE_ID = process.env.AGENCY_RESOURCE_ID;

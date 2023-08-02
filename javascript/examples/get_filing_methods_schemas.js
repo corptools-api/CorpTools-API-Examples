@@ -4,7 +4,8 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// GET /filing-methods/schemas
+// Example of GET /filing-methods/schemas
+
 const COMPANY_ID	= process.env.COMPANY_ID;
 const METHOD_ID 	= process.env.FILING_METHOD_ID;
 

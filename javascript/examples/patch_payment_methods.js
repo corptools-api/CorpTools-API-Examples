@@ -4,7 +4,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example of PATCH /payment-methods/:id
+// Example of PATCH /payment-methods/:payment_method_id
 
 const PAYMENT_METHOD_ID = process.env.PAYMENT_METHOD_ID;
 const CARD_NUMBER = '4000056655665556'
