@@ -2,7 +2,7 @@
 
 namespace Examples.examples
 {
-    // GET /filing-products/offerings
+    // Example of GET /filing-products/offerings
     
     class GetFilingProductsOfferings : BaseRequest
     {

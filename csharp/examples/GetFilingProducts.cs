@@ -2,7 +2,7 @@ using System;
 
 namespace Examples.examples
 {
-    // GET /filing-products
+    // Example of GET /filing-products
     
     class GetFilingProducts : BaseRequest
     {

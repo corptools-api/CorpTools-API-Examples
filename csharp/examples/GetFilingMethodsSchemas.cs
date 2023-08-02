@@ -2,7 +2,7 @@ using System;
 
 namespace Examples.examples
 {
-    // GET /filing-methods/schemas
+    // Example of GET /filing-methods/schemas
     
     class GetFilingMethodsSchemas : BaseRequest
     {
