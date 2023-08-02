@@ -10,7 +10,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example of POST /services/:id/info
+# Example of POST /services/:service_id/info
 
 class PostServicesInfoRequest(BaseRequest):
     def __init__(self):

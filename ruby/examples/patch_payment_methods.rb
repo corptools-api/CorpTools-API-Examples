@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example of PATCH /payment-methods/:id
+# Example of PATCH /payment-methods/:payment_method_id
 
 PAYMENT_METHOD_ID = ENV['PAYMENT_METHOD_ID']
 CARD_NUMBER = '6011111111111117'
