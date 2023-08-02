@@ -1,8 +1,9 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // Example of DELETE /payment-methods/:id
-	public class DeletePaymentMethods : BaseRequest
+    // Example of DELETE /payment-methods/:payment_method_id
+
+    public class DeletePaymentMethods : BaseRequest
     {
         private string _paymentMethodId;
 

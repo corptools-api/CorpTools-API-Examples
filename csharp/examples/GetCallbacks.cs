@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // GET /callbacks
+    // Example of GET /callbacks
+    
     public class GetCallbacks : BaseRequest
     {
         public GetCallbacks()

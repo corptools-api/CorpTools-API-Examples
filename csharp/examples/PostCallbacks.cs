@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // POST /callbacks
+    // Example of POST /callbacks
+    
     public class PostCallbacks : BaseRequest
     {
         private string _callbackUrl;

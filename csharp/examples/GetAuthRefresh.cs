@@ -2,6 +2,7 @@
 namespace Examples.examples
 {
     // Example of GET /auth/refresh
+    
     public class GetAuthRefresh : BaseRequest
     {
         public GetAuthRefresh()

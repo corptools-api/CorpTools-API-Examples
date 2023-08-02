@@ -2,7 +2,8 @@
 
 namespace Examples.examples
 {
-    // GET /filing-methods
+    // Example of GET /filing-methods
+    
     class GetFilingMethods : BaseRequest
     {
         private string _companyId;

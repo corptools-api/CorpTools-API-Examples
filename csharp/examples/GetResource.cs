@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // Example of GET /resources/:id
+    // Example of GET /resources/:resource_id
+    
     public class GetResource : BaseRequest
     {
         private string _resourceId;

@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example POST /services/:id/cancel-request
+// Example of POST /services/:service_id/cancel-request
 
 const SERVICE_ID = process.env.SERVICE_ID
 

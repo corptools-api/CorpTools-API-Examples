@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /services
+// Example of GET /services
 
 const COMPANY_ID = process.env.COMPANY_ID
 const COMPANY_NAME = process.env.COMPANY_NAME

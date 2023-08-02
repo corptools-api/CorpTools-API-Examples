@@ -1,6 +1,6 @@
 const baseRequest = require('../base_request.js').baseRequest
 
-// Example GET /services/:id/info
+// Example of GET /services/:service_id/info
 
 const SERVICE_ID = process.env.SERVICE_ID
 

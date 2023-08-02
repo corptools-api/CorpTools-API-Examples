@@ -9,7 +9,8 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# GET /filing-methods/schemas
+# Example of GET /filing-methods/schemas
+
 class GetFilingMethodsSchemasRequest(BaseRequest):
     def __init__(self):
         super().__init__()

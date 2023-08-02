@@ -2,7 +2,8 @@ using System;
 
 namespace Examples.examples
 {
-    // GET /companies/:company_id
+    // Example of GET /companies/:company_id
+
     class GetCompany : BaseRequest
     {
         private string _companyId;

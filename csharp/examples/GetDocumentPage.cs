@@ -3,7 +3,9 @@ using System;
 namespace Examples.examples
 {
     // Example of GET /documents/:document_id/page/:page_number
+
     // The specified page of the document is saved as a png in the 'documents' directory
+    
     class GetDocumentPage : BaseRequest
     {
         private string _documentId;

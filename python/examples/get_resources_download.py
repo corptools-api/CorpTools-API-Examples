@@ -10,6 +10,7 @@ from dotenv import dotenv_values
 config = dotenv_values()
 
 # Example of GET /resources/:resource_id/download
+
 # The specified resource is saved as a pdf in the 'documents' directory
 
 class GetResourcesDownloadRequest(BaseRequest):

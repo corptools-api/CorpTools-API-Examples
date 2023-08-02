@@ -8,7 +8,9 @@ from request import BaseRequest
 from dotenv import dotenv_values
 
 config = dotenv_values()
+
 # Example of POST /invoices/pay
+
 class PostInvoicesPayRequest(BaseRequest):
     def __init__(self):
         super().__init__()

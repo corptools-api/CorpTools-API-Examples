@@ -2,6 +2,7 @@
 require_once 'base_request.php';
 
 //  Example of GET /compliance-events
+
 //  Either a company or company_id may be provided, but not both
 //  Either an array of jurisdictions or jurisdiction_ids may be provided, but not both
 //  Start_date and end_date are required

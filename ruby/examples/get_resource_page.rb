@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example of GET /resources/:id/page/:page
+# Example of GET /resources/:resource_id/page/:page_number
 
 RESOURCE_ID = ENV['AGENCY_RESOURCE_ID']
 PAGE_NUMBER = ENV['PAGE_NUMBER']

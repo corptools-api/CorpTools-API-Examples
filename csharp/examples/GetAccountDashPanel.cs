@@ -2,6 +2,7 @@
 namespace Examples.examples
 {
     // Example of GET /account/dashpanel
+
     public class GetAccountDashPanel : BaseRequest
     {
         public GetAccountDashPanel()

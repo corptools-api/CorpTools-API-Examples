@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // POST /shopping-cart/checkout
+    // Example of POST /shopping-cart/checkout
+    
     public class PostShoppingCartCheckout : BaseRequest
 	{
         private string _companyId;

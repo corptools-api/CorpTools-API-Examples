@@ -9,6 +9,8 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
+# Example of POST /companies
+
 class PostCompaniesRequest(BaseRequest):
     def __init__(self):
         super().__init__()

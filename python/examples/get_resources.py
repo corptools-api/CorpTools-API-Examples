@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from request import BaseRequest
 
-# Example GET /resources
+# Example of GET /resources
 
 class GetResourcesRequest(BaseRequest):
     def __init__(self):

@@ -3,6 +3,7 @@ using System;
 namespace Examples.examples
 {
     // Example of GET /documents/:document_id/page/:page_number/url
+    
     class GetDocumentPageUrl : BaseRequest
     {
         private string _documentId;
