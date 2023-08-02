@@ -7,7 +7,7 @@ const fs = require('fs');
 const currentWorkingDirectory = process.cwd();
 const filePath = `${currentWorkingDirectory}/data/services/add_info_corp.json`;
 
-// Example POST /services/:id/info
+// Example of POST /services/:service_id/info
 
 const SERVICE_ID = process.env.SERVICE_ID
 

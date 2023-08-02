@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example of DELETE /payment-methods/:id
+// Example of DELETE /payment-methods/:payment_method_id
 
 const PAYMENT_METHOD_ID = process.env.PAYMENT_METHOD_ID;
 const url_path = `/payment-methods/${PAYMENT_METHOD_ID}`;

@@ -8,8 +8,6 @@ const fs = require('fs');
 const currentWorkingDirectory = process.cwd();
 const filePath = `${currentWorkingDirectory}/data/form_data_ein_tax_id.json`;
 
-console.log(`currentWorkingDirectory=${currentWorkingDirectory} filePath=${filePath}`)
-
 // Example of POST /order-items/requiring-attention
 
 fs.readFile(filePath, 'utf8', (err, data) => {

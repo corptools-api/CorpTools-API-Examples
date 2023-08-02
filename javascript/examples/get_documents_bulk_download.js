@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /documents/bulk-download
+// Example of GET /documents/bulk-download
 
 const DOCUMENT_IDS = [process.env.DOCUMENT_ID];
 
