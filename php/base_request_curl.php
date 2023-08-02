@@ -34,7 +34,7 @@ function send_request($method, $request_path, $request_params, $request_data, $c
     if (strpos($content_type, 'application/json') !== false) {
         echo json_encode(json_decode($result), JSON_PRETTY_PRINT);
     } elseif (strpos($content_type, 'image/png') !== false) {
-        $png_file_path = __DIR__ . "/documents/{$$response_filename}.png";
+        $png_file_path = __DIR__ . "/documents/{$response_filename}.png";
         if (file_put_contents($png_file_path, $result) === false) {
             die("Error: Unable to save PNG file");
         }
