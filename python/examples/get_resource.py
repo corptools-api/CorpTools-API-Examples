@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example GET /resources/:id
+# Example of GET /resources/:resource_id
 
 class GetResourceRequest(BaseRequest):
     def __init__(self):

@@ -10,6 +10,7 @@ from dotenv import dotenv_values
 config = dotenv_values()
 
 # Example GET /invoices
+
 # An array of company names or company_ids may be provided, but not both
 
 class GetInvoicesRequest(BaseRequest):
