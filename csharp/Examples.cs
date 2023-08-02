@@ -39,6 +39,7 @@ namespace Examples
             // requestGetPaymentMethods();
             // requestGetRegisteredAgentProducts();
             // requestGetResource();
+            // requestGetResourcePage();
             // requestGetResources();
             // requestGetServices();
             // requestGetServicesInfo();
@@ -107,6 +108,12 @@ namespace Examples
             request.SendRequest();
         }
 
+        private static void requestGetCompany()
+        {
+            GetCompany request = new GetCompany();
+            request.SendRequest();
+        }
+
         private static void requestGetCompanies()
         {
             GetCompanies request = new GetCompanies();
@@ -153,12 +160,6 @@ namespace Examples
         {
            GetDocumentPageUrl request = new GetDocumentPageUrl();
            request.SendRequest();
-        }
-
-        private static void requestGetCompany()
-        {
-            GetCompany request = new GetCompany();
-            request.SendRequest();
         }
 
         private static void requestGetFilingMethods()
@@ -218,6 +219,12 @@ namespace Examples
         private static void requestGetResource()
         {
             GetResource request = new GetResource();
+            request.SendRequest();
+        }
+
+        private static void requestGetResourcePage()
+        {
+            GetResourcePage request = new GetResourcePage();
             request.SendRequest();
         }
 

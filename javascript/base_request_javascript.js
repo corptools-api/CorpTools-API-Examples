@@ -52,10 +52,11 @@ exports.request = {
 				console.log(responseData);
 			} else if (contentType?.includes('image/png') || contentType?.includes('application/pdf')) {
 				const buffer = await response.arrayBuffer();
-				const fileName = contentType?.includes('image/png') ? 'get_document_page_response.png' : 'get_document_download_response.pdf';
+				const request_name = method.toLowerCase() + path.replace(/\//g, "_");
+				const fileName = contentType?.includes('image/png') ? `${request_name}_response.png` : `${request_name}_response.pdf`;
 				const filePath = pathModule.join(__dirname, 'documents', fileName);
 				await fs.writeFile(filePath, Buffer.from(buffer));
-				console.log(`${fileName} saved successfully.`);
+				console.log(`${fileName} saved to /documents successfully.`);
 			} else {
 				const responseData = await response.text();
 				console.log(responseData);

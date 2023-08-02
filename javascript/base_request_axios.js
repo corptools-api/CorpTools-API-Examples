@@ -43,17 +43,18 @@ exports.request = {
 			});
 
 			// Check content type and save files accordingly (if needed)
+			const request_name = method.toLowerCase() + path.replace(/\//g, "_");
 			const contentType = response.headers['content-type'];
 			if (contentType.includes('image/png')) {
 				const buffer = Buffer.from(response.data);
-				const filePath = pathModule.join(__dirname, 'documents', 'get_document_page_response.png');
+				const filePath = pathModule.join(__dirname, 'documents', `${request_name}_response.png`);
 				await fs.writeFile(filePath, buffer);
-				console.log('PNG file saved as get_document_page_response.png');
+				console.log(`PNG file saved as ${request_name}_response.png`);
 			} else if (contentType.includes('application/pdf')) {
 				const buffer = Buffer.from(response.data);
-				const filePath = pathModule.join(__dirname, 'documents', 'get_document_download_response.pdf');
+				const filePath = pathModule.join(__dirname, 'documents', `${request_name}_response.pdf`);
 				await fs.writeFile(filePath, buffer);
-				console.log('PDF file saved as get_document_download_response.pdf');
+				console.log(`PDF file saved as ${request_name}_response.pdf`);
 			} else {
 				const dataAsString = response.data.toString();
 				const dataAsJson = JSON.parse(dataAsString);

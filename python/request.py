@@ -41,18 +41,19 @@ class BaseRequest:
       headers["Content-Type"] = "application/json"
       print(f'{method} {path} body={body}')
       response = requests.request(method, url, headers=headers, data=payload)
+      request_name = method.lower() + path.replace('/', '_')
 
       if response.headers.get("content-type") == "application/json":
         return response.json()
       elif response.headers.get("content-type") == "image/png":
-        with open('./documents/get_document_page_response.png', 'wb') as file:
+        with open(f'./documents/{request_name}_response.png', 'wb') as file:
             file.write(response.content)
-        print('PNG image saved as get_document_page_response.png')
+        print(f'PNG image saved as {request_name}_response.png')
         return "PNG image downloaded."
       elif response.headers.get("content-type") == "application/pdf":
-        with open('./documents/get_document_download_response.pdf', 'wb') as file:
+        with open(f'./documents/{request_name}_response.pdf', 'wb') as file:
             file.write(response.content)
-        print('PDF file saved as get_document_download_response.pdf')
+        print(f'PDF file saved as {request_name}_response.pdf')
         return "PDF file downloaded"
       else:
         return response.text

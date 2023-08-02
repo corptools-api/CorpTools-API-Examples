@@ -46,15 +46,16 @@ module BaseRequestRoute
         puts "Response status code: #{res.code}"
 
         if res.headers[:content_type] == 'image/png'
-          File.open('./documents/get_document_page_response.png', 'wb') do |file|
+          request_name = method.to_s + path.gsub('/', '_')
+          File.open("./documents/#{script_name}_response.png", 'wb') do |file|
             file.write(res.body)
           end
-          puts 'Image saved as get_document_page_response.png'
+          puts "Image saved as #{request_name}_response.png"
         elsif res.headers[:content_type] == 'application/pdf'
-          File.open('./documents/get_document_download_response.pdf', 'wb') do |file|
+          File.open("./documents/#{request_name}_response.pdf", 'wb') do |file|
             file.write(res.body)
           end
-          puts 'PDF saved as get_document_download_response.pdf'
+          puts "PDF saved as get_#{request_name}_response.pdf"
     else
       puts JSON.pretty_generate(JSON.parse(res.body))
       JSON.parse(res.body)
