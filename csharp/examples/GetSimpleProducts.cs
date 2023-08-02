@@ -2,9 +2,9 @@
 namespace Examples.examples
 {
     // Example of GET /simple-products
-    
-	public class GetSimpleProducts : BaseRequest
-	{
+
+    public class GetSimpleProducts : BaseRequest
+    {
         private string _websiteUrl;
 
         public GetSimpleProducts()

@@ -5,8 +5,8 @@ namespace Examples.examples
 {
     // Example of POST /auth/login
     
-	public class PostAuthLogin : BaseRequest
-	{
+    public class PostAuthLogin : BaseRequest
+    {
         private string _email;
         private string _password;
         private string _website_id;
