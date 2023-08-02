@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of GET /companies/company_id
+// Example of GET /companies/:company_id
 
 $debug = true;
 $company_id   = $_ENV['COMPANY_ID'];

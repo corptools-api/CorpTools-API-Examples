@@ -4,6 +4,7 @@ require_once 'base_request.php';
 // Example of PATCH /companies
 
 // this example request will update the home_state for the specified company
+
 $debug = true;
 $company = $_ENV['COMPANY_NAME'];
 $entity_type = 'Corporation';

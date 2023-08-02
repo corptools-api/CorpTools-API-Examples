@@ -1,6 +1,8 @@
 <?php
 require_once 'base_request.php';
 
+// Example of GET /filing-products
+
 $debug = true;
 $jurisdiction = $_ENV['JURISDICTION'];
 $url   = $_ENV['WEBSITE_URL'];
