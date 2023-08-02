@@ -5,6 +5,4 @@ require_relative '../request.rb'
 
 RESOURCE_ID = ENV['AGENCY_RESOURCE_ID']
 
-puts RESOURCE_ID
-
 BaseRequestRoute.request(:get, "/resources/#{RESOURCE_ID}/download")
