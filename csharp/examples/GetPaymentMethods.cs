@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-	// Example GET /payment-methods
+	// Example of GET /payment-methods
+
 	public class GetPaymentMethods : BaseRequest
 	{
 		public GetPaymentMethods()

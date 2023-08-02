@@ -2,6 +2,7 @@
 namespace Examples.examples
 {
     // Example of GET /services
+    
 	public class GetServices : BaseRequest
 	{
         private string _companyId;

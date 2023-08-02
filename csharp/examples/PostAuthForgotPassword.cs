@@ -3,6 +3,7 @@
 namespace Examples.examples
 {
     // Example of POST /auth/forgot-password
+    
     public class PostAuthForgotPassword : BaseRequest
 	{
         private string _email;

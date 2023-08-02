@@ -4,7 +4,8 @@ using System.IO;
 
 namespace Examples.examples.models
 {
-    // Example of POST /services/:id/info
+    // Example of POST /services/:service_id/info
+
     public class PostServicesInfo : BaseRequest
     {
         private string _serviceId;

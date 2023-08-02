@@ -2,7 +2,8 @@
 
 namespace Examples.examples
 {
-    // Example POST /payment-methods
+    // Example of POST /payment-methods
+    
     public class PostPaymentMethods : BaseRequest
     {
         public PostPaymentMethods()

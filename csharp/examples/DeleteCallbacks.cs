@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-    // Example DELETE /callbacks/:id
+    // Example of DELETE /callbacks/:callback_id
+
     public class DeleteCallbacks : BaseRequest
 	{
         private string _callbackId;

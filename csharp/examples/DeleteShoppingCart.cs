@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-	// Example DELETE /shopping-cart
+	// Example of DELETE /shopping-cart
+
 	public class DeleteShoppingCart : BaseRequest
 	{
 		private string _companyId;

@@ -3,6 +3,7 @@
 namespace Examples.examples
 {
     // GET /filing-methods
+    
     class GetFilingMethods : BaseRequest
     {
         private string _companyId;
