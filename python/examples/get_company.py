@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example of GET /companies/:id
+# Example of GET /companies/:company_id
 
 class GetCompanyRequest(BaseRequest):
     def __init__(self):
