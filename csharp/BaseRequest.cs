@@ -53,7 +53,7 @@ namespace Examples
                 GenerateJwtToken(ref request, path);
                 var response = client.Get(request);
                 string contentType = response.ContentType;
-                HandleResponse(response, contentType);
+                HandleResponse(response, path, contentType);
             }
             catch (System.Net.Http.HttpRequestException ex)
             {
@@ -94,7 +94,7 @@ namespace Examples
             }
         }
 
-        protected void HandleResponse(RestResponse response, string contentType = "application/json")
+        protected void HandleResponse(RestResponse response, string path, string contentType = "application/json")
         {
             if (contentType == "application/json")
             {
@@ -102,17 +102,19 @@ namespace Examples
             }
             else if (contentType == "image/png")
             {
+                string responseFileName = BuildResponseFileName(path);
                 byte[] data = response.RawBytes;
-                string filePath = Path.Combine("documents", "get_document_page_response.png");
+                string filePath = Path.Combine("documents", $"{responseFileName}.png");
                 File.WriteAllBytes(filePath, data);
-                Console.WriteLine("PNG file saved as get_document_page_response.png");
+                Console.WriteLine($"PNG file saved as {responseFileName}.png");
             }
             else if (contentType == "application/pdf")
             {
+                string responseFileName = BuildResponseFileName(path);
                 byte[] data = response.RawBytes;
-                string filePath = Path.Combine("documents", "get_document_download_response.pdf");
+                string filePath = Path.Combine("documents", $"{responseFileName}.pdf");
                 File.WriteAllBytes(filePath, data);
-                Console.WriteLine("PDF file saved as get_document_download_response.pdf");
+                Console.WriteLine($"PDF file saved as {responseFileName}.pdf");
             }
             else
             {
@@ -150,6 +152,11 @@ namespace Examples
         {
             return BitConverter.ToString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(body)))
                 .Replace("-", String.Empty).ToLower();
+        }
+
+        internal static string BuildResponseFileName(string path)
+        {
+            return "get_" + path.Replace('/', '_') + "_response";
         }
     }
 }
