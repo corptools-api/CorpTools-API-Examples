@@ -2,8 +2,9 @@
 namespace Examples.examples
 {
     // Example of GET /order-items/requiring-attention
+    
     public class GetOrderItemsRequiringAttention : BaseRequest
-	{
+    {
         private string _companyId;
 
         public GetOrderItemsRequiringAttention()

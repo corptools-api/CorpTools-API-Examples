@@ -2,8 +2,9 @@
 namespace Examples.examples
 {
     // Example of GET /resources
-	public class GetResources : BaseRequest
-	{
+
+    public class GetResources : BaseRequest
+    {
 		public GetResources()
 		{
             Console.WriteLine($"GetResources");

@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example GET /documents/bulk-download
+# Example of GET /documents/bulk-download
 
 class GetDocumentsBulkDownloadRequest(BaseRequest):
     def __init__(self):

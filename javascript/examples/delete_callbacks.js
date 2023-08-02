@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example of DELETE /callbacks/:id
+// Example of DELETE /callbacks/:callback_id
 
 const CALLBACK_ID = process.env.CALLBACK_ID;
 const url_path = `/callbacks/${CALLBACK_ID}`

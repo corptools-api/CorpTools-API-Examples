@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example of POST /services/:id/info
+# Example of POST /services/:service_id/info
 
 SERVICE_ID = ENV['SERVICE_ID']
 

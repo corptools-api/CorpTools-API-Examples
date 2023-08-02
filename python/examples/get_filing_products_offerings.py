@@ -9,6 +9,8 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
+# Example of GET /filing-products/offerings
+
 class GetFilingProductsOfferingsRequest(BaseRequest):
     def __init__(self):
         super().__init__()

@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 
 namespace Examples.examples
 {
-    // Example PATCH /payment-methods/:id
+    // Example PATCH /payment-methods/:payment_method_id
+
     public class PatchPaymentMethods : BaseRequest
     {
         private string _paymentMethodId;

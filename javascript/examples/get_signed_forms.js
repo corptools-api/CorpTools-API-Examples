@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /signed-forms
+// Example of GET /signed-forms
 
 const FILING_METHOD_ID = process.env.FILING_METHOD_ID
 const WEBSITE_ID = process.env.WEBSITE_ID

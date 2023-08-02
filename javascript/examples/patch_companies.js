@@ -4,7 +4,10 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
+// Example of PATCH /companies
+
 // this example will update the company name
+
 const COMPANY = process.env.COMPANY_NAME;
 const NAME = 'Awesome Newer Name'
 

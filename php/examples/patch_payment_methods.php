@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of PATCH /payment-methods/:id
+// Example of PATCH /payment-methods/:payment_method_id
 
 $debug = true;
 $payment_method_id = $_ENV['PAYMENT_METHOD_ID'];

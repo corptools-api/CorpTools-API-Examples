@@ -3,7 +3,8 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /invoices
+// Example of GET /invoices
+
 // An array of company names or company_ids may be provided, but not both
 
 const COMPANY_IDS = [process.env.COMPANY_ID];

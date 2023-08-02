@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of POST /services/:id/info
+// Example of POST /services/:service_id/info
 
 $debug = true;
 $service_id = $_ENV['SERVICE_ID'];

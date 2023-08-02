@@ -2,8 +2,9 @@
 namespace Examples.examples
 {
     // Example GET /shopping-cart
+    
     public class GetShoppingCart : BaseRequest
-	{
+    {
         private string _companyId;
 
         public GetShoppingCart()

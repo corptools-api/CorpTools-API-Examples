@@ -3,7 +3,7 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
-// Example GET /simple-products
+// Example of GET /simple-products
 
 const WEBSITE_URL = process.env.WEBSITE_URL
 

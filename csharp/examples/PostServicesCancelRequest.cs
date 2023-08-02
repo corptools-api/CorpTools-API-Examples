@@ -1,7 +1,8 @@
 ﻿using System;
 namespace Examples.examples
 {
-	// Example of POST /services/:id/cancel-request
+	// Example of POST /services/:service_id/cancel-request
+
 	public class PostServicesCancelRequest : BaseRequest
 	{
         private string _serviceId;

@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from request import BaseRequest
 
-# Example of GET /account
+# Example of GET /account/dashpanel
 
 class GetAccountDashPanelRequest(BaseRequest):
     def __init__(self):

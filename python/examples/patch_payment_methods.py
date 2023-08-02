@@ -34,7 +34,7 @@ PAYMENT_METHOD = {
     'billing_address': BILLING_ADDRESS
 }
 
-# Example of PATCH /payment-methods/:id
+# Example of PATCH /payment-methods/:payment_method_id
 
 class PatchPaymentMethodsRequest(BaseRequest):
     def __init__(self):

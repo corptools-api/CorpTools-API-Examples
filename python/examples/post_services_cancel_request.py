@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example of POST /services/:id/cancel-request
+# Example of POST /services/:service_id/cancel-request
 
 class PostServicesCancelRequest(BaseRequest):
     def __init__(self):

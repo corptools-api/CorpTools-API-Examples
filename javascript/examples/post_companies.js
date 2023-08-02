@@ -4,6 +4,8 @@ const path = require('path');
 process.chdir(path.resolve(__dirname, '../../'));
 require('dotenv').config();
 
+// Example of POST /companies
+
 const COMPANY_NAME = process.env.COMPANY_NAME;
 const JURISDICTION = process.env.JURISDICTION;
 const ENTITY_TYPE = process.env.ENTITY_TYPE;

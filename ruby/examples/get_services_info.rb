@@ -1,6 +1,6 @@
 require_relative '../request.rb'
 
-# Example of GET /services/:id/info
+# Example of GET /services/:service_id/info
 
 SERVICE_ID = ENV['SERVICE_ID']
 

@@ -5,6 +5,7 @@ using System.Net.Http;
 namespace Examples.examples
 {
     // Example of GET /invoices
+    
     // An array of company names or company_ids may be provided, but not both
 
     public class GetInvoices : BaseRequest

@@ -2,6 +2,7 @@
 require_once 'base_request.php';
 
 // Example of GET /documents/:document_id/page/:page_number
+
 // The specified page of the document is saved as a png in the 'documents' directory
 
 $debug = true;
