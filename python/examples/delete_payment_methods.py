@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example of DELETE /payment-methods/:id
+# Example of DELETE /payment-methods/:payment_method_id
 
 class DeletePaymentMethodsRequest(BaseRequest):
     def __init__(self):

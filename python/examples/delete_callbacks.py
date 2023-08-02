@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-# Example of DELETE /callbacks/:id
+# Example of DELETE /callbacks/:callback_id
 
 class DeleteCallbacksRequest(BaseRequest):
     def __init__(self):
