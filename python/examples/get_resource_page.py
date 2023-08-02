@@ -15,12 +15,12 @@ class GetResourcePageRequest(BaseRequest):
     def __init__(self):
         super().__init__()
     
-    def get_resource_page(self, resource_id, page):
-        return self.make_request('GET', f'/resources/{resource_id}/page/{page}')
+    def get_resource_page(self, resource_id, page_number):
+        return self.make_request('GET', f'/resources/{resource_id}/page/{page_number}')
 
 resource_id = config['AGENCY_RESOURCE_ID']
-page = 1
+page_number = config['PAGE_NUMBER']
 request = GetResourcePageRequest()
-response = request.get_resource_page(resource_id, page)
+response = request.get_resource_page(resource_id, page_number)
 
 pprint.pprint(response)
