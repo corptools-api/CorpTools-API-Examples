@@ -38,14 +38,15 @@ function send_request($method, $request_path, $request_params, $request_data, $c
     }
     if ($response != null) {
         $content_type = $response->getHeaderLine('content-type');
+        $response_filename = strtolower($method) . str_replace(['/'], ['_'], $request_path) . '_response';
         if (strpos($content_type, 'application/json') !== false) {
             echo json_encode(json_decode($response->getBody()), JSON_PRETTY_PRINT);
         } elseif (strpos($content_type, 'image/png') !== false) {
-            file_put_contents('./documents/get_document_page_response.png', $response->getBody());
-            echo 'PNG image saved as get_document_page_response.png';
+            file_put_contents("./documents/{$response_filename}.png", $response->getBody());
+            echo "PNG image saved as {$response_filename}.png";
         } elseif (strpos($content_type, 'application/pdf') !== false) {
-            file_put_contents('./documents/get_document_download_response.pdf', $response->getBody());
-            echo 'PDF file saved as get_document_download_response.pdf';
+            file_put_contents("./documents/{$response_filename}.pdf", $response->getBody());
+            echo "PDF file saved as {$response_filename}.pdf";
         } else {
             echo $response->getBody();
         }
