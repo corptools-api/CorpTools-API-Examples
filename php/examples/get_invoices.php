@@ -2,6 +2,7 @@
 require_once 'base_request.php';
 
 // Example of GET /invoices
+
 // An array of company names or company_ids may be provided, but not both
 
 $debug = true;

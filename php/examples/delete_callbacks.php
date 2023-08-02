@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of DELETE /callbacks/:id
+// Example of DELETE /callbacks/:callback_id
 
 $debug = true;
 $callback_id = $_ENV['CALLBACK_ID'];

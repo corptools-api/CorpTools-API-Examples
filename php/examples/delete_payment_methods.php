@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of DELETE /payment-methods/:id
+// Example of DELETE /payment-methods/:payment_method_id
 
 $debug = true;
 $payment_method_id = $_ENV['PAYMENT_METHOD_ID'];

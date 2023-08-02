@@ -1,7 +1,7 @@
 <?php
 require_once 'base_request.php';
 
-// Example of GET /resources/:id/page/:page
+// Example of GET /resources/:resource_id/page/:page_number
 
 $debug = true;
 $resource_id = $_ENV['AGENCY_RESOURCE_ID'];
