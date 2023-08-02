@@ -41,6 +41,7 @@ namespace Examples
             // requestGetResource();
             // requestGetResourcePage();
             // requestGetResources();
+            // requestGetResourcesDownload();
             // requestGetServices();
             // requestGetServicesInfo();
             // requestGetShoppingCart();
@@ -232,6 +233,12 @@ namespace Examples
         {
             GetResources request = new GetResources();
             request.SendRequest();
+        }
+
+        private static void requestGetResourcesDownload()
+        {
+           GetResourcesDownload request = new GetResourcesDownload();
+           request.SendRequest();
         }
 
         private static void requestGetServices()

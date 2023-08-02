@@ -45,9 +45,10 @@ module BaseRequestRoute
 
         puts "Response status code: #{res.code}"
 
+        request_name = method.to_s + path.gsub('/', '_')
+
         if res.headers[:content_type] == 'image/png'
-          request_name = method.to_s + path.gsub('/', '_')
-          File.open("./documents/#{script_name}_response.png", 'wb') do |file|
+          File.open("./documents/#{request_name}_response.png", 'wb') do |file|
             file.write(res.body)
           end
           puts "Image saved as #{request_name}_response.png"
