@@ -2,9 +2,9 @@
 namespace Examples.examples
 {
     // Example of GET /services
-    
-	public class GetServices : BaseRequest
-	{
+
+    public class GetServices : BaseRequest
+    {
         private string _companyId;
         private string _companyName;
         private int _limit;

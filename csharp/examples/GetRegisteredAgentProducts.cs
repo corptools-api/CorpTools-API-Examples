@@ -2,6 +2,7 @@
 namespace Examples.examples
 {
     // Example of GET /registered-agent-products
+
     public class GetRegisteredAgentProducts : BaseRequest
     {
         private string _websiteUrl;
