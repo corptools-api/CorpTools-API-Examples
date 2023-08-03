@@ -5,12 +5,12 @@ require('dotenv').config();
 
 // Example of GET /documents/bulk-download
 
-const DOCUMENT_IDS = [process.env.DOCUMENT_ID];
+const DOCUMENT_ID = process.env.DOCUMENT_ID;
 
-const idsArray = DOCUMENT_IDS.map((id) => `ids[]=${encodeURIComponent(id)}`);
-const queryString = idsArray.join('&');
-const urlWithParams = `/documents/bulk-download?${queryString}`
+params = {
+  ids: [DOCUMENT_ID]
+}
 
-token = baseRequest.request.token({ path: urlWithParams });
+token = baseRequest.request.token({ path: '/documents/bulk-download' , queryParams: params});
 
-baseRequest.request.get({ path: urlWithParams, token: token});
+baseRequest.request.get({ path: '/documents/bulk-download', token: token, queryParams: params});
