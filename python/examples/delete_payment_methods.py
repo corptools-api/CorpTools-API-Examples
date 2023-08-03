@@ -18,9 +18,11 @@ class DeletePaymentMethodsRequest(BaseRequest):
     def delete_payment_methods(self, payment_method_id):
         return self.make_request('DELETE', f'/payment-methods/{payment_method_id}')
 
-payment_method_id = config['PAYMENT_METHOD_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    payment_method_id = config['PAYMENT_METHOD_ID']
 
-request = DeletePaymentMethodsRequest()
-response = request.delete_payment_methods(payment_method_id)
+    request = DeletePaymentMethodsRequest()
+    response = request.delete_payment_methods(payment_method_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

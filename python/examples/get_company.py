@@ -19,9 +19,11 @@ class GetCompanyRequest(BaseRequest):
         path = f"/companies/{company_id}"
         return self.make_request("GET", path)
 
-company_id = config['COMPANY_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
 
-get_company_request = GetCompanyRequest()
-company = get_company_request.get_company()
+    get_company_request = GetCompanyRequest()
+    company = get_company_request.get_company()
 
-pprint.pprint(company)
+    pprint.pprint(company)

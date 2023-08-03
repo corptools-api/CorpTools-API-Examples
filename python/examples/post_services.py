@@ -23,11 +23,13 @@ class PostServicesRequest(BaseRequest):
         }
         return self.make_request('POST', '/services', body=body)
 
-company_id = config['COMPANY_ID'];
-company_name = config['COMPANY_NAME'];
-jurisdiction_id = config['JURISDICTION_ID'];
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID'];
+    company_name = config['COMPANY_NAME'];
+    jurisdiction_id = config['JURISDICTION_ID'];
 
-request = PostServicesRequest()
-response = request.post_services(company_id, company_name, jurisdiction_id)
+    request = PostServicesRequest()
+    response = request.post_services(company_id, company_name, jurisdiction_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

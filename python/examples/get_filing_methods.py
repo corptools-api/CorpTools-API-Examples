@@ -23,11 +23,13 @@ class GetFilingMethodsRequest(BaseRequest):
         }
         return self.make_request('GET', '/filing-methods', params=params)
 
-company_id = config['COMPANY_ID']
-product_id = config['FILING_PRODUCT_ID']
-jurisdiction = config['JURISDICTION']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    product_id = config['FILING_PRODUCT_ID']
+    jurisdiction = config['JURISDICTION']
 
-request = GetFilingMethodsRequest()
-response = request.get_filing_methods(company_id, product_id, jurisdiction)
+    request = GetFilingMethodsRequest()
+    response = request.get_filing_methods(company_id, product_id, jurisdiction)
 
-pprint.pprint(response)
+    pprint.pprint(response)

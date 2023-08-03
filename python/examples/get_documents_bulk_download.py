@@ -21,10 +21,12 @@ class GetDocumentsBulkDownloadRequest(BaseRequest):
         }
         return self.make_request('GET', '/documents/bulk-download', params=params)
 
-document_id  = config['DOCUMENT_ID']
-document_ids = [document_id]
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    document_id  = config['DOCUMENT_ID']
+    document_ids = [document_id]
 
-request = GetDocumentsBulkDownloadRequest()
-response = request.bulk_download_documents(document_ids)
+    request = GetDocumentsBulkDownloadRequest()
+    response = request.bulk_download_documents(document_ids)
 
-pprint.pprint(response)
+    pprint.pprint(response)
