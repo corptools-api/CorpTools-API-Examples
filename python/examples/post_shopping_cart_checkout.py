@@ -23,11 +23,13 @@ class PostShoppingCartCheckoutRequest(BaseRequest):
         }
         return self.make_request('POST', '/shopping-cart/checkout', body=body)
 
-company_id = config['COMPANY_ID']
-item_id = config['SHOPPING_CART_ITEM_ID']
-payment_method_id = config['PAYMENT_METHOD_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    item_id = config['SHOPPING_CART_ITEM_ID']
+    payment_method_id = config['PAYMENT_METHOD_ID']
 
-request = PostShoppingCartCheckoutRequest()
-response = request.post_checkout(company_id, item_id, payment_method_id)
+    request = PostShoppingCartCheckoutRequest()
+    response = request.post_checkout(company_id, item_id, payment_method_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

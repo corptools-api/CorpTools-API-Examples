@@ -45,8 +45,10 @@ class PatchPaymentMethodsRequest(BaseRequest):
         path = f'/payment-methods/{payment_method_id}'
         return self.make_request('PATCH', path, body=body)
 
-payment_method_id = config['PAYMENT_METHOD_ID']
-request = PatchPaymentMethodsRequest()
-response = request.patch_payment_methods(payment_method_id)
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    payment_method_id = config['PAYMENT_METHOD_ID']
+    request = PatchPaymentMethodsRequest()
+    response = request.patch_payment_methods(payment_method_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

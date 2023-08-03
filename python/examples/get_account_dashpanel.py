@@ -16,7 +16,9 @@ class GetAccountDashPanelRequest(BaseRequest):
         path = "/account/dashpanel"
         return self.make_request("GET", path)
 
-request = GetAccountDashPanelRequest()
-account = request.get_account_dashpanel()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    request = GetAccountDashPanelRequest()
+    account = request.get_account_dashpanel()
 
-pprint.pprint(account)
+    pprint.pprint(account)

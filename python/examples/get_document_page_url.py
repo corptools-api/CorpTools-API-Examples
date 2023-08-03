@@ -19,10 +19,12 @@ class GetDocumentPageUrlRequest(BaseRequest):
         path = f"/documents/{document_id}/page/{page_number}/url"
         return self.make_request("GET", path)
 
-document_id = config['DOCUMENT_ID']
-page_number = config['PAGE_NUMBER']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    document_id = config['DOCUMENT_ID']
+    page_number = config['PAGE_NUMBER']
 
-get_document_page_url_request = GetDocumentPageUrlRequest()
-url = get_document_page_url_request.get_document_page_url()
+    get_document_page_url_request = GetDocumentPageUrlRequest()
+    url = get_document_page_url_request.get_document_page_url()
 
-pprint.pprint(url)
+    pprint.pprint(url)

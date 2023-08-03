@@ -40,11 +40,12 @@ class PostPaymentMethodsRequest(BaseRequest):
     def __init__(self):
         super().__init__()
     
-    def post_payment_methods(self):
-        body = PAYMENT_METHOD
-        return self.make_request('POST', '/payment-methods', body=body)
+    def post_payment_methods(self, payment_card_info):
+        return self.make_request('POST', '/payment-methods', body=payment_card_info)
 
-request = PostPaymentMethodsRequest()
-response = request.post_payment_methods()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    request = PostPaymentMethodsRequest()
+    response = request.post_payment_methods(PAYMENT_METHOD)
 
-pprint.pprint(response)
+    pprint.pprint(response)

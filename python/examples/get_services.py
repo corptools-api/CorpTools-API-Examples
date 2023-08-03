@@ -24,12 +24,14 @@ class GetServicesRequest(BaseRequest):
         }
         return self.make_request('GET', '/services', params=params)
 
-company_id  = config['COMPANY_ID']
-company_name  = config['COMPANY_NAME']
-limit = 3
-offset = 0
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id  = config['COMPANY_ID']
+    company_name  = config['COMPANY_NAME']
+    limit = 3
+    offset = 0
 
-request = GetServicesRequest()
-response = request.get_services(company_id, company_name, limit, offset)
+    request = GetServicesRequest()
+    response = request.get_services(company_id, company_name, limit, offset)
 
-pprint.pprint(response)
+    pprint.pprint(response)
