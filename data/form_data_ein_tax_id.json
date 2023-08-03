@@ -1,6 +1,7 @@
 {
   "ssn":"555-55-5555",
   "start_date":"04/04/2023",
+  "fiscal_year_end": "01",
   "entity_type":"Limited Liability Company",
   "ein_trucking":true,
   "ein_excise_tax":true,

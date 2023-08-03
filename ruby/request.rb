@@ -59,7 +59,7 @@ module BaseRequestRoute
           puts "PDF saved as get_#{request_name}_response.pdf"
     else
       puts JSON.pretty_generate(JSON.parse(res.body))
-      JSON.parse(res.body)
+      return JSON.parse(res.body)
     end
     rescue StandardError => error
       puts error

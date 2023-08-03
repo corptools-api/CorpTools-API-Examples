@@ -5,7 +5,7 @@ require_relative '../request.rb'
 COMPANY_ID = ENV['COMPANY_ID']
 
 params = {
-  company_id: [COMPANY_ID]
+  company_ids: [COMPANY_ID]
 }
 
 BaseRequestRoute.request(:get, '/shopping-cart', query_params: params)
