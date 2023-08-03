@@ -18,9 +18,11 @@ class GetResourcePageRequest(BaseRequest):
     def get_resource_page(self, resource_id, page_number):
         return self.make_request('GET', f'/resources/{resource_id}/page/{page_number}')
 
-resource_id = config['AGENCY_RESOURCE_ID']
-page_number = config['PAGE_NUMBER']
-request = GetResourcePageRequest()
-response = request.get_resource_page(resource_id, page_number)
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    resource_id = config['AGENCY_RESOURCE_ID']
+    page_number = config['PAGE_NUMBER']
+    request = GetResourcePageRequest()
+    response = request.get_resource_page(resource_id, page_number)
 
-pprint.pprint(response)
+    pprint.pprint(response)

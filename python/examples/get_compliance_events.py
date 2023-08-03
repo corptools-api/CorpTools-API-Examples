@@ -20,10 +20,12 @@ class ComplianceEventsRequest(BaseRequest):
         params = { 'start_date': start_date, 'end_date': end_date, 'limit': limit }
         return self.make_request("GET", path, params=params)
 
-start_date = config['START_DATE']
-end_date = config['END_DATE']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    start_date = config['START_DATE']
+    end_date = config['END_DATE']
 
-compliance_request = ComplianceEventsRequest()
-compliance_events = compliance_request.get_compliance_events(start_date, end_date)
+    compliance_request = ComplianceEventsRequest()
+    compliance_events = compliance_request.get_compliance_events(start_date, end_date)
 
-pprint.pprint(compliance_events)
+    pprint.pprint(compliance_events)

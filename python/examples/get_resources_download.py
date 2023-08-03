@@ -21,9 +21,11 @@ class GetResourcesDownloadRequest(BaseRequest):
         path = f"/resources/{resource_id}/download"
         return self.make_request("GET", path)
 
-resource_id = config['AGENCY_RESOURCE_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    resource_id = config['AGENCY_RESOURCE_ID']
 
-request = GetResourcesDownloadRequest()
-response = request.get_resources_download()
+    request = GetResourcesDownloadRequest()
+    response = request.get_resources_download()
 
-pprint.pprint(response)
+    pprint.pprint(response)

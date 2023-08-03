@@ -21,9 +21,11 @@ class GetWebsites(BaseRequest):
         }
         return self.make_request('GET', '/websites', params=params)
 
-website_url  = config['WEBSITE_URL']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    website_url  = config['WEBSITE_URL']
 
-request = GetWebsites()
-response = request.get_websites(website_url)
+    request = GetWebsites()
+    response = request.get_websites(website_url)
 
-pprint.pprint(response)
+    pprint.pprint(response)

@@ -21,9 +21,11 @@ class GetDocumentRequest(BaseRequest):
         path = f"/documents/{document_id}"
         return self.make_request("GET", path)
 
-document_id = config['DOCUMENT_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    document_id = config['DOCUMENT_ID']
 
-get_document_request = GetDocumentRequest()
-document = get_document_request.get_document()
+    get_document_request = GetDocumentRequest()
+    document = get_document_request.get_document()
 
-pprint.pprint(document)
+    pprint.pprint(document)

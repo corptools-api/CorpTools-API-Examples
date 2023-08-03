@@ -24,15 +24,16 @@ class PostOrderItemsRequiringAttentionRequest(BaseRequest):
         }
         return self.make_request('POST', '/order-items/requiring-attention', body=body)
 
-ORDER_ITEM_ID = config['ORDER_ITEM_ID']
-COMPANY_ID = config['COMPANY_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    ORDER_ITEM_ID = config['ORDER_ITEM_ID']
+    COMPANY_ID = config['COMPANY_ID']
+    cwd = os.getcwd();
+    file_path = f"{cwd}/../data/form_data_ein_tax_id.json";
 
-cwd = os.getcwd();
-file_path = f"{cwd}/../data/form_data.json";
-
-with open(file_path, 'r') as file:
-    FORM_DATA = json.load(file)
-    print(f"form_data: {FORM_DATA}\n")
-    request = PostOrderItemsRequiringAttentionRequest()
-    response = request.post_requring_attention(COMPANY_ID, ORDER_ITEM_ID, FORM_DATA)
-    pprint.pprint(response)
+    with open(file_path, 'r') as file:
+        FORM_DATA = json.load(file)
+        print(f"form_data: {FORM_DATA}\n")
+        request = PostOrderItemsRequiringAttentionRequest()
+        response = request.post_requring_attention(COMPANY_ID, ORDER_ITEM_ID, FORM_DATA)
+        pprint.pprint(response)

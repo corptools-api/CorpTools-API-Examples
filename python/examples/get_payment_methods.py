@@ -18,7 +18,9 @@ class GetPaymentMethodsRequest(BaseRequest):
     def get_payment_methods(self):
         return self.make_request('GET', '/payment-methods')
 
-request = GetPaymentMethodsRequest()
-response = request.get_payment_methods()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    request = GetPaymentMethodsRequest()
+    response = request.get_payment_methods()
 
-pprint.pprint(response)
+    pprint.pprint(response)

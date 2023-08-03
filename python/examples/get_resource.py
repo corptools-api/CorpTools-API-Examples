@@ -18,8 +18,10 @@ class GetResourceRequest(BaseRequest):
     def get_resource(self, resource_id):
         return self.make_request('GET', f'/resources/{resource_id}')
 
-resource_id = config['AGENCY_RESOURCE_ID']
-request = GetResourceRequest()
-response = request.get_resource(resource_id)
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    resource_id = config['AGENCY_RESOURCE_ID']
+    request = GetResourceRequest()
+    response = request.get_resource(resource_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

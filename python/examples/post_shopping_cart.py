@@ -24,13 +24,15 @@ class PostShoppingCartRequest(BaseRequest):
         }
         return self.make_request('POST', '/shopping-cart', body=body)
 
-company_id = config['COMPANY_ID'];
-filing_product_id = config['FILING_PRODUCT_ID'];
-filing_method_id  = config['FILING_METHOD_ID'];
-quantity = 1;
-# form_data = {}; # optional, expects JSON mapping to fields of filing method schema
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID'];
+    filing_product_id = config['FILING_PRODUCT_ID'];
+    filing_method_id  = config['FILING_METHOD_ID'];
+    quantity = 1;
+    # form_data = {}; # optional, expects JSON mapping to fields of filing method schema
 
-request = PostShoppingCartRequest()
-response = request.post_shopping_cart(company_id, filing_product_id, filing_method_id, quantity)
+    request = PostShoppingCartRequest()
+    response = request.post_shopping_cart(company_id, filing_product_id, filing_method_id, quantity)
 
-pprint.pprint(response)
+    pprint.pprint(response)

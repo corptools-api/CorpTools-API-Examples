@@ -22,10 +22,12 @@ class GetFilingMethodsSchemasRequest(BaseRequest):
         }
         return self.make_request('GET', '/filing-methods/schemas', params=params)
 
-company_id = config['COMPANY_ID']
-method_id = config['FILING_METHOD_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    method_id = config['FILING_METHOD_ID']
 
-request = GetFilingMethodsSchemasRequest()
-response = request.get_filing_methods_schemas(company_id, method_id)
+    request = GetFilingMethodsSchemasRequest()
+    response = request.get_filing_methods_schemas(company_id, method_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)
