@@ -68,17 +68,24 @@ exports.request = {
 		this.base_request({ method: 'DELETE', path: path, token: token, body: body });
 	},
 	get: function ({ path, token, queryParams = '' }) {
-		let url;
-		if (queryParams) {
-			// read in query parameters to set on the URL
-			const params = new URLSearchParams();
+		if (Object.keys(queryParams).length) {
+			const queryArray = [];
 			for (let key in queryParams) {
 				if (queryParams.hasOwnProperty(key)) {
 					const value = queryParams[key];
-					params.append(key, value);
+					if (Array.isArray(value)) {
+						for (const v of value) {
+							queryArray.push(`${encodeURIComponent(key)}[]=${encodeURIComponent(v)}`);
+						}
+					} else if (typeof value === 'object') {
+						queryArray.push(`${encodeURIComponent(key)}=${encodeURIComponent(JSON.stringify(value))}`);
+					} else {
+						queryArray.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+					}
 				}
 			}
-			path += '?' + params.toString();
+			const queryString = queryArray.join('&');
+			path += '?' + queryString;
 		}
 
 		this.base_request({ method: 'GET', path: path, token: token });
