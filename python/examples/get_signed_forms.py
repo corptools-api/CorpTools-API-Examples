@@ -22,10 +22,12 @@ class GetSignedFormsRequest(BaseRequest):
         }
         return self.make_request('GET', '/signed-forms', params=params)
 
-filing_method_id = config['FILING_METHOD_ID']
-website_id  = config['WEBSITE_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    filing_method_id = config['FILING_METHOD_ID']
+    website_id  = config['WEBSITE_ID']
 
-request = GetSignedFormsRequest()
-response = request.get_signed_forms(filing_method_id, website_id)
+    request = GetSignedFormsRequest()
+    response = request.get_signed_forms(filing_method_id, website_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

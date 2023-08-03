@@ -18,9 +18,11 @@ class GetServicesInfoRequest(BaseRequest):
     def get_info(self, service_id):
         return self.make_request('GET', f'/services/{service_id}/info')
 
-service_id = config['SERVICE_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    service_id = config['SERVICE_ID']
 
-request = GetServicesInfoRequest()
-response = request.get_info(service_id)
+    request = GetServicesInfoRequest()
+    response = request.get_info(service_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

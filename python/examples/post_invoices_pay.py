@@ -23,10 +23,12 @@ class PostInvoicesPayRequest(BaseRequest):
         }
         return self.make_request("POST", path, body=body)
 
-payment_method_id = config['PAYMENT_METHOD_ID']
-invoice_ids = config['INVOICE_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    payment_method_id = config['PAYMENT_METHOD_ID']
+    invoice_ids = config['INVOICE_ID']
 
-post_invoices_pay_request = PostInvoicesPayRequest()
-post_invoices_pay_response = post_invoices_pay_request.post_invoices_pay(payment_method_id, invoice_ids)
+    post_invoices_pay_request = PostInvoicesPayRequest()
+    post_invoices_pay_response = post_invoices_pay_request.post_invoices_pay(payment_method_id, invoice_ids)
 
-pprint.pprint(post_invoices_pay_response)
+    pprint.pprint(post_invoices_pay_response)

@@ -21,11 +21,12 @@ class GetOrderItemsRequiringAttentionRequest(BaseRequest):
         }
         return self.make_request('GET', '/order-items/requiring-attention', params=params)
 
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    company_ids = [company_id]
 
-company_id = config['COMPANY_ID']
-company_ids = [company_id]
+    request = GetOrderItemsRequiringAttentionRequest()
+    response = request.get_requiring_attention(company_ids)
 
-request = GetOrderItemsRequiringAttentionRequest()
-response = request.get_requiring_attention(company_ids)
-
-pprint.pprint(response)
+    pprint.pprint(response)

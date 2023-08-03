@@ -18,8 +18,10 @@ class PostServicesCancelRequest(BaseRequest):
     def post_cancel(self, service_id):
         return self.make_request('POST', f'/services/{service_id}/cancel-request')
 
-service_id = config['SERVICE_ID'];
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    service_id = config['SERVICE_ID'];
 
-request = PostServicesCancelRequest()
-response = request.post_cancel(service_id)
-pprint.pprint(response)
+    request = PostServicesCancelRequest()
+    response = request.post_cancel(service_id)
+    pprint.pprint(response)

@@ -19,9 +19,11 @@ class GetDocumentDownloadRequest(BaseRequest):
         path = f"/documents/{document_id}/download"
         return self.make_request("GET", path)
 
-document_id = config['DOCUMENT_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    document_id = config['DOCUMENT_ID']
 
-get_document_download_request = GetDocumentDownloadRequest()
-document_download = get_document_download_request.get_document_download()
+    get_document_download_request = GetDocumentDownloadRequest()
+    document_download = get_document_download_request.get_document_download()
 
-pprint.pprint(document_download)
+    pprint.pprint(document_download)

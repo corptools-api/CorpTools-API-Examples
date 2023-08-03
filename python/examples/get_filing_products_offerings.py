@@ -22,10 +22,12 @@ class GetFilingProductsOfferingsRequest(BaseRequest):
         }
         return self.make_request('GET', '/filing-products/offerings', params=params)
 
-company_id = config['COMPANY_ID']
-jurisdiction = config['JURISDICTION']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    jurisdiction = config['JURISDICTION']
 
-request = GetFilingProductsOfferingsRequest()
-response = request.get_filing_products_offerings(company_id, jurisdiction)
+    request = GetFilingProductsOfferingsRequest()
+    response = request.get_filing_products_offerings(company_id, jurisdiction)
 
-pprint.pprint(response)
+    pprint.pprint(response)

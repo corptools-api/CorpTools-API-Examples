@@ -14,4 +14,8 @@ The Python examples read in configurable properties from a shared `.env` file at
 - `pip3 install python-dotenv`
 
 ## Getting Started
-1. `python3 examples/<script-filename>` (see `examples` directory for example options)
+1. `python3 examples/<script-filename> <standalone-arg>` (see `examples` directory for example options)
+	- The `<standalone-arg>` runs the script in a standalone example mode, the argument can be any value
+2. `python3 examples/end-to-end/<script-filename>` 
+	- More complex examples of a series of requests that depend upon each other 
+	- These examples reuse the request classes from the `/examples/` folder 

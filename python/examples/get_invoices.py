@@ -23,10 +23,12 @@ class GetInvoicesRequest(BaseRequest):
         }
         return self.make_request('GET', '/invoices', params=params)
 
-company_id  = config['COMPANY_ID']
-company_ids = [company_id]
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id  = config['COMPANY_ID']
+    company_ids = [company_id]
 
-request = GetInvoicesRequest()
-response = request.get_invoices(company_ids)
+    request = GetInvoicesRequest()
+    response = request.get_invoices(company_ids)
 
-pprint.pprint(response)
+    pprint.pprint(response)
