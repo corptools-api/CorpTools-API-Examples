@@ -140,10 +140,8 @@ let filingProductId = '';
 
 		// Step 7: Perform shopping cart checkout 
 
-		// in this example, all cart items for the company are added to the order, along with the specified item looked up in step 6.
-		// either is optional
 		body = { 
-			company_ids: [COMPANY_ID],
+			// company_ids: [COMPANY_ID], // would include all items from the company's shopping cart
 			item_ids: [shoppingCartItemId],
 			payment_token: paymentMethodId
 		};
