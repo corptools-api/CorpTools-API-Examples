@@ -4,6 +4,7 @@ import json
 from multiprocessing.sharedctypes import Value
 import jwt
 import requests
+import urllib.parse
 from dotenv import dotenv_values
 
 config = dotenv_values()
@@ -28,15 +29,30 @@ class BaseRequest:
       headers = {}
     if params and body:
       raise ValueError("Both 'params' and 'body' cannot be provided simultaneously. Please modify request.")
-    if params:
-        payload = json.dumps(params)
-    elif body:
-      payload = json.dumps(body)
+
+    url = self.api_url + path
+    payload = ""
+
+    if method == "GET" and params:
+        query_string = []
+        for key, value in params.items():
+            if isinstance(value, list):
+                for v in value:
+                    query_string.append(f"{key}[]={urllib.parse.quote(v)}")
+            elif isinstance(value, dict):
+                serialized_value = urllib.parse.quote(json.dumps(value))
+                query_string.append(f"{key}={serialized_value}")
+            else:
+                query_string.append(f"{key}={urllib.parse.quote(str(value))}")
+        query_params = '&'.join(query_string)
+        url = f"{url}?{query_params}"
+        response = requests.get(url, headers=headers)
     else:
-      payload = ""
+        if body:
+          payload = json.dumps(body)
     
     try:
-      url = self.api_url + path
+      url = url
       headers["Authorization"] = 'Bearer %s' % self.generate_token(path, payload)
       headers["Content-Type"] = "application/json"
       print(f'{method} {path} body={body}')
