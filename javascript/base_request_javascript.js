@@ -50,6 +50,7 @@ exports.request = {
 			if (contentType?.includes('application/json')) {
 				const responseData = await response.json();
 				console.log(responseData);
+				return responseData;
 			} else if (contentType?.includes('image/png') || contentType?.includes('application/pdf')) {
 				const buffer = await response.arrayBuffer();
 				const request_name = method.toLowerCase() + path.replace(/\//g, "_");
@@ -66,11 +67,12 @@ exports.request = {
 		}
 	},
 
-	delete: function ({ path, token, body = {} }) {
-		this.base_request({ method: 'DELETE', path: path, token: token, body: body });
+	delete: async function ({ path, token, body = {} }) {
+		let response = await this.base_request({ method: 'DELETE', path: path, token: token, body: body });
+		return response;
 	},
 
-	get: function ({ path, token, queryParams = '' }) {
+	get: async function ({ path, token, queryParams = '' }) {
 		if (queryParams) {
 			// read in query parameters to set on the URL
 			const params = new URLSearchParams();
@@ -82,14 +84,17 @@ exports.request = {
 			}
 			path += '?' + params.toString();
 		}
-		this.base_request({ method: 'GET', path: path, token: token });
+		let response = await this.base_request({ method: 'GET', path: path, token: token });
+		return response;
 	},
 
-	patch: function ({ path, token, body = {} }) {
-		this.base_request({ method: 'PATCH', path: path, token: token, body: body });
+	patch: async function ({ path, token, body = {} }) {
+		let response = await this.base_request({ method: 'PATCH', path: path, token: token, body: body });
+		return response;
 	},
 
-	post: function ({ path, token, body = {} }) {
-		this.base_request({ method: 'POST', path: path, token: token, body: body });
+	post: async function ({ path, token, body = {} }) {
+		let response = await this.base_request({ method: 'POST', path: path, token: token, body: body });
+		return response;
 	}
 };
