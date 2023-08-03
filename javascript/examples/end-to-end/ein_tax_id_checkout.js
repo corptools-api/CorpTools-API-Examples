@@ -41,8 +41,6 @@ let filingProductId = '';
 
 		// choose filing product; in this example, the 'EIN tax id' product
 		const einFilingProduct = response['result'].find((product) => product['filing_name'] === 'tax id');
-
-		if (DEBUG) console.log(`EIN Tax ID filing product: ${JSON.stringify(einFilingProduct)}`);
 		filingProductId = einFilingProduct['id'];
 
 		if (DEBUG) console.log(`filing product id: ${filingProductId}`);
@@ -172,8 +170,7 @@ let filingProductId = '';
 
 		if (DEBUG) console.log(`filing method form data schema: ${JSON.stringify(response['result'])}`);
 
-		// Step 10: Get id of order item requiring client attention GET /order-items/requiring-attention
-		// e.g. need form_data
+		// Step 10: Get id of order item needing form data with GET /order-items/requiring-attention
 
 		params = {
 		  company_ids: [COMPANY_ID]
