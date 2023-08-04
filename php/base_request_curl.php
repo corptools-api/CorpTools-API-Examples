@@ -48,6 +48,7 @@ function send_request($method, $request_path, $request_params, $request_data, $c
     } else {
         echo $result;
     }
+    return json_decode($result, true);
 }
 
 /*
