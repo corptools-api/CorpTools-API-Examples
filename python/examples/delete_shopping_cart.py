@@ -16,11 +16,11 @@ class DeleteShoppingCartRequest(BaseRequest):
         super().__init__()
     
     def delete_shopping_cart(self, company_id, item_id):
-        params = {
+        body = {
             'company_ids': [company_id],
             'item_ids': [item_id]
         }
-        return self.make_request('DELETE', '/shopping-cart', params=params)
+        return self.make_request('DELETE', '/shopping-cart', body=body)
 
 # run as standalone script by passing any command line argument
 if len(sys.argv) > 1:

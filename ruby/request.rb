@@ -13,13 +13,15 @@ module BaseRequestRoute
   SECRET_KEY  = ENV['SECRET_KEY']
   BASE_URL    = ENV['API_URL']
 
-  def self.request(method, path, query_params: nil, body: '')
+  def self.request(method, path, query_params: {}, body: '')
     p "#{method.to_s.upcase} #{path} query_params=#{query_params} body=#{body}" if DEBUG
 
     payload = {
       path: path,
       content: Digest::SHA2.hexdigest(body)
     }
+
+    url = "#{BASE_URL}#{path}"
 
     headers = { access_key: ACCESS_KEY }
 
@@ -32,11 +34,30 @@ module BaseRequestRoute
 
     p "token=#{token}" if DEBUG
 
+    if method == :get && !query_params.empty?
+      query_string = []
+
+      query_params.each do |key, val|
+        case val
+        when Array
+          val.each do |v|
+            query_string << "#{key}[]=#{URI.encode_www_form_component(v)}"
+          end
+        when Hash
+          serialized_hash = URI.encode_www_form_component(val.to_json)
+          query_string << "#{key}=#{serialized_hash}"
+        else
+          query_string << "#{key}=#{URI.encode_www_form_component(val)}"
+        end
+      end
+      url = "#{BASE_URL}#{path}?#{query_string.join('&')}"
+    end
+
     begin
         res = RestClient::Request.execute(
           method: method,
-          url: BASE_URL + path,
-          payload: query_params || body,
+          url: url,
+          payload: body,
           headers: {
             authorization: "Bearer #{token}",
             content_type: :json
@@ -59,7 +80,7 @@ module BaseRequestRoute
           puts "PDF saved as get_#{request_name}_response.pdf"
     else
       puts JSON.pretty_generate(JSON.parse(res.body))
-      return JSON.parse(res.body)
+      JSON.parse(res.body)
     end
     rescue StandardError => error
       puts error
