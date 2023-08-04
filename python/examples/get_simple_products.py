@@ -21,9 +21,11 @@ class GetSimpleProducts(BaseRequest):
         }
         return self.make_request('GET', '/simple-products', params=params)
 
-website_url  = config['WEBSITE_URL']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    website_url  = config['WEBSITE_URL']
 
-request = GetSimpleProducts()
-response = request.get_products(website_url)
+    request = GetSimpleProducts()
+    response = request.get_products(website_url)
 
-pprint.pprint(response)
+    pprint.pprint(response)

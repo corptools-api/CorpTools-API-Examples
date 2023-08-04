@@ -18,9 +18,11 @@ class DeleteCallbacksRequest(BaseRequest):
     def delete_callbacks(self, callback_id):
         return self.make_request('DELETE', f'/callbacks/{callback_id}')
 
-callback_id = config['CALLBACK_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    callback_id = config['CALLBACK_ID']
 
-request = DeleteCallbacksRequest()
-response = request.delete_callbacks(callback_id)
+    request = DeleteCallbacksRequest()
+    response = request.delete_callbacks(callback_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

@@ -20,13 +20,15 @@ class PatchCompaniesRequest(BaseRequest):
          body = {'companies': [{'company': company, 'name': name, 'home_state': home_state, 'entity_type': entity_type}]}
          return self.make_request("PATCH", path, body=body)
 
-#  this example will update the company name, home_state, and entity_type
-company = config['COMPANY_NAME']
-name = 'The Best Fake Company'
-home_state = 'Arizona'
-entity_type = 'Corporation'
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    #  this example will update the company name, home_state, and entity_type
+    company = config['COMPANY_NAME']
+    name = 'The Best Fake Company'
+    home_state = 'Arizona'
+    entity_type = 'Corporation'
 
-patch_companies_request = PatchCompaniesRequest()
-patch_companies_response = patch_companies_request.patch_companies(company, name, home_state, entity_type)
+    patch_companies_request = PatchCompaniesRequest()
+    patch_companies_response = patch_companies_request.patch_companies(company, name, home_state, entity_type)
 
-pprint.pprint(patch_companies_response)
+    pprint.pprint(patch_companies_response)

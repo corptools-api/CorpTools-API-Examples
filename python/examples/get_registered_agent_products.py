@@ -21,9 +21,11 @@ class GetRegisteredAgentProductsRequest(BaseRequest):
         }
         return self.make_request('GET', '/registered-agent-products', params=params)
 
-website_url = config['WEBSITE_URL']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    website_url = config['WEBSITE_URL']
 
-request = GetRegisteredAgentProductsRequest()
-response = request.get_products(website_url)
+    request = GetRegisteredAgentProductsRequest()
+    response = request.get_products(website_url)
 
-pprint.pprint(response)
+    pprint.pprint(response)

@@ -19,7 +19,9 @@ class GetCompaniesRequest(BaseRequest):
         path = "/companies"
         return self.make_request("GET", path)
 
-get_companies_request = GetCompaniesRequest()
-companies = get_companies_request.get_companies()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    get_companies_request = GetCompaniesRequest()
+    companies = get_companies_request.get_companies()
 
-pprint.pprint(companies)
+    pprint.pprint(companies)

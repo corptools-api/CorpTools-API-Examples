@@ -16,7 +16,9 @@ class GetCallbacksRequest(BaseRequest):
         path = "/callbacks"
         return self.make_request("GET", path)
 
-get_callbacks_request = GetCallbacksRequest()
-callbacks = get_callbacks_request.get_callbacks()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    get_callbacks_request = GetCallbacksRequest()
+    callbacks = get_callbacks_request.get_callbacks()
 
-pprint.pprint(callbacks)
+    pprint.pprint(callbacks)
