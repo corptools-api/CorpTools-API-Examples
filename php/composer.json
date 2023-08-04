@@ -5,6 +5,7 @@
       "vlucas/phpdotenv": "^5.5"
    },
    "scripts": {
+      "end-to-end-ein-tax-id-checkout": "php ./examples/end-to-end/ein_tax_id_checkout.php curl",
       "curl-delete-callbacks": "php ./examples/delete_callbacks.php curl",
       "curl-delete-payment-methods": "php ./examples/delete_payment_methods.php curl",
       "curl-delete-shopping-cart": "php ./examples/delete_shopping_cart.php curl",
