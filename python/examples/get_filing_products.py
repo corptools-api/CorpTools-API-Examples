@@ -20,10 +20,12 @@ class GetFilingProductsRequest(BaseRequest):
         params = { 'url': url, 'jurisdiction': jurisdiction }
         return self.make_request("GET", path, params=params)
 
-url = config['WEBSITE_URL']
-jurisdiction = config['JURISDICTION']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    url = config['WEBSITE_URL']
+    jurisdiction = config['JURISDICTION']
 
-filing_products_request = GetFilingProductsRequest()
-filing_products = filing_products_request.get_filing_products(url, jurisdiction)
+    filing_products_request = GetFilingProductsRequest()
+    filing_products = filing_products_request.get_filing_products(url, jurisdiction)
 
-pprint.pprint(filing_products)
+    pprint.pprint(filing_products)

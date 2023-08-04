@@ -21,10 +21,12 @@ class GetShoppingCartRequest(BaseRequest):
         }
         return self.make_request('GET', '/shopping-cart', params=params)
 
-company_id  = config['COMPANY_ID']
-company_ids = [company_id]
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id  = config['COMPANY_ID']
+    company_ids = [company_id]
 
-request = GetShoppingCartRequest()
-response = request.get_shopping_cart(company_ids)
+    request = GetShoppingCartRequest()
+    response = request.get_shopping_cart(company_ids)
 
-pprint.pprint(response)
+    pprint.pprint(response)

@@ -20,9 +20,11 @@ class PostCallbacksRequest(BaseRequest):
         body = { 'url': url }
         return self.make_request("POST", path, body=body)
 
-url = config['CALLBACK_URL']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    url = config['CALLBACK_URL']
 
-post_callbacks_request = PostCallbacksRequest()
-post_callbacks_response = post_callbacks_request.post_callbacks(url)
+    post_callbacks_request = PostCallbacksRequest()
+    post_callbacks_response = post_callbacks_request.post_callbacks(url)
 
-pprint.pprint(post_callbacks_response)
+    pprint.pprint(post_callbacks_response)

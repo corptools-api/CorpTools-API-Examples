@@ -19,12 +19,14 @@ class PostServicesInfoRequest(BaseRequest):
     def post_info(self, service_id, service_info):
         return self.make_request('POST', f'/services/{service_id}/info', body=service_info)
 
-service_id = config['SERVICE_ID'];
-cwd = os.getcwd();
-file_path = f"{cwd}/../data/services/add_info_corp.json";
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    service_id = config['SERVICE_ID'];
+    cwd = os.getcwd();
+    file_path = f"{cwd}/../data/services/add_info_corp.json";
 
-with open(file_path, 'r') as file:
-    service_info = json.load(file)
-    request = PostServicesInfoRequest()
-    response = request.post_info(service_id, service_info)
-    pprint.pprint(response)
+    with open(file_path, 'r') as file:
+        service_info = json.load(file)
+        request = PostServicesInfoRequest()
+        response = request.post_info(service_id, service_info)
+        pprint.pprint(response)

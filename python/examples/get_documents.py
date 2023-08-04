@@ -22,9 +22,11 @@ class GetDocumentsRequest(BaseRequest):
         path = "/documents"
         return self.make_request("GET", path, params=params)
 
-status = config['STATUS']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    status = config['STATUS']
 
-get_documents_request = GetDocumentsRequest()
-get_documents_response = get_documents_request.get_documents(status)
+    get_documents_request = GetDocumentsRequest()
+    get_documents_response = get_documents_request.get_documents(status)
 
-pprint.pprint(get_documents_response)
+    pprint.pprint(get_documents_response)

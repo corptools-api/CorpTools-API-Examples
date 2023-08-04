@@ -22,10 +22,12 @@ class DeleteShoppingCartRequest(BaseRequest):
         }
         return self.make_request('DELETE', '/shopping-cart', body=body)
 
-company_id = config['COMPANY_ID']
-item_id = config['SHOPPING_CART_ITEM_ID']
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    company_id = config['COMPANY_ID']
+    item_id = config['SHOPPING_CART_ITEM_ID']
 
-request = DeleteShoppingCartRequest()
-response = request.delete_shopping_cart(company_id, item_id)
+    request = DeleteShoppingCartRequest()
+    response = request.delete_shopping_cart(company_id, item_id)
 
-pprint.pprint(response)
+    pprint.pprint(response)

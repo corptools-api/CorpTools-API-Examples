@@ -15,7 +15,9 @@ class GetResourcesRequest(BaseRequest):
     def get_resources(self):
         return self.make_request('GET', '/resources')
 
-request = GetResourcesRequest()
-response = request.get_resources()
+# run as standalone script by passing any command line argument
+if len(sys.argv) > 1:
+    request = GetResourcesRequest()
+    response = request.get_resources()
 
-pprint.pprint(response)
+    pprint.pprint(response)
