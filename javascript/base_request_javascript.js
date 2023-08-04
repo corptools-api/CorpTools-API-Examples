@@ -11,7 +11,7 @@ const ACCESS_KEY = process.env.ACCESS_KEY;
 const SECRET_KEY = process.env.SECRET_KEY;
 
 exports.request = {
-	token: function({ path, body = null }) {
+	token: function({ path, body = null, queryParams = {} }) {
 		let token = "";
 		let header = { access_key: ACCESS_KEY };
 		let payload = { path: path };
@@ -72,17 +72,25 @@ exports.request = {
 		return response;
 	},
 
-	get: async function ({ path, token, queryParams = '' }) {
-		if (queryParams) {
-			// read in query parameters to set on the URL
-			const params = new URLSearchParams();
+	get: async function ({ path, token, queryParams = {} }) {
+		if (Object.keys(queryParams).length) {
+			const queryArray = [];
 			for (let key in queryParams) {
 				if (queryParams.hasOwnProperty(key)) {
 					const value = queryParams[key];
-					params.append(key, value);
+					if (Array.isArray(value)) {
+						for (const v of value) {
+							queryArray.push(`${encodeURIComponent(key)}[]=${encodeURIComponent(v)}`);
+						}
+					} else if (typeof value === 'object') {
+						queryArray.push(`${encodeURIComponent(key)}=${encodeURIComponent(JSON.stringify(value))}`);
+					} else {
+						queryArray.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+					}
 				}
 			}
-			path += '?' + params.toString();
+			const queryString = queryArray.join('&');
+			path += '?' + queryString;
 		}
 		let response = await this.base_request({ method: 'GET', path: path, token: token });
 		return response;
