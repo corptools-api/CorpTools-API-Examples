@@ -15,9 +15,9 @@ namespace Examples.examples
             Console.WriteLine($"GetResource: _resourceId={_resourceId} _pageNumber={_pageNumber}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"resources/{_resourceId}/page/{_pageNumber}");
+            return GetRequest($"resources/{_resourceId}/page/{_pageNumber}");
         }
     }
 }

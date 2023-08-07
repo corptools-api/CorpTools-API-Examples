@@ -10,9 +10,9 @@ namespace Examples.examples
             Console.WriteLine($"GetResources");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"resources");
+            return GetRequest($"resources");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Examples.examples
         {
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var billing_address = new BillingAddress
             {
@@ -34,7 +34,7 @@ namespace Examples.examples
             };
 
             var body = JsonConvert.SerializeObject(payment_method, Formatting.None);
-            PostRequest("payment-methods", body);
+            return PostRequest("payment-methods", body);
         }
     }
 }

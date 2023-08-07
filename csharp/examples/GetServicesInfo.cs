@@ -13,9 +13,9 @@ namespace Examples.examples
             Console.WriteLine($"GetServicesInfo: _serviceId={_serviceId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"services/{_serviceId}/info");
+            return GetRequest($"services/{_serviceId}/info");
         }
     }
 }

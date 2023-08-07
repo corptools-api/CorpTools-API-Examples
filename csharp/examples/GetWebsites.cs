@@ -14,9 +14,9 @@ namespace Examples.examples
             Console.WriteLine($"GetWebsites: _websiteUrl={_websiteUrl}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"websites?url={_websiteUrl}");
+            return GetRequest($"websites?url={_websiteUrl}");
         }
     }
 }

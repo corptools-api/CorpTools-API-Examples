@@ -14,9 +14,14 @@ namespace Examples.examples
             Console.WriteLine($"GetShoppingCart: _companyId={_companyId}");
         }
 
-        public override void SendRequest()
+        public GetShoppingCart(string companyId)
         {
-            GetRequest($"shopping-cart?company_ids={_companyId}");
+            _companyId = companyId;
+        }
+
+        public override string SendRequest()
+        {
+            return GetRequest($"shopping-cart?company_ids={_companyId}");
         }
     }
 }

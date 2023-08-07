@@ -16,10 +16,17 @@ namespace Examples.examples
 		{
             _companyId = Environment.GetEnvironmentVariable("COMPANY_ID");
             _orderItemId = Environment.GetEnvironmentVariable("ORDER_ITEM_ID");
-            loadFormData();
+            loadFormData("../data/form_data.json");
         }
 
-        public override void SendRequest()
+        public PostOrderItemsRequiringAttention(string companyId, string orderItemId)
+        {
+            _companyId = companyId;
+            _orderItemId = orderItemId;
+            loadFormData("../data/form_data_ein_tax_id.json");
+        }
+
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -28,13 +35,13 @@ namespace Examples.examples
                 form_data = _formData
             });
             Console.WriteLine($"PostOrderItemsRequiringAttention: {body}");
-            PostRequest("order-items/requiring-attention", body);
+            return PostRequest("order-items/requiring-attention", body);
         }
 
-        private void loadFormData()
+        private void loadFormData(string formDataFilePath)
         {
             string currentDirectory = Environment.CurrentDirectory;
-            string relativePath = "../data/form_data.json";
+            string relativePath = formDataFilePath;
             string filePath = Path.Combine(currentDirectory, relativePath);
             string jsonData = File.ReadAllText(filePath);
             _formData = JObject.Parse(jsonData);

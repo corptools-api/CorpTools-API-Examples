@@ -26,9 +26,9 @@ namespace Examples
             Console.WriteLine($"BaseRequest: _apiUrl={_apiUrl} _accessKey={_accessKey} _secretKey={_secretKey}");
         }
 
-        public abstract void SendRequest();
+        public abstract string SendRequest();
 
-        protected void DeleteRequest(string path)
+        protected string DeleteRequest(string path)
         {
             try {
                 var client = new RestClient(_apiUrl);
@@ -37,14 +37,16 @@ namespace Examples
                 GenerateJwtToken(ref request, path);
                 var response = client.Delete(request);
                 Console.WriteLine(response.Content);
+                return response.Content;
             }
             catch (System.Net.Http.HttpRequestException ex)
             {
                 Console.WriteLine("Something went wrong: " + ex.Message);
             }
+            return "";
         }
 
-        protected void GetRequest(string path)
+        protected string GetRequest(string path)
         {
             try {
                 var client = new RestClient(_apiUrl);
@@ -53,15 +55,16 @@ namespace Examples
                 GenerateJwtToken(ref request, path);
                 var response = client.Get(request);
                 string contentType = response.ContentType;
-                HandleResponse(response, path, contentType);
+                return HandleResponse(response, path, contentType);
             }
             catch (System.Net.Http.HttpRequestException ex)
             {
                 Console.WriteLine("Something went wrong: " + ex.Message);
             }
+            return "";
         }
 
-        protected void PatchRequest(string path, string body)
+        protected string PatchRequest(string path, string body)
         {
             try {
                 var client = new RestClient(_apiUrl);
@@ -70,14 +73,16 @@ namespace Examples
                 GenerateJwtToken(ref request, path, body);
                 var response = client.Patch(request);
                 Console.WriteLine(response.Content);
+                return response.Content;
             }
             catch (System.Net.Http.HttpRequestException ex)
             {
                 Console.WriteLine("Something went wrong: " + ex.Message);
             }
+            return "";
         }
 
-        protected void PostRequest(string path, string body)
+        protected string PostRequest(string path, string body)
         {
             try
             {
@@ -87,14 +92,16 @@ namespace Examples
                 GenerateJwtToken(ref request, path, body);
                 var response = client.Post(request);
                 Console.WriteLine(response.Content);
+                return response.Content;
             }
             catch (System.Net.Http.HttpRequestException ex)
             {
                 Console.WriteLine("Something went wrong: " + ex.Message);
             }
+            return "";
         }
 
-        protected void HandleResponse(RestResponse response, string path, string contentType = "application/json")
+        protected string HandleResponse(RestResponse response, string path, string contentType = "application/json")
         {
             if (contentType == "application/json")
             {
@@ -120,6 +127,8 @@ namespace Examples
             {
                 Console.WriteLine(response.Content);
             }
+
+            return response.Content;
         }
 
         protected void GenerateJwtToken(ref RestRequest request, string path, string body = "")

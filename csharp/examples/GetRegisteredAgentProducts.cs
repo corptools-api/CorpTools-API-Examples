@@ -13,9 +13,9 @@ namespace Examples.examples
             Console.WriteLine($"GetRegisteredAgentProducts: _websiteUrl={_websiteUrl}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"registered-agent-products?url={_websiteUrl}");
+            return GetRequest($"registered-agent-products?url={_websiteUrl}");
         }
     }
 }
