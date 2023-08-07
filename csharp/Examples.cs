@@ -64,7 +64,7 @@ namespace Examples
             // requestPostShoppingCart();
             //requestPostShoppingCartCheckout();
 
-             einTaxIdCheckout();
+            // einTaxIdCheckout();
 
             // ListenForCallback();
         }
