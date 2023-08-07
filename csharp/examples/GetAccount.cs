@@ -10,9 +10,9 @@ namespace Examples.examples
             Console.WriteLine("GetAccount");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest("account");
+            return GetRequest("account");
         }
     }
 }

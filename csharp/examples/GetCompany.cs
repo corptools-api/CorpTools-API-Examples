@@ -15,10 +15,9 @@ namespace Examples.examples
             Console.WriteLine($"GetCompany: company_id={_companyId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            string path = $"companies/{_companyId}";
-            GetRequest(path);
+            return GetRequest($"companies/{_companyId}");
         }
     }
 }

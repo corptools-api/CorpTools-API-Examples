@@ -15,9 +15,9 @@ namespace Examples.examples
             Console.WriteLine($"DeleteCallbacks: _callbackId={_callbackId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            DeleteRequest($"callbacks/{_callbackId}");
+            return DeleteRequest($"callbacks/{_callbackId}");
         }
     }
 }

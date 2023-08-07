@@ -19,7 +19,7 @@ namespace Examples.examples
             Console.WriteLine($"PostAuthForgotPassword: _email={_email} _subdomain={_subdomain} _website_id={_website_id}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -28,7 +28,7 @@ namespace Examples.examples
                 website_id = _website_id
             });
 
-            PostRequest("auth/forgot-password", body);
+            return PostRequest("auth/forgot-password", body);
         }
     }
 }

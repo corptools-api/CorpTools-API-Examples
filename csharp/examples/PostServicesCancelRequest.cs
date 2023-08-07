@@ -14,10 +14,10 @@ namespace Examples.examples
             Console.WriteLine($"PostServicesCancelRequest: _serviceId={_serviceId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject( new {} );
-            PostRequest($"services/{_serviceId}/cancel-request", body);
+            return PostRequest($"services/{_serviceId}/cancel-request", body);
         }
     }
 }

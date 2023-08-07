@@ -8,17 +8,22 @@ namespace Examples.examples
     {
         private string _invoiceId;
 
-        public GetInvoice() : base()
+        public GetInvoice()
         {
             dotenv.net.DotEnv.Load();
             _invoiceId = Environment.GetEnvironmentVariable("INVOICE_ID");
             Console.WriteLine($"GetInvoice: invoice_id={_invoiceId}");
         }
 
-        public override void SendRequest()
+        public GetInvoice(string invoiceId)
+        {
+            _invoiceId = invoiceId;
+        }
+
+        public override string SendRequest()
         {
             string path = $"invoices/{_invoiceId}";
-            GetRequest(path);
+            return GetRequest(path);
         }
     }
 }

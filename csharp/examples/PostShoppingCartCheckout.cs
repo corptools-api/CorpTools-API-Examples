@@ -12,12 +12,20 @@ namespace Examples.examples
         public PostShoppingCartCheckout()
 		{
             _companyId = Environment.GetEnvironmentVariable("COMPANY_ID");
-            _itemId = Environment.GetEnvironmentVariable("COMPANY_ID");
-            _paymentMethodId = Environment.GetEnvironmentVariable("COMPANY_ID");
+            _itemId = Environment.GetEnvironmentVariable("SHOPPING_CART_ITEM_ID");
+            _paymentMethodId = Environment.GetEnvironmentVariable("PAYMENT_METHOD_ID");
             Console.WriteLine($"PostShoppingCartCheckout: _companyId={_companyId} _itemId={_itemId} _paymentMethodId={_paymentMethodId}");
         }
 
-        public override void SendRequest()
+        public PostShoppingCartCheckout(string companyId, string shoppingCartItemId, string paymentMethodId)
+        {
+            _companyId = companyId;
+            _itemId = shoppingCartItemId;
+            _paymentMethodId = paymentMethodId;
+            Console.WriteLine($"PostShoppingCartCheckout: _companyId={_companyId} _itemId={_itemId} _paymentMethodId={_paymentMethodId}");
+        }
+
+        public override string SendRequest()
         {
             string[] item_ids = { _itemId };
             string[] company_ids = { _companyId };
@@ -29,7 +37,7 @@ namespace Examples.examples
                 payment_token = _paymentMethodId
             });
 
-            PostRequest("shopping-cart/checkout", body);
+            return PostRequest("shopping-cart/checkout", body);
         }
     }
 }

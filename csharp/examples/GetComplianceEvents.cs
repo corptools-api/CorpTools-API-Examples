@@ -23,11 +23,11 @@ namespace Examples.examples
             Console.WriteLine($"GetComplianceEvents: _companyId={_companyId} _startDate={_startDate} _endDate={_endDate}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             string path = "compliance-events";
             string queryParams = $"?company_id={_companyId}&start_date={_startDate}&end_date={_endDate}";
-            GetRequest(path + queryParams);
+            return GetRequest(path + queryParams);
         }
 	}
 }

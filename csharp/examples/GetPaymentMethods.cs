@@ -9,9 +9,9 @@ namespace Examples.examples
 		{
 		}
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-			GetRequest("payment-methods");
+			return GetRequest("payment-methods");
         }
     }
 }

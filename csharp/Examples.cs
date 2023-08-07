@@ -62,9 +62,17 @@ namespace Examples
             // requestPostServicesCancelRequest();
             // requestPostServicesInfo();
             // requestPostShoppingCart();
-            // requestPostShoppingCartCheckout();
+            //requestPostShoppingCartCheckout();
+
+            // einTaxIdCheckout();
 
             // ListenForCallback();
+        }
+
+        private static void einTaxIdCheckout()
+        {
+            EinTaxIdCheckout request = new EinTaxIdCheckout();
+            request.checkout();
         }
 
         private static void requestDeleteCallbacks()
