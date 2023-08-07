@@ -22,20 +22,3 @@ namespace Examples.examples
         public List<InvoiceItem> items { get; set; }
     }
 }
-
-
-//"id": "05d42782-3e02-4c73-9ef0-75178a8a67e4",
-//    "invoice_number": "W27E3HBF",
-//    "status": "unpaid",
-//    "company_id": "ca78108b-c0c1-4036-8c8b-8ebe6c59f39a",
-//    "created_at": "2023-08-07T11:59:58.000-07:00",
-//    "updated_at": "2023-08-07T11:59:58.000-07:00",
-//    "company": "Test Company 1",
-//    "due_date": "2023-08-07T11:59:58.000-07:00",
-//    "items": [
-//      {
-//        "price": 50.0,
-//        "description": "Standard Federal EIN - Tax Id filing",
-//        "quantity": 1
-//      }
-//    ]
