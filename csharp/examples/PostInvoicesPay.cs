@@ -15,7 +15,7 @@ namespace Examples.examples
             Console.WriteLine($"PostInvoicesPay: _paymentToken={_paymentToken} _invoiceIds={_invoiceIds}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -23,7 +23,7 @@ namespace Examples.examples
                 invoice_ids = _invoiceIds,
             });
 
-            PostRequest("invoices/pay", body);
+            return PostRequest("invoices/pay", body);
         }
     }
 }

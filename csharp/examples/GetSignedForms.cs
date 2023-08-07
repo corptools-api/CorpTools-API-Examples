@@ -18,9 +18,9 @@ namespace Examples.examples
         }
 
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"signed-forms?filing_method_id={_filingMethodId}&website_id={_websiteId}");
+            return GetRequest($"signed-forms?filing_method_id={_filingMethodId}&website_id={_websiteId}");
         }
     }
     

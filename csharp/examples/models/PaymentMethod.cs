@@ -12,4 +12,3 @@ namespace Examples.examples
         public BillingAddress billing_address { get; set; }
     }
 }
-

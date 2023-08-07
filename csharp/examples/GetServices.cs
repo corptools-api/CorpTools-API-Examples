@@ -19,10 +19,10 @@ namespace Examples.examples
             Console.WriteLine($"GetServices: _companyId={_companyId} _companyName={_companyName}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"services?company_id={_companyId}");
-            //GetRequest($"services?company={_companyName}&limit={limit}&offset={offset}");
+            return GetRequest($"services?company_id={_companyId}");
+            // return GetRequest($"services?company={_companyName}&limit={limit}&offset={offset}");
         }
     }
 }

@@ -17,11 +17,11 @@ namespace Examples.examples
             Console.WriteLine($"GetFilingProducts: _websiteUrl={_websiteUrl} _jurisdiction={_jurisdiction}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             string path = "filing-products";
             string queryParams = $"?url={_websiteUrl}&jurisdiction={_jurisdiction}";
-            GetRequest(path + queryParams);
+            return GetRequest(path + queryParams);
         }
 	}
 }

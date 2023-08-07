@@ -17,7 +17,7 @@ namespace Examples.examples.models
             Console.WriteLine($"PostServices: _companyId={_companyId} _companyName={_companyName} _jurisdictionId={_jurisdictionId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             string[] jurisdiction_ids = new string[] { _jurisdictionId };
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
@@ -27,7 +27,7 @@ namespace Examples.examples.models
                 jurisdiction_ids = jurisdiction_ids
             });
 
-            PostRequest("services", body);
+            return PostRequest("services", body);
         }
     }
 }

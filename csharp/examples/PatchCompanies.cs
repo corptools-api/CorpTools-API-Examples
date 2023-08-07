@@ -27,7 +27,7 @@ namespace Examples.examples
         public string EntityType { get; set; }
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
           CompanyData companyData = new CompanyData
           {
@@ -39,7 +39,7 @@ namespace Examples.examples
 
           string jsonBody = JsonConvert.SerializeObject(new { companies = companiesArray });
 
-          PatchRequest("companies", jsonBody);
+          return PatchRequest("companies", jsonBody);
         }
       }
     }

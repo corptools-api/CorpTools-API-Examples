@@ -14,9 +14,14 @@ namespace Examples.examples
             Console.WriteLine($"GetOrderItemsRequiringAttention: _companyId={_companyId}");
         }
 
-        public override void SendRequest()
+        public GetOrderItemsRequiringAttention(string companyId)
         {
-            GetRequest($"order-items/requiring-attention?company_ids={_companyId}");
+            _companyId = companyId;
+        }
+
+        public override string SendRequest()
+        {
+            return GetRequest($"order-items/requiring-attention?company_ids={_companyId}");
         }
     }
 }

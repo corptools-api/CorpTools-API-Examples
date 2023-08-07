@@ -14,9 +14,9 @@ namespace Examples.examples
             Console.WriteLine($"GetDocuments: _status={_status}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"documents?status={_status}");
+            return GetRequest($"documents?status={_status}");
         }
     }
 }

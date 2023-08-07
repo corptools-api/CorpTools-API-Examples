@@ -14,9 +14,9 @@ namespace Examples.examples
             Console.WriteLine($"DeletePaymentMethods: _paymentMethodId={_paymentMethodId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            DeleteRequest($"payment-methods/{_paymentMethodId}");
+            return DeleteRequest($"payment-methods/{_paymentMethodId}");
         }
     }
 }

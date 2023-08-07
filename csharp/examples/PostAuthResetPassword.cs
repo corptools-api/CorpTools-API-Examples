@@ -17,7 +17,7 @@ namespace Examples.examples
             Console.WriteLine($"PostAuthResetPassword: _password={_password} _token={_token}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -26,7 +26,7 @@ namespace Examples.examples
                 password_confirmation = _password
             });
 
-            PostRequest("auth/reset-password", body);
+            return PostRequest("auth/reset-password", body);
         }
     }
 }

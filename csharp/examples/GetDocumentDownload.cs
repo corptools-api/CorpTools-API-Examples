@@ -17,10 +17,10 @@ namespace Examples.examples
             Console.WriteLine($"GetDocumentDownload: document_id={_documentId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             string path = $"documents/{_documentId}/download";
-            GetRequest(path);
+            return GetRequest(path);
         }
     }
 }
