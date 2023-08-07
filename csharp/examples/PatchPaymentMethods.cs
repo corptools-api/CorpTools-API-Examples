@@ -15,7 +15,7 @@ namespace Examples.examples
             Console.WriteLine($"PatchPaymentMethods: _paymentMethodId={_paymentMethodId}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var billing_address = new BillingAddress
             {
@@ -40,7 +40,7 @@ namespace Examples.examples
 
             var body = JsonConvert.SerializeObject(payment_method, Formatting.None);
 
-            PatchRequest($"payment-methods/{_paymentMethodId}", body);
+            return PatchRequest($"payment-methods/{_paymentMethodId}", body);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Examples.examples
             Console.WriteLine($"PostAuthLogin: _email={_email} _password={_password} _website_id={_website_id}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -29,7 +29,7 @@ namespace Examples.examples
                 website_id = _website_id
             });
 
-            PostRequest("auth/login", body);
+            return PostRequest("auth/login", body);
         }
     }
 }

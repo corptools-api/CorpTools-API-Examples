@@ -16,9 +16,9 @@ namespace Examples.examples
             Console.WriteLine($"DeleteShoppingCart: _companyId={_companyId} _shoppingCartItemId={_shoppingCartItemId}");
         }
 
-		public override void SendRequest()
+		public override string SendRequest()
 		{
-            DeleteRequest($"shopping-cart?company_ids[]={_companyId}&item_ids[]={_shoppingCartItemId}");
+            return DeleteRequest($"shopping-cart?company_ids[]={_companyId}&item_ids[]={_shoppingCartItemId}");
         }
     }
 }

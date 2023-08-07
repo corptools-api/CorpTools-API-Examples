@@ -17,7 +17,7 @@ namespace Examples.examples
             Console.WriteLine($"GetDocumentsBulkDownload: _documentIds={_documentIds}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             // Construct the url with the ids param as an array in the query string
             var queryParams = new List<string>();
@@ -27,7 +27,7 @@ namespace Examples.examples
             }
             var queryString = string.Join("&", queryParams);
             var urlWithParams = $"documents/bulk-download?{queryString}";
-            GetRequest(urlWithParams);
+            return GetRequest(urlWithParams);
         }
     }
 }

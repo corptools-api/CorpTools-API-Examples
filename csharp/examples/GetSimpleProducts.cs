@@ -14,9 +14,9 @@ namespace Examples.examples
             Console.WriteLine($"GetSimpleProducts: _websiteUrl={_websiteUrl}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
-            GetRequest($"simple-products?url={_websiteUrl}");
+            return GetRequest($"simple-products?url={_websiteUrl}");
         }
     }
 }

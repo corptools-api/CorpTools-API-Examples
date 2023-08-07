@@ -18,10 +18,10 @@ namespace Examples.examples.models
             Console.WriteLine($"PostServicesInfo: _serviceId={_serviceId} _serviceInfo={_serviceInfo}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(_serviceInfo);
-            PostRequest($"services/{_serviceId}/info", body );
+            return PostRequest($"services/{_serviceId}/info", body );
         }
 
         private void loadInfo()

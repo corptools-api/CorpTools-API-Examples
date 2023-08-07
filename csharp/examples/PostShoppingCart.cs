@@ -20,7 +20,15 @@ namespace Examples.examples
             Console.WriteLine($"PostShoppingCart: _companyId={_companyId} _filingProductId={_filingProductId} _filingMethodId={_filingMethodId}");
         }
 
-        public override void SendRequest()
+        public PostShoppingCart(string companyId, string filingProductId, string filingMethodId, int quantity)
+        {
+            _companyId = companyId;
+            _filingProductId = filingProductId;
+            _filingMethodId = filingMethodId;
+            _quantity = quantity;
+        }
+
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
@@ -30,7 +38,7 @@ namespace Examples.examples
                 quantity = _quantity
             });
 
-            PostRequest("shopping-cart", body);
+            return PostRequest("shopping-cart", body);
         }
     }
 }

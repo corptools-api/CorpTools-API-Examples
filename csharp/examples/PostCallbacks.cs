@@ -13,14 +13,14 @@ namespace Examples.examples
             Console.WriteLine($"PostCallbacks: _callbackUrl={_callbackUrl}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             var body = Newtonsoft.Json.JsonConvert.SerializeObject(new
             {
                 url = _callbackUrl
             });
 
-            PostRequest("callbacks", body);
+            return PostRequest("callbacks", body);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Examples.examples
         private string _companyId;
         private string _methodId;
 
-        public GetFilingMethodsSchemas() : base()
+        public GetFilingMethodsSchemas()
         {
             dotenv.net.DotEnv.Load();
             _companyId = Environment.GetEnvironmentVariable("COMPANY_ID");
@@ -17,11 +17,17 @@ namespace Examples.examples
             Console.WriteLine($"GetFilingMethodsSchemas: company_id={_companyId} filing_method_id={_methodId}");
         }
 
-        public override void SendRequest()
+        public GetFilingMethodsSchemas(string companyId, string filingMethodId)
+        {
+            _companyId = companyId;
+            _methodId = filingMethodId;
+        }
+
+        public override string SendRequest()
         {
             string path = "filing-methods/schemas";
             string queryParams = $"?company_id={_companyId}&filing_method_id={_methodId}";
-            GetRequest(path + queryParams);
+            return GetRequest(path + queryParams);
         }
     }
 }

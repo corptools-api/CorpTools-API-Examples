@@ -9,7 +9,7 @@ namespace Examples.examples
 		private string _companyId;
         private string _jurisdiction;
 
-        public GetFilingProductsOfferings() : base()
+        public GetFilingProductsOfferings()
 		{
             dotenv.net.DotEnv.Load();
             _companyId      = Environment.GetEnvironmentVariable("COMPANY_ID");
@@ -17,11 +17,17 @@ namespace Examples.examples
             Console.WriteLine($"GetFilingProductsOfferings: _companyId={_companyId} _jurisdiction={_jurisdiction}");
         }
 
-        public override void SendRequest()
+        public GetFilingProductsOfferings(string companyId, string jursidiction)
+        {
+            _companyId = companyId;
+            _jurisdiction = jursidiction;
+        }
+
+        public override string SendRequest()
         {
             string path = "filing-products/offerings";
             string queryParams = $"?company_id={_companyId}&jurisdiction={_jurisdiction}";
-            GetRequest(path + queryParams);
+            return GetRequest(path + queryParams);
         }
 	}
 }

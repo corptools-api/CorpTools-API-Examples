@@ -19,10 +19,10 @@ namespace Examples.examples
             Console.WriteLine($"GetDocumentPage: document_id={_documentId} page_number={_pageNumber}");
         }
 
-        public override void SendRequest()
+        public override string SendRequest()
         {
             string path = $"documents/{_documentId}/page/{_pageNumber}";
-            GetRequest(path);
+            return GetRequest(path);
         }
     }
 }
