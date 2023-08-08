@@ -1,0 +1,38 @@
+{
+  "ssn":"555-55-5555",
+  "start_date":"04/04/2023",
+  "fiscal_year_end": "01",
+  "entity_type":"Limited Liability Company",
+  "ein_trucking":true,
+  "ein_excise_tax":true,
+  "ein_sell_tobacco":true,
+  "ein_has_employees":true,
+  "number_of_members":"1",
+  "responsible_party":{
+    "last_name":"Prime Corporate Services Test",
+    "first_name":"Tester McTestington",
+    "phone_number":"5555555555"
+  },
+  "principal_activity":"Just a Test",
+  "ein_other_employees":"1",
+  "ein_involves_gambling":true,
+  "company_mailing_address":{
+    "city":"Spokane",
+    "line1":"123 Test St",
+    "county":"Spokane",
+    "country":"US",
+    "zip_postal_code":"99223",
+    "state_province_region":"WA"
+  },
+  "company_principal_address":{
+    "city":"Spokane",
+    "line1":"123 Test St",
+    "county":"Spokane",
+    "country":"US",
+    "zip_postal_code":"99223",
+    "state_province_region":"WA"
+  },
+  "ein_first_date_wages_paid":"04/17/2023",
+  "ein_agricultural_employees":"1",
+  "ein_employee_tax_liability_1000":true
+}
